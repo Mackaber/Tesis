@@ -1,0 +1,64 @@
+\chapter{Experimentos Preliminares}
+\label{chapter:chapter04}
+
+\section{Mutación}
+
+jMetal cuenta con distintos algoritmos para realizar la mutación, sin embargo estos comprenden únicamente problemas binarios o de permutación, y ya que es necesario un algoritmo para obtener una solución combinatoria, fue necesaria la creación de un nuevo algoritmo que a continuación se propone
+
+\ref{alg:mutation}.
+\begin{algorithm}
+\caption{Group Combination Mutation}\label{alg:mutation}
+\begin{algorithmic}[1]
+\Procedure{Mutation}{$s$}
+\State $g1\gets getRandomVariable(s)$\Comment{Obtiene una variable aleatoria de la solución}
+\State $g2\gets getRandomVariable(s)$
+\While{$groupSize(g1)\leq minSize() + 1$}\Comment{Revisa si en grupo de origen es mayor que el tamaño menor posible}
+\State $g1 \gets getRandomVariable(s)$
+\EndWhile\label{euclidendwhile}
+\While{$groupSize(g2)> maxSize() - 1$}\Comment{Revisa si en grupo destino es menor que el tamaño mayor posible}
+\State $g2 \gets getRandomVariable(s)$
+\EndWhile\label{euclidendwhile}
+\State $u \gets getRandomUserFromGroup(g1)$ 
+\State $addUserToGroup(u,g2)$
+\State $removeUserFromGroup(u,g1)$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+Una mutación de acuerdo a los algoritmos genéticos debe de introducir al sistema una solución que no se exista aún. Sin embargo no es suficiente con cambiar un usuario por otro en un grupo para la mutación ya que este usuario probablemente se encuentre en otro grupo diferente y el sistema prohíbe que un usuario este en 2 grupos distintos a la vez. Por ello el algoritmo para la mutación toma un grupo de origen al azar, quita un usuario de un grupo y lo pone en otro, tomando en cuenta las restricciones del tamaño del grupo, es decir, si es un grupo que quitándole un usuario resultaría menor a 3 entonces se debe seleccionar otro grupo. De forma similar para el grupo destino se verifica que no sobrepase el tamaño máximo de 6 una vez que el nuevo usuario sea agregado, y si es el caso se selecciona otro grupo. El algoritmo completo se presenta como pseudocódigo a continuación:
+
+Resulta trivial hacer esta mutación sin verificar que se repita el usuario, ya que el tiempo requerido para reparar la solución es el mismo que revisarla de forma previa, pero no se descarta que sea posible hacer obtener soluciones sin restricciones y repararlas al final.
+
+\section{Crossover}
+
+La herramienta de jMetal cuenta con distintos algoritmos de crossover, y ya que estos únicamente se basan en los cromosomas que corresponden a los grupos creados, es posible usar cualquier algoritmo de esta herramienta para generar soluciones nuevas en la población. El algoritmo que se usó en cuestión recibe el nombre de N-Point Crossover, donde la N corresponde al número de cromosomas que se cruzaran, es decir suponiendo que n = 10 entonces 10 grupos se tomarán de una solución y se pasarán a otra que a su vez también intercambiará 10 grupos y el resto... ya que se busca que el crossover se realice justo a la mitad, esta N corresponde al número de cromosomas/variables o bien el número de grupos.
+
+Para la primera fase los experimentos que se definieron consistieron en probar únicamente las funciones objetivo de forma individual y determinar su factibilidad con respecto a si son reproducibles y pueden ser útiles para cualquier tipo de solución generada.
+
+\section{Función de Distancia entre intereses}
+
+Para este experimento se generaron 4 usuarios de forma aleatoria con sus correspectivos intereses, luego se probaron distintas técnicas y así... para determinar la más adecuada y al final salió la de la distancia cosenoidal...
+
+\section{Función de Participación}
+
+Ya que no hay ningún paper que diga que función usar para esto se le hizo un análisis de datos al AMI meeting corpus para ver qué relación había entre el número de silencios y la homogeniedad de las participaciones de acuerdo con los functional roles de Benne & Sheats, y pues resulta que si hay una correlación con respecto al porcentaje de participaciones por lo que se usó esta medida para tratar de predecir la interacción del grupo, considerando que esta participación debe ser homogénea entre ellos por lo que es el inverso a la suma de las participaciones y así...
+
+\section{Optimización mono-objetivo}
+
+Para la optimización mono-objetivo se definió una función compuesta por las funciones objetivo previamente definidas [funciones] considerando sus pesos de forma uniforme en esta parte de la investigación.
+
+[función]
+
+\section{Local Search}
+
+Para comenzar a experimentar se usó el algoritmo de búsqueda local, ya que este es considerado una de las formas más directas para realizar la optimización, en caso de que las soluciones que produjera se encontraran dentro del frente de pareto no sería necesario usar algoritmos más avanzados. Como era de esperarse, este algoritmo se queda trabado en un mínimo local, inclusive después de un número significativo de iteraciones no logra mejorar mucho, por lo que queda descartada la idea de que encuentre una solución dentro del frente de pareto
+
+\section{Algoritmo Genético}
+
+Debido a que la optimización Multiobjetivo se encuentra dominada en la literatura por algoritmos genéticos, resulta relevante usar un algoritmo genético mono-objetivo para hacer una comparación más directa, ya que ambos comparten parámetros como los algoritmos de mutación y crossover además de un epsilon para la evaluación de las soluciones. Como podemos ver en los resultados estas soluciones resultan ser mejores que las obtenidas por local search y si observamos la muestra de una de las soluciones es evidente ver que la estabilidad del grupo resulta mejor comparada con la que resultaría de un grupo generado de forma aleatoria.
+
+\section{Optimización Multi-Objetivo}
+
+Para la optimización multiobjetivo se utilizó el algoritmo NSGA-II qué significa... ya que es uno de los más usados en la literatura de hoy en día, además de que no necesitan parámetros adicionales a los usados para el algoritmo genético de optimización mono-objetivo.
+
+Es posible ver en estos resultados que las soluciones obtenidas por la optimización multiobjetivo resultan ser significativamente mejores, ya que al sumar los valores de las soluciones resultan ser menores a las obtenidas por una optimización mono-objetivo por algoritmos genéticos.
