@@ -1,6 +1,23 @@
 \chapter{Experimentos Preliminares}
 \label{chapter:chapter04}
 
+\section{Creación de la Base de Datos}
+
+Debido a que esta investigación se lleva a cabo con un concepto nuevo, no existe ninguna base de datos que tenga todos los datos relacionados al respecto, por lo que se opto por crear una base de datos artificial alimentada con la distribución de distintas estadísticas que se encontraron en diversos estudios, para poder acercarnos a lo que podría ser la distribución que se pudiera obtener cuando la plataforma este lista.
+
+\subsection{Datos sintéticos}
+
+Se hizo un estudio de como pueden ser usados los datos sintéticos en [ref1] y [ref2], además de esto los datos sintéticos pueden servir para evitar problemas de privacidad para los usuarios cuyos datos se encuentran en la base de datos.
+
+\subsection{Datos de Idiomas} 
+
+Para los datos de idiomas se busco en distintas fuentes algún tipo de estadística que pudiera definir como se comporta la distribución entre los distintos niveles de idiomas que forman parte del CEFR, de esta manera hacer una distribución similar para nuestra base de datos artificial.
+
+\subsection{Datos de Intereses de Facebook} 
+
+Como previamente se mencionó Facebook cuenta con una base de datos de intereses que son distribuidos entre varias cosas por intereses ligados a una población, para poder calcular la distribución se calculó un total de usuarios de lo que contempla México, después se ajusto para que arrojara resultados por cada interés, en cada caso la herramienta daba un número que consistía en un aproximado de la segmentación de ese interés en particular. Cabe destacar que hay intereses generales que conforman la parte superior de la ontología, directamente después del origen, que no fueron tomados en cuenta porque se consideraron muy generales y resultaban llevarse un [prc]\% de la distribución total, por lo que únicamente se tomaron en cuenta intereses de tercer y cuarto nivel, que se acercan más a los intereses específicos que podría presentar cada usuario. Por último, también es importante señalar que no se trabaja con números exactos con esta herramienta, sin embargo para propósitos de esta investigación sólo es importante obtener un porcentaje aproximado, por lo que este detalle resulta no muy relevante.
+
+
 \section{Mutación}
 
 jMetal cuenta con distintos algoritmos para realizar la mutación, sin embargo estos comprenden únicamente problemas binarios o de permutación, y ya que es necesario un algoritmo para obtener una solución combinatoria, fue necesaria la creación de un nuevo algoritmo que a continuación se propone
@@ -37,28 +54,65 @@ Para la primera fase los experimentos que se definieron consistieron en probar �
 
 \section{Función de Distancia entre intereses}
 
-Para este experimento se generaron 4 usuarios de forma aleatoria con sus correspectivos intereses, luego se probaron distintas técnicas y así... para determinar la más adecuada y al final salió la de la distancia cosenoidal...
+Para este experimento se generaron 4 usuarios de forma aleatoria con sus correspectivos vectores de intereses, del mismo modo que se definieron en la Metodología \ref{chapter:chapter02}. La idea era buscar la forma de encontrar la distancia entre 2 vectores o un grupo de vectores de ser posible, con un valor que idealmente fuera de 0 a 1, de forma continua. Para ello se compararon distintas medidas de similaridad, algunas de ellas encontradas en \cite{SeyedShirkhorshidi2015AData}, \cite{Sung-HyukChaComprehensiveFunctions}, un factor importante para usar como punto de comparación es que esta función es que permitiera trabajar con valores de 0, lo cual terminó descartando gran parte de las funciones, ya que su resultado hubiera sido dividido entre 0. Al final se hizo una comparativa entre 2 medidas, la distancia cosenoidal y el coeficiente de correlación de Pearson, 
+
 
 \section{Función de Participación}
 
-Ya que no hay ningún paper que diga que función usar para esto se le hizo un análisis de datos al AMI meeting corpus para ver qué relación había entre el número de silencios y la homogeniedad de las participaciones de acuerdo con los functional roles de Benne & Sheats, y pues resulta que si hay una correlación con respecto al porcentaje de participaciones por lo que se usó esta medida para tratar de predecir la interacción del grupo, considerando que esta participación debe ser homogénea entre ellos por lo que es el inverso a la suma de las participaciones y así...
+Al momento de buscar alguna métrica que ayudara a definir la estabilidad del grupo entre los distintos estilos de participación, no fue posible encontrar en la literatura algún valor con suficiente validez para usarse de la forma que requiere esta investigación. Por lo que fue necesario definirla de otra manera, para ello se hizo un análisis de datos a la base de datos pública de conversaciones conocida como AMI Meeting Corpus buscando alguna correlación entre los roles funcionales y la homogeneidad de participación, que en este caso se le considera como el menor número de silencios y tiempos de participaciones aproximadamente similares.
+
+Se hizo un análisis de distintas conversaciones que tuvieran los roles funcionales indicados, afortunadamente esta base de datos cuenta con información de al menos 8 conversaciones independientes, con 4 grupos se personas distintos, teniendo 2 conversaciones por grupo. 
+
+De forma preliminar como se puede observar en la Fig \ref{roles_table} que existe la posibilidad de una correlación fuerte entre el número de silencios con la cantidad total de "protagonismos", cabe mencionar que en este caso los roles no son características de la persona, si no de la participación, así cada vez que una persona participa puede hacerlo llenando un rol distinto, el rol que nos interesa en este caso es el rol de de "protagonista" ya que según su descripción es aquella persona que normalmente inicia las conversaciones. 
 
 \section{Optimización mono-objetivo}
 
-Para la optimización mono-objetivo se definió una función compuesta por las funciones objetivo previamente definidas [funciones] considerando sus pesos de forma uniforme en esta parte de la investigación.
+Para la optimización mono-objetivo se definió una función compuesta que puede apreciarse en la función \ref{weighted_function}, por las funciones objetivo previamente definidas considerando sus pesos de forma uniforme en esta parte de la investigación. En el resto de los experimentos, esta función también se utiliza como principal punto de comparación entre las distintas estrategias mono-objetivo y multi-objetivo.
+\begin{itemize}
+\item La función del tamaño del grupo \(f_{1}\)
+\item La función de la similitud de intereses \(f_{2}\)
+\item La función de la similitud del nivel \(f_{3}\)
+\item La función del estilo de participación \(f_{4}\)
+\end{itemize}
 
-[función]
+\begin{equation} \label{weighted_function}
+    f = w_{1} \times f_{1} + \\
+    w_{2} \times f_{2} + \\
+    w_{3} \times f_{3} + \\
+    w_{4} \times f_{4}
+\end{equation}
 
-\section{Local Search}
+\section{Búsqueda local}
 
 Para comenzar a experimentar se usó el algoritmo de búsqueda local, ya que este es considerado una de las formas más directas para realizar la optimización, en caso de que las soluciones que produjera se encontraran dentro del frente de pareto no sería necesario usar algoritmos más avanzados. Como era de esperarse, este algoritmo se queda trabado en un mínimo local, inclusive después de un número significativo de iteraciones no logra mejorar mucho, por lo que queda descartada la idea de que encuentre una solución dentro del frente de pareto
 
+\begin{figure}
+    \centering
+    \includegraphics[width=150mm]{Local.png}
+    \caption{Búsqueda Local}
+    \label{fig:local}
+\end{figure}
+
 \section{Algoritmo Genético}
 
-Debido a que la optimización Multiobjetivo se encuentra dominada en la literatura por algoritmos genéticos, resulta relevante usar un algoritmo genético mono-objetivo para hacer una comparación más directa, ya que ambos comparten parámetros como los algoritmos de mutación y crossover además de un epsilon para la evaluación de las soluciones. Como podemos ver en los resultados estas soluciones resultan ser mejores que las obtenidas por local search y si observamos la muestra de una de las soluciones es evidente ver que la estabilidad del grupo resulta mejor comparada con la que resultaría de un grupo generado de forma aleatoria.
+Debido a que la optimización Multi-objetivo se encuentra dominada en la literatura por algoritmos genéticos, resulta relevante usar un algoritmo genético mono-objetivo para hacer una comparación más directa, ya que ambos comparten parámetros como los algoritmos de mutación y crossover además de un épsilon para la evaluación de las soluciones. Como podemos ver en los resultados estas soluciones resultan ser mejores que las obtenidas por búsqueda local y si observamos la muestra de una de las soluciones es evidente ver que la estabilidad del grupo resulta mejor comparada con la que resultaría de un grupo generado de forma aleatoria.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=150mm]{Genetic.png}
+    \caption{Algoritmo Genético Mono-objetivo}
+    \label{fig:genetico}
+\end{figure}
 
 \section{Optimización Multi-Objetivo}
 
 Para la optimización multiobjetivo se utilizó el algoritmo NSGA-II qué significa... ya que es uno de los más usados en la literatura de hoy en día, además de que no necesitan parámetros adicionales a los usados para el algoritmo genético de optimización mono-objetivo.
 
 Es posible ver en estos resultados que las soluciones obtenidas por la optimización multiobjetivo resultan ser significativamente mejores, ya que al sumar los valores de las soluciones resultan ser menores a las obtenidas por una optimización mono-objetivo por algoritmos genéticos.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=150mm]{Multi-Objective.png}
+    \caption{Multi-Objetivo (NSGAII)}
+    \label{fig:multiobjetivo}
+\end{figure}

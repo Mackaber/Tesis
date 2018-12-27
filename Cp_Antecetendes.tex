@@ -1,7 +1,7 @@
 \chapter{Antecedentes}
 \label{chapter:chapter02}
 
-Existen distintos trabajos que contemplan una comparación entre estrategias mono-objetivo y multiobjetivo para distintos campos de la industria, por ejemplo Jiao, Zeng\cite{Jiao2017DynamicME} entre otros hacen uso de distintas estrategias para convertir un problema mono-objetivo en uno multiobjetivo dinámico en el cual aplican un algoritmo evolutivo multiobjetivo con una mejora en los resultados comparándola con las soluciones existentes. Otro tema muy recurrente en los cuales se comparan su desempeño es en el diseño de antenas para mejorar la recepción telefónica, como es el caso del trabajo de Rahmat-Samil y Nanbo Jin.\cite{Jin2007-qu} \\
+Existen distintos trabajos que contemplan una comparación entre estrategias mono-objetivo y multiobjetivo para distintos campos de la industria, por ejemplo Jiao, Zeng\cite{Jiao2017DynamicME} entre otros hacen uso de distintas estrategias para convertir un problema mono-objetivo en uno multiobjetivo dinámico en el cual aplican un algoritmo evolutivo multiobjetivo con una mejora en los resultados comparándola con las soluciones existentes. Otro tema muy recurrente en los cuales se comparan su desempeño es en el diseño de antenas para mejorar la recepción telefónica, como es el caso del trabajo de Rahmat-Samil y Nanbo Jin.\cite{Jin2007-qu} 
 
 Por último Battiti y Passerini\cite{Battiti2010-xo} hablan sobre el uso de algoritmos genéticos que se adaptan al tomador de decisiones, esto resulta relevante porque en la plataforma final el usuario propiamente no tiene una decisión real sobre a qué grupo terminará siendo asignado sino que esto se pretende realizar de manera automática, Battiti menciona algunas de las estrategias posibles para que pueda adaptarse el comportamiento de un tomador de decisiones y además discute algunas de las limitaciones que un sistema de este tipo presentaría de acuerdo con sus preferencias.\cite{Wang2010-zh} \\
 
@@ -69,16 +69,53 @@ A continuación se describen los pasos que lleva a cabo un algoritmo evolutivo c
 Este ciclo se repite dando paso cada vez a nuevas generaciones que cada vez se ajustan más a la función de evaluación hasta que se alcance el resultado deseado determinado por el paso de Terminación.[10] \\
 
 \section{AMI Meeting Corpus}
-[?]
 
-\section{Benne and Sheats Roles funcionales}
-[?]
+Ya que no hay ningún paper que diga que función usar para esto se le hizo un análisis de datos al AMI meeting corpus para ver qué relación había entre el número de silencios y la homogeniedad de las participaciones de acuerdo con los functional roles de Benne y Sheats, y pues resulta que si hay una correlación con respecto al porcentaje de participaciones por lo que se usó esta medida para tratar de predecir la interacción del grupo, considerando que esta participación debe ser homogénea entre ellos por lo que es el inverso a la suma de las participaciones.
+[...]
+Esta ha sido usada en varios trabajos como para predecir estilos de participación como es el caso de Vinciarelli\cite{VinciarelliUnderstandingCorpus} quien usa esta base de datos para identificar los roles funcionales de Benne y Sheats\cite{benne_sheats}. 
+
+\section{Roles funcionales de Benne and Sheats }
+Los roles funcionales de Benne y Sheats son una herramienta que ayuda a definir que tipo de reacción tiene una persona al momento de entablar una conversación[ref]. Los roles en los que estamos interesados específicamente se conocen como los \textbf{Roles de mantenimiento} o sociales que están basados en el trabajo de Biddle [ref] sobre la teoría de los roles, ya que el resto de las definiciones de roles que son los enfocados a tareas y disfuncionales no proporcionan información relevante para la investigación. Estos roles en específico se definen a continuación:
+
+\begin{itemize}\break
+
+\item \textbf{Atacante}: Es aquella persona que invalida los comentarios de otros y "ataca" al resto de los miembros del grupo.
+\item \textbf{Protagonista}: es aquella persona que inicia las conversaciones, asume un rol de autoridad. En este caso es un rol muy valioso para nuestra investigación.
+\item \textbf{Seguidor (Supporter)}: esta persona presenta una actitud cooperativa, pone atención a la platica, acepta las propuestas y ofrece soporte técnico.
+\item \textbf{Gatekeeper}: es una persona que desempeña el rol de moderador, revisando que cada persona tenga su oportunidad de participar de forma similar.
+\item \textbf{Neutral}: Es similar al rol de seguidor, sólo que en lugar de participar de forma activa, acepta los comentarios de forma pasiva.
+\end{itemize}
+
+Cabe destacar que una persona puede representar distintos tipos de roles en una misma conversación, aunque generalmente se le clasifica dependiendo de cual fue su rol más prominente, lo cual será usado como ventaja, ya que en la base de datos de \textbf{AMI meeting corpus} las etiquetas de los roles están dadas para cada participación y no necesariamente para cada persona, por lo que nos es posible determinar que porcentaje represento cada rol del tiempo total de lo que duro la conversación.
 
 \section{Facebook Ad Platform} 
-[?]
+La red social conocida como Facebook es útil hoy en día para mantener el contacto entre amigos y conocidos, sin embargo también es una útil herramienta de mercadotecnia para dar a los usuarios que pertenecen a un cierto mercado anuncios enfocados a cada uno de ellos acorde a sus preferencias, comportamientos y ubicación, esto de hecho sigue una metodología de la mercadotecnia conocida como Demografía, comportamientos e  intereses[ref]. Por lo que para esta investigación respecta solo nos interesa la cuestión de los intereses. 
+
+Estos intereses están determinados por la clasificación de las paginas o grupos a las que el usuario sigue, sin embargo cuenta con una clasificación más general a manera de una ontología que Facebook ha estado construyendo a lo largo de los años usando distintas técnicas de clustering para que pueda tener una categorización más general de los distintos tipos de intereses de cada uno de los usuarios.
+
+Además Facebook permite que a través de una plataforma conocida como Facbook Ad platform en la cual los negocios pueden hacer uso de ella para publicar distintos tipos de anuncios dirigidos a un tipo de mercado de acuerdo con los intereses o comportamientos que cada uno describe, e. esta plataforma es publica y puede hacerse uso de ella para determinar un costo aproximado al momento de preparar campañas de mercadotecnia. Sin embargo para esta investigación se usa con otro tipo de propósito, en este caso se usa para determinar el tamaño de población para cada uno de los intereses que se describe como será mencionado en las secciones [ref1] y [ref2]. 
+
+También esta plataforma puede ser usada al mismo tiempo para generar la distribución de los datos ya que esta directamente ligada con la ontología y puede ser consultada para medir las distancias entre un interés y otro. Parte de la ontología puede ser vista en la Fig [ref]
+
+[Fig (Ontologia)]
+
+La ontología que ha creado Facebook se determina con un arbol de 9 intereses generales y 325 específicos cada uno clasificado según la relación a un interés general, esto nos permite buscar intereses específicos en común, por ejemplo si una persona le gustan los programas de televisión podemos asumir también que le gustan los reality shows o los programas de concursos etc, de esta forma otra persona que tenga un gusto de por ejemplo de series de televisión, tiene una relación directa con la primera y serán capaces de encontrar algún tema en común para iniciar una conversación.
 
 \section{CEFR}
-[?]
+
+Conocida como \textbf{Common European Framework of Reference for Languages} por sus siglas en Inglés, es una herramienta usada a nivel internacional para evaluar el nivel de conocimiento de un idioma extranjero y es comúnmente conocido a lo largo del mundo de tal manera que aunque se haya realizado un test diferente, es posible encontrar un tipo de equivalencia usando esta clasificación, lo que nos permite ser capaces de tomar en cuenta en nivel de una persona sin importar que tipo de test tomo como información al registrarse en esta plataforma, o inclusive usando la descripción de cada uno de los niveles definirse a si mismo como perteneciente a alguno de ellos.
+A continuación se describen los niveles y el significado de cada uno:
+
+%\begin{itemize}
+%\item \textbf{A1 - Principiante}: se dice que es capaz de usar expresiones comunes, dar información como su nombre, a que se dedican y donde viven. Y además pueden tener una interacción simple siempre y cuando la persona a la que se dirijan hable de forma clara y este preparada para ayudar.
+%\item \textbf{A2 - Elemental: }
+%\item \textbf{B1: Intermedio:}
+%\item \textbf{B2: Intermedio Avanzado:}
+%\item \textbf{C1: Avanzado:}
+%\item \textbf{C2: Maestro:}
+%\end{itemize}
+
+
 
 \section{jMetal}
 
@@ -96,7 +133,7 @@ Algunas de las características que se busca formen parte de este tipo de softwa
 \item Incluir los algoritmos más actuales disponibles
 \item Contener las pruebas de desempeño más aceptadas para la resolución de problemas multiobjetivo
 \item Dar indicadores de calidad para medir el desempeño de cada una de las pruebas y asistir de manera más accesible en las investigaciones de sus usuarios.
-\end{itemize}\\
+\end{itemize}
 
 jMetal por su parte cuenta con las siguientes características que hacen la plataforma una herramienta única comparada con las alternativas existentes:
 
