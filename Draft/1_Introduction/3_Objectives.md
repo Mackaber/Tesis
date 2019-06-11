@@ -18,4 +18,6 @@
 
 1. "The thing" : http://doi.org/98123
 2.
-3.
+3. 
+
+Reference-style: 
