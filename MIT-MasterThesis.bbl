@@ -1,0 +1,50 @@
+\begin{thebibliography}{1}
+
+\bibitem{Battiti2010-xo}
+{\sc Battiti, R., and Passerini, A.}
+\newblock {Brain--Computer} evolutionary multiobjective optimization: A genetic
+  algorithm adapting to the decision maker.
+\newblock {\em IEEE Trans. Evol. Comput. 14}, 5 (Oct. 2010), 671--687.
+
+\bibitem{Jiao2017DynamicME}
+{\sc Jiao, R., Zeng, S., Alkasassbeh, J.~S., and Li, C.}
+\newblock Dynamic multi-objective evolutionary algorithms for single-objective
+  optimization.
+\newblock {\em Appl. Soft Comput. 61\/} (2017), 793--805.
+
+\bibitem{Jin2007-qu}
+{\sc Jin, N., and Rahmat-Samii, Y.}
+\newblock Advances in particle swarm optimization for antenna designs:
+  {Real-Number}, binary, {Single-Objective} and multiobjective implementations.
+\newblock {\em IEEE Trans. Antennas Propag. 55}, 3 (Mar. 2007), 556--567.
+
+\bibitem{taxonomy_semantic_similarity}
+{\sc Madylova, A., and Oguducu, S.~G.}
+\newblock A taxonomy based semantic similarity of documents using the cosine
+  measure.
+\newblock In {\em 2009 24th International Symposium on Computer and Information
+  Sciences\/} (Sept 2009), pp.~129--134.
+
+\bibitem{SeyedShirkhorshidi2015AData}
+{\sc Seyed~Shirkhorshidi, A., Aghabozorgi, S., and Wah, Y.}
+\newblock {A Comparison Study on Similarity and Dissimilarity Measures in
+  Clustering Continuous Data}.
+
+\bibitem{Sung-HyukChaComprehensiveFunctions}
+{\sc {Sung-Hyuk Cha}}.
+\newblock {Comprehensive Survey on Distance/Similarity Measures between
+  Probability Density Functions}.
+\newblock Tech. rep.
+
+\bibitem{VinciarelliUnderstandingCorpus}
+{\sc Vinciarelli, A., Valente, F., Harsha~Yella, S., and Sapru, A.}
+\newblock {Understanding Social Signals in Multi-party Conversations: Automatic
+  Recognition of Socio-Emotional Roles in the AMI Meeting Corpus}.
+
+\bibitem{Wang2010-zh}
+{\sc Wang, N.~F., and Tai, K.}
+\newblock Target matching problems and an adaptive constraint strategy for
+  multiobjective design optimization using genetic algorithms.
+\newblock {\em Comput. Struct. 88}, 19 (Oct. 2010), 1064--1076.
+
+\end{thebibliography}
