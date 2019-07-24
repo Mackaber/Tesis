@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.7)  16 JUL 2019 11:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.7)  24 JUL 2019 18:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -62,8 +62,8 @@ Package: times 2005/04/12 PSNFSS-v9.2a (SPQR)
 Package: babel 2019/04/03 3.29 The Babel package
  (/usr/local/texlive/2019basic/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2019/04/03 3.29 Babel switching mechanism
-) (/usr/local/texlive/2019basic/texmf-dist/tex/generic/babel-spanish/spanish.ldf
-Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+) (/usr/local/texlive/2019basic/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
  (/usr/local/texlive/2019basic/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2019/04/03 3.29 Babel common definitions
 \babel@savecnt=\count89
@@ -71,45 +71,42 @@ File: babel.def 2019/04/03 3.29 Babel common definitions
  (/usr/local/texlive/2019basic/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@dirlevel=\count90
 )
-\es@quottoks=\toks15
-\es@quotdepth=\count91
-Package babel Info: Making " an active character on input line 561.
-Package babel Info: Making . an active character on input line 662.
-Package babel Info: Making < an active character on input line 707.
-Package babel Info: Making > an active character on input line 707.
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
 )) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count92
-\float@exts=\toks18
+\c@float@type=\count91
+\float@exts=\toks17
 \float@box=\box27
-\@float@everytoks=\toks19
+\@float@everytoks=\toks18
 \@floatcapt=\box28
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks20
-\c@algorithm=\count93
+\@float@every@algorithm=\toks19
+\c@algorithm=\count92
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count94
-\c@ALG@rem=\count95
-\c@ALG@nested=\count96
+\c@ALG@line=\count93
+\c@ALG@rem=\count94
+\c@ALG@nested=\count95
 \ALG@tlm=\skip43
 \ALG@thistlm=\skip44
-\c@ALG@Lnr=\count97
-\c@ALG@blocknr=\count98
-\c@ALG@storecount=\count99
-\c@ALG@tmpcounter=\count100
+\c@ALG@Lnr=\count96
+\c@ALG@blocknr=\count97
+\c@ALG@storecount=\count98
+\c@ALG@tmpcounter=\count99
 \ALG@tmplength=\skip45
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -122,7 +119,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks21
+\@emptytoks=\toks20
 \ex@=\dimen106
 )) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -130,13 +127,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count101
+\inf@bad=\count100
 LaTeX Info: Redefining \frac on input line 223.
-\uproot@=\count102
-\leftroot@=\count103
+\uproot@=\count101
+\leftroot@=\count102
 LaTeX Info: Redefining \overline on input line 385.
-\classnum@=\count104
-\DOTSCASE@=\count105
+\classnum@=\count103
+\DOTSCASE@=\count104
 LaTeX Info: Redefining \ldots on input line 482.
 LaTeX Info: Redefining \dots on input line 485.
 LaTeX Info: Redefining \cdots on input line 606.
@@ -145,26 +142,26 @@ LaTeX Info: Redefining \cdots on input line 606.
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
-\macc@depth=\count106
-\c@MaxMatrixCols=\count107
+\macc@depth=\count105
+\c@MaxMatrixCols=\count106
 \dotsspace@=\muskip10
-\c@parentequation=\count108
-\dspbrk@lvl=\count109
-\tag@help=\toks22
-\row@=\count110
-\column@=\count111
-\maxfields@=\count112
-\andhelp@=\toks23
+\c@parentequation=\count107
+\dspbrk@lvl=\count108
+\tag@help=\toks21
+\row@=\count109
+\column@=\count110
+\maxfields@=\count111
+\andhelp@=\toks22
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
 \tagshift@=\dimen111
 \tagwidth@=\dimen112
 \totwidth@=\dimen113
 \lineht@=\dimen114
-\@envbody=\toks24
+\@envbody=\toks23
 \multlinegap=\skip47
 \multlinetaggap=\skip48
-\mathdisplay@stack=\toks25
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2844.
 LaTeX Info: Redefining \] on input line 2845.
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/url/url.sty
@@ -176,8 +173,11 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (./MIT-MasterThesis.aux
+
+LaTeX Warning: Label `euclidendwhile' multiply defined.
+
 )
-No file MIT-MasterThesis.aux.
 \openout1 = `MIT-MasterThesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -193,21 +193,21 @@ LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 50.
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+ (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
+\scratchcounter=\count112
 \scratchdimen=\dimen115
 \scratchbox=\box31
-\nofMPsegments=\count114
-\nofMParguments=\count115
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count116
+\nofMPsegments=\count113
+\nofMParguments=\count114
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count115
 \MPscratchDim=\dimen116
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count116
+\makeMPintoPDFobject=\count117
+\everyMPtoPDFconversion=\toks26
 ) (/usr/local/texlive/2019basic/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/local/texlive/2019basic/texmf-dist/tex/generic/oberdiek/infwarerr.sty
@@ -241,8 +241,6 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \. on input line 50.
-LaTeX Info: Redefining \% on input line 50.
 <escudo-itesm.png, id=1, 60.5478pt x 28.04076pt>
 File: escudo-itesm.png Graphic file (type png)
 <use escudo-itesm.png>
@@ -257,46 +255,51 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 {/usr/local/texlive/2019basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./escudo-itesm.png>] [1]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 56.
+ (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
 
 Underfull \hbox (badness 10000) in paragraph at lines 56--56
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 56.
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
- [2] (./dedicationFile.tex) [3] (./acknowledgementFile.tex) [4]
+[2] (./dedicationFile.tex) [3] (./acknowledgementFile.tex) [4]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
  (./abstractFile.tex) [5]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
-
-No file MIT-MasterThesis.lof.
+ (./MIT-MasterThesis.lof
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+ (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+ (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@lof=\write3
 \openout3 = `MIT-MasterThesis.lof'.
 
-[6
+ [6
 
-]
-No file MIT-MasterThesis.lot.
+] (./MIT-MasterThesis.lot)
 \tf@lot=\write4
 \openout4 = `MIT-MasterThesis.lot'.
 
-[7
+ [7
 
-]
-No file MIT-MasterThesis.toc.
+] (./MIT-MasterThesis.toc [8
+
+])
 \tf@toc=\write5
 \openout5 = `MIT-MasterThesis.toc'.
 
-[8
-
-] (./Cp_Intro.tex
-Cap\'{\i }tulo 1.
+ [9] (./Cp_Intro.tex
+Chapter 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
 
@@ -338,39 +341,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
 [2]
+Overfull \hbox (1.23116pt too wide) in paragraph at lines 26--27
+\OT1/ptm/m/n/12 El ob-je-tivo de la in-ves-ti-gaci[]on es com-parar dis-tin-tas es-trate-gias mono-objetivo y multi-objetivo
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
  []
 
-LaTeX Info: Redefining \. on input line 42.
-LaTeX Info: Redefining \% on input line 42.
 [3]
 Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
-) (./Cp_Antecetendes.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [4
+
+Overfull \hbox (2.4551pt too wide) in paragraph at lines 53--54
+[]\OT1/ptm/m/n/12 ?`Los mod-e-los mono-objetivo que garan-ti-zan una soluci[]on pertenecen al frente de pareto? 
+ []
+
+) (./Cp_Antecetendes.tex [4
 
 ]
-Cap\'{\i }tulo 2.
-
-LaTeX Warning: Citation `Jiao2017DynamicME' on page 5 undefined on input line 4.
-
-
-LaTeX Warning: Citation `Jin2007-qu' on page 5 undefined on input line 4.
-
-
-LaTeX Warning: Citation `Battiti2010-xo' on page 5 undefined on input line 6.
-
-
-LaTeX Warning: Citation `Wang2010-zh' on page 5 undefined on input line 6.
-
+Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
@@ -382,8 +376,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
  []
 
 
-Overfull \hbox (1.88008pt too wide) in paragraph at lines 11--12
-[]\OT1/ptm/m/n/12 Los al-go-rit-mos pa-ra en-con-trar un m[]^^Pni-mo glo-bal com-pren-den m[]eto-dos exac-tos y heur[]^^Psti-
+Overfull \hbox (16.87993pt too wide) in paragraph at lines 11--12
+[]\OT1/ptm/m/n/12 Los al-go-rit-mos para en-con-trar un m[]^^Pnimo global com-pren-den m[]etodos ex-ac-tos y heur[]^^Psticos.
  []
 
 
@@ -418,128 +412,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--28
 
  []
 
-LaTeX Info: Redefining \. on input line 28.
-LaTeX Info: Redefining \% on input line 28.
 [6]
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
 
-Overfull \hbox (5.59958pt too wide) in paragraph at lines 58--59
-[]\OT1/ptm/m/n/12 A con-ti-nua-ci[]on se des-cri-ben los pa-sos que lle-va a ca-bo un al-go-rit-mo evo-lu-ti-vo com[]unmen-
+Overfull \hbox (13.6033pt too wide) in paragraph at lines 58--59
+[]\OT1/ptm/m/n/12 A con-tin-uaci[]on se de-scriben los pa-sos que ll-eva a cabo un al-go-ritmo evo-lu-tivo com[]unmente: 
  []
 
-LaTeX Info: Redefining \. on input line 65.
-LaTeX Info: Redefining \% on input line 65.
 [7]
 Underfull \hbox (badness 10000) in paragraph at lines 69--70
 
  []
 
 
-LaTeX Warning: Citation `VinciarelliUnderstandingCorpus' on page 8 undefined on input line 75.
-
-
 LaTeX Warning: Citation `benne_sheats' on page 8 undefined on input line 75.
 
-LaTeX Info: Redefining \. on input line 80.
-LaTeX Info: Redefining \% on input line 80.
 [8]
-<ontology.png, id=63, 1542.76375pt x 330.23375pt>
+<ontology.png, id=66, 1542.76375pt x 330.23375pt>
 File: ontology.png Graphic file (type png)
 <use ontology.png>
 Package pdftex.def Info: ontology.png  used on input line 102.
 (pdftex.def)             Requested size: 426.79134pt x 91.35623pt.
-LaTeX Info: Redefining \. on input line 108.
-LaTeX Info: Redefining \% on input line 108.
  [9]
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
-
+[10 <./ontology.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
-[10 <./ontology.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--134
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-LaTeX Info: Redefining \. on input line 155.
-LaTeX Info: Redefining \% on input line 155.
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
-
- []
-
-) (./Cp_funciones_a_optimizar.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [12]
-Cap\'{\i }tulo 3.
-
-LaTeX Warning: Reference `eq_group_size' on page 13 undefined on input line 10.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
- (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Reference `eq_nivel' on page 13 undefined on input line 18.
-
-
-LaTeX Warning: Citation `taxonomy_semantic_similarity' on page 13 undefined on input line 26.
-
-
-LaTeX Warning: Reference `fig:interests_table' on page 13 undefined on input line 26.
-
-
-LaTeX Warning: Reference `fig:interests_vector' on page 13 undefined on input line 26.
-
+[11]) (./Cp_funciones_a_optimizar.tex [12]
+Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--27
 
@@ -548,121 +476,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--27
 [13
 
 ]
-<interests_table.png, id=86, 785.93625pt x 176.66pt>
+<interests_table.png, id=89, 785.93625pt x 176.66pt>
 File: interests_table.png Graphic file (type png)
 <use interests_table.png>
 Package pdftex.def Info: interests_table.png  used on input line 31.
 (pdftex.def)             Requested size: 426.79134pt x 95.9341pt.
-<interests_vector.png, id=87, 915.42pt x 45.16875pt>
+<interests_vector.png, id=90, 915.42pt x 45.16875pt>
 File: interests_vector.png Graphic file (type png)
 <use interests_vector.png>
 Package pdftex.def Info: interests_vector.png  used on input line 39.
 (pdftex.def)             Requested size: 426.79134pt x 21.05838pt.
-
-
-LaTeX Warning: Reference `eq_cos_sym' on page 14 undefined on input line 44.
-
-LaTeX Info: Redefining \. on input line 56.
-LaTeX Info: Redefining \% on input line 56.
-[14 <./interests_table.png> <./interests_vector.png>]) (./Cp_Experimentos.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [15]
-Cap\'{\i }tulo 4.
+ [14 <./interests_table.png> <./interests_vector.png>]) (./Cp_Experimentos.tex [15]
+Chapter 4.
 [16
 
 ]
+Overfull \hbox (12.17543pt too wide) in paragraph at lines 51--52
+\OT1/ptm/m/n/12 La her-ramienta de jMetal cuenta con dis-tin-tos al-go-rit-mos de crossover, y ya que es-tos []unicamente
+ []
 
-LaTeX Warning: Reference `alg:mutation' on page 17 undefined on input line 25.
-
-LaTeX Info: Redefining \. on input line 52.
-LaTeX Info: Redefining \% on input line 52.
 [17]
-
-LaTeX Warning: Reference `chapter:chapter02' on page 18 undefined on input line 57.
-
-
-LaTeX Warning: Citation `SeyedShirkhorshidi2015AData' on page 18 undefined on input line 57.
-
-
-LaTeX Warning: Citation `Sung-HyukChaComprehensiveFunctions' on page 18 undefined on input line 57.
+Overfull \hbox (4.48387pt too wide) in paragraph at lines 53--54
+[]\OT1/ptm/m/n/12 Para la primera fase los ex-per-i-men-tos que se definieron con-sistieron en pro-bar []unicamente
+ []
 
 
 LaTeX Warning: Reference `roles_table' on page 18 undefined on input line 66.
 
-
-LaTeX Warning: Reference `weighted_function' on page 18 undefined on input line 70.
-
-LaTeX Info: Redefining \. on input line 71.
-LaTeX Info: Redefining \% on input line 71.
 [18]
-<Local.png, id=106, 824.07875pt x 537.00626pt>
+<Local.png, id=109, 824.07875pt x 537.00626pt>
 File: Local.png Graphic file (type png)
 <use Local.png>
 Package pdftex.def Info: Local.png  used on input line 91.
 (pdftex.def)             Requested size: 426.79134pt x 278.11407pt.
-<Genetic.png, id=107, 821.0675pt x 407.5225pt>
+<Genetic.png, id=110, 821.0675pt x 407.5225pt>
 File: Genetic.png Graphic file (type png)
 <use Genetic.png>
 Package pdftex.def Info: Genetic.png  used on input line 102.
 (pdftex.def)             Requested size: 426.79134pt x 211.82585pt.
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
- [19]
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
- [20 <./Local.png> <./Genetic.png>]
-<Multi-Objective.png, id=116, 778.91pt x 360.34625pt>
+<Multi-Objective.png, id=111, 778.91pt x 360.34625pt>
 File: Multi-Objective.png Graphic file (type png)
 <use Multi-Objective.png>
 Package pdftex.def Info: Multi-Objective.png  used on input line 115.
 (pdftex.def)             Requested size: 426.79134pt x 197.44325pt.
-) (./Cp_Experimentos_II.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [21 <./Multi-Objective.png>]
-Cap\'{\i }tulo 5.
+ [19] [20 <./Local.png> <./Genetic.png>]) (./Cp_Experimentos_II.tex [21 <./Multi-Objective.png>]
+Chapter 5.
 ) (./Appendix_01.tex [22
 
 ]
-Overfull \vbox (326.45605pt too high) has occurred while \output is active []
+Appendix A.
+) (./MIT-MasterThesis.bbl [23
 
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [23]
-Ap\'{e}ndice A.
-)
-No file MIT-MasterThesis.bbl.
-[24
+]) [24
 
 ] (./vitaFile.tex)
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 78.
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [25] (./MIT-MasterThesis.aux
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
-)
+) [25] (./MIT-MasterThesis.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4103 strings out of 494060
- 57435 string characters out of 6163036
- 136032 words of memory out of 5000000
- 7667 multiletter control sequences out of 15000+600000
- 33597 words of font info for 71 fonts, out of 8000000 for 9000
+ 3731 strings out of 494060
+ 52834 string characters out of 6163036
+ 128088 words of memory out of 5000000
+ 7283 multiletter control sequences out of 15000+600000
+ 35281 words of font info for 73 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 41i,8n,31p,2163b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on MIT-MasterThesis.pdf (34 pages, 1351827 bytes).
+ 41i,8n,25p,2163b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on MIT-MasterThesis.pdf (35 pages, 1366294 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 177 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

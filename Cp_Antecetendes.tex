@@ -120,8 +120,6 @@ A continuación se describen los niveles y el significado de cada uno:
 %\item \textbf{C2: Maestro:}
 %\end{itemize}
 
-
-
 \section{jMetal}
 
 jMetal es un framework basado en el lenguaje de programación Java, orientado a objetos enfocado al desarrollo, la experimentación y el estudio de metaheurísticas para resolver problemas de optimización multiobjetivo. jMetal incluye diversos optimizadores de los más comunes, además de una serie de problemas además de algunos de los indicadores más conocidos para medir el desempeño de los algoritmos. Incluye herramientas para llevar a cabo estudios experimentales que pueden ser configurados desde su interfaz para generar reportes de forma estadística de los resultados obtenidos. También es posible  aprovechar el uso de procesadores multi-core para hacer el proceso de experimentación más rápido.\\
@@ -146,15 +144,34 @@ jMetal por su parte cuenta con las siguientes características que hacen la plat
 \item La validación de la implementación, se comparó las implementaciones incluidas en jMetal de los algoritmos NSGA-II y SPA2 con sus versiones originales obteniendo resultados competitivos.\\
 \end{itemize}
 
-\textbf{NSGA-II:} (Non-dominated Sorting Genetic Algorithm II) es uno de los métodos más conocidos y usados para los problemas de optimización multiobjetivo fue en primer lugar propuesto por Shinivas y Deb en 1994 y está basado en varias capas de clasificación de individuos. Antes de que se haga una selección la población es definida y es catalogada basada en su base de dominio. Todos los individuos no dominados se clasifican en una categoría. Para mantener la diversidad de la población estos individuos se comparten a su vez con valores de prueba. Entonces se remueve este grupo y se considera otra capa de individuos no dominados, siguiendo el ciclo hasta que todos los individuos hayan sido clasificados.[13]–[15]\\
+\section{James}
+James is a framework for discrete optimization, that uses a variety of local search metaheuristics. Problems can be defined by providing a configuration for the problem and the solution. This framework was added after realizing that jMetal lacked many significant Single-Objective Algorithms to be used for comparison. 
 
-\textbf{SMPSO:} (Speed constrained Multi-objective PSO) es una metaheurística basada en el algoritmo OMOPSO (Multi-Objective Particle Swarm Optimizer) que fue diseñado para contrarrestar las dificultades de esta técnica, en la que se aplica una limitante de velocidad para controlar la explosión de una colmena.[16], [17]\\
+However, to make compatible between each other, all the problems were defined as jMetal problems and an adapter was used for conversion between both frameworks.
 
-\textbf{AbYSS:} (Archive-based hYbrid Scatter Search) es una adaptación de la búsqueda dispersa implementandolo a un algoritmo multi-objetivo, se denomina como un algoritmo híbrido porque utiliza conceptos de crossover y mutación que son típicos de los algoritmos genéticos.[18]\\
+% Brief introduction to the algorithms used, explaining that at the beginning a lot more were considered but were discarded since the problem is discrete (there can only be the users that are present in the dataset, there aren't new users created on the fly)
 
-\textbf{MOCHC:} (MultiObjective Cellular genetic algorithm) es una versión multiobjetivo del algoritmo evolutivo CHC propuesto por Eshelman en 1991. Su intención es resolver problemas binarios cuya principal característica en el paso de genes es el uso de un mecanismo llamado HUX. El algoritmo CHC es un algoritmo genético no tradicional que combina una estrategia de selección conservadora que siempre preserva a los mejores individuos y una recombinación altamente disruptiva.[19], [20]\\
+\section{Single-Objective Algorithms}
 
-\textbf{MOCell:} (MultiObjective Cellular genetic algorithm) Comprende una familia de algoritmos genéticos celulares para la optimización multiobjetivo que son el resultado de diferentes estrategias, como la sincronizada y la asíncrona.[21]\\
+\subsection{Local Search (Steepest Descent)}
+\subsection{Genetic Generational Algorithm}
+\subsection{Genetic Steady Algorithm}
+\subsection{Elitist Algorithm}
+\subsection{Non-Elitist Algorithm}
 
+\subsection{Random search} 
+\subsection{Random Descent (Replica Exchange Monte Carlo)} 
+\subsection{Tabu Search} 
+\subsection{Parallel Tempering} 
 
+\section{Multi-Objective Algorithms}
 
+\subsection{MOMBI2}
+\subsection{NSGAII}
+(Non-dominated Sorting Genetic Algorithm II) es uno de los métodos más conocidos y usados para los problemas de optimización multiobjetivo fue en primer lugar propuesto por Shinivas y Deb en 1994 y está basado en varias capas de clasificación de individuos. Antes de que se haga una selección la población es definida y es catalogada basada en su base de dominio. Todos los individuos no dominados se clasifican en una categoría. Para mantener la diversidad de la población estos individuos se comparten a su vez con valores de prueba. Entonces se remueve este grupo y se considera otra capa de individuos no dominados, siguiendo el ciclo hasta que todos los individuos hayan sido clasificados.[13]–[15]\\
+\subsection{NSGAIII}
+\subsection{PAES}
+\subsection{RandomSearch}
+\subsection{RNSGAII}
+\subsection{SMSEMOA}
+\subsection{SPEA2}
