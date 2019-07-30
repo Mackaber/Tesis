@@ -1,4 +1,11 @@
 {
     "editor.fontFamily": "Hack",
-    "cSpell.enabled": true
+    "cSpell.enabled": true,
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "plaintext"
+    ]
 }

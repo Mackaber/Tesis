@@ -17,53 +17,71 @@
 \contentsline {section}{\numberline {2.7}CEFR}{10}% 
 \contentsline {section}{\numberline {2.8}jMetal}{10}% 
 \contentsline {section}{\numberline {2.9}James}{11}% 
-\contentsline {section}{\numberline {2.10}Single-Objective Algorithms}{12}% 
-\contentsline {subsection}{\numberline {2.10.1}Local Search (Steepest Descent)}{12}% 
-\contentsline {subsection}{\numberline {2.10.2}Genetic Generational Algorithm}{12}% 
-\contentsline {subsection}{\numberline {2.10.3}Genetic Steady Algorithm}{12}% 
-\contentsline {subsection}{\numberline {2.10.4}Elitist Algorithm}{12}% 
-\contentsline {subsection}{\numberline {2.10.5}Non-Elitist Algorithm}{12}% 
-\contentsline {subsection}{\numberline {2.10.6}Random search}{12}% 
-\contentsline {subsection}{\numberline {2.10.7}Random Descent (Replica Exchange Monte Carlo)}{12}% 
-\contentsline {subsection}{\numberline {2.10.8}Tabu Search}{12}% 
-\contentsline {subsection}{\numberline {2.10.9}Parallel Tempering}{12}% 
-\contentsline {section}{\numberline {2.11}Multi-Objective Algorithms}{12}% 
-\contentsline {subsection}{\numberline {2.11.1}MOMBI2}{12}% 
-\contentsline {subsection}{\numberline {2.11.2}NSGAII}{12}% 
-\contentsline {subsection}{\numberline {2.11.3}NSGAIII}{12}% 
-\contentsline {subsection}{\numberline {2.11.4}PAES}{12}% 
-\contentsline {subsection}{\numberline {2.11.5}RandomSearch}{12}% 
-\contentsline {subsection}{\numberline {2.11.6}RNSGAII}{12}% 
-\contentsline {subsection}{\numberline {2.11.7}SMSEMOA}{12}% 
-\contentsline {subsection}{\numberline {2.11.8}SPEA2}{12}% 
-\contentsline {chapter}{\numberline {3}Funciones Objetivo}{13}% 
-\contentsline {subsection}{\numberline {3.0.1}Tama\IeC {\~n}o del Grupo}{13}% 
-\contentsline {subsection}{\numberline {3.0.2}Nivel de experiencia}{13}% 
-\contentsline {subsection}{\numberline {3.0.3}Intereses}{14}% 
-\contentsline {subsection}{\numberline {3.0.4}Estilo de Participaci\IeC {\'o}n}{14}% 
-\contentsline {chapter}{\numberline {4}Experimentos Preliminares}{16}% 
-\contentsline {section}{\numberline {4.1}Creaci\IeC {\'o}n de la Base de Datos}{16}% 
-\contentsline {subsection}{\numberline {4.1.1}Datos sint\IeC {\'e}ticos}{16}% 
-\contentsline {subsection}{\numberline {4.1.2}Datos de Idiomas}{16}% 
-\contentsline {subsection}{\numberline {4.1.3}Datos de Intereses de Facebook}{16}% 
-\contentsline {section}{\numberline {4.2}Mutaci\IeC {\'o}n}{17}% 
-\contentsline {section}{\numberline {4.3}Crossover}{18}% 
-\contentsline {section}{\numberline {4.4}Funci\IeC {\'o}n de Distancia entre intereses}{18}% 
-\contentsline {section}{\numberline {4.5}Funci\IeC {\'o}n de Participaci\IeC {\'o}n}{18}% 
-\contentsline {section}{\numberline {4.6}Optimizaci\IeC {\'o}n mono-objetivo}{19}% 
-\contentsline {section}{\numberline {4.7}B\IeC {\'u}squeda local}{19}% 
-\contentsline {section}{\numberline {4.8}Algoritmo Gen\IeC {\'e}tico}{19}% 
-\contentsline {section}{\numberline {4.9}Optimizaci\IeC {\'o}n Multi-Objetivo}{19}% 
-\contentsline {chapter}{\numberline {5}Experiments}{22}% 
-\contentsline {section}{\numberline {5.1}Metrics}{22}% 
-\contentsline {subsection}{\numberline {5.1.1}Epsilon}{22}% 
-\contentsline {subsection}{\numberline {5.1.2}Spread}{22}% 
-\contentsline {subsection}{\numberline {5.1.3}Generational Distance}{22}% 
-\contentsline {subsection}{\numberline {5.1.4}Inverted Generational Distance}{22}% 
-\contentsline {subsection}{\numberline {5.1.5}Inverted Generational Distance +}{22}% 
-\contentsline {subsection}{\numberline {5.1.6}Hypervolume}{22}% 
-\contentsline {subsection}{\numberline {5.1.7}Friedman Test}{22}% 
-\contentsline {section}{\numberline {5.2}Reference Front}{22}% 
-\contentsline {section}{\numberline {5.3}Hyperparameters}{22}% 
-\contentsline {chapter}{\numberline {A}Appendix}{23}% 
-\contentsline {chapter}{Bibliography}{24}% 
+\contentsline {section}{\numberline {2.10}Single-Objective Algorithms}{11}% 
+\contentsline {subsection}{\numberline {2.10.1}Local Search}{11}% 
+\contentsline {subsection}{\numberline {2.10.2}Genetic Algorithms}{12}% 
+\contentsline {subsection}{\numberline {2.10.3}Evolution Strategy}{13}% 
+\contentsline {subsection}{\numberline {2.10.4}Random search}{13}% 
+\contentsline {subsection}{\numberline {2.10.5}Random Descent (Replica Exchange Monte Carlo)}{14}% 
+\contentsline {subsection}{\numberline {2.10.6}Tabu Search}{14}% 
+\contentsline {subsection}{\numberline {2.10.7}Parallel Tempering}{14}% 
+\contentsline {section}{\numberline {2.11}Multi-Objective Algorithms}{14}% 
+\contentsline {subsection}{\numberline {2.11.1}MOMBI2}{14}% 
+\contentsline {subsection}{\numberline {2.11.2}NSGAII}{14}% 
+\contentsline {subsection}{\numberline {2.11.3}NSGAIII}{14}% 
+\contentsline {subsection}{\numberline {2.11.4}PAES}{14}% 
+\contentsline {subsection}{\numberline {2.11.5}RandomSearch}{14}% 
+\contentsline {subsection}{\numberline {2.11.6}RNSGAII}{14}% 
+\contentsline {subsection}{\numberline {2.11.7}SMSEMOA}{14}% 
+\contentsline {subsection}{\numberline {2.11.8}SPEA2}{14}% 
+\contentsline {chapter}{\numberline {3}Funciones Objetivo}{15}% 
+\contentsline {subsection}{\numberline {3.0.1}Tama\IeC {\~n}o del Grupo}{15}% 
+\contentsline {subsection}{\numberline {3.0.2}Nivel de experiencia}{15}% 
+\contentsline {subsection}{\numberline {3.0.3}Intereses}{16}% 
+\contentsline {subsection}{\numberline {3.0.4}Estilo de Participaci\IeC {\'o}n}{16}% 
+\contentsline {chapter}{\numberline {4}Experimentos Preliminares}{18}% 
+\contentsline {section}{\numberline {4.1}Creaci\IeC {\'o}n de la Base de Datos}{18}% 
+\contentsline {subsection}{\numberline {4.1.1}Datos sint\IeC {\'e}ticos}{18}% 
+\contentsline {subsection}{\numberline {4.1.2}Datos de Idiomas}{18}% 
+\contentsline {subsection}{\numberline {4.1.3}Datos de Intereses de Facebook}{18}% 
+\contentsline {section}{\numberline {4.2}Mutaci\IeC {\'o}n}{19}% 
+\contentsline {section}{\numberline {4.3}Crossover}{20}% 
+\contentsline {section}{\numberline {4.4}Funci\IeC {\'o}n de Distancia entre intereses}{20}% 
+\contentsline {section}{\numberline {4.5}Funci\IeC {\'o}n de Participaci\IeC {\'o}n}{20}% 
+\contentsline {section}{\numberline {4.6}Optimizaci\IeC {\'o}n mono-objetivo}{21}% 
+\contentsline {section}{\numberline {4.7}B\IeC {\'u}squeda local}{21}% 
+\contentsline {section}{\numberline {4.8}Algoritmo Gen\IeC {\'e}tico}{21}% 
+\contentsline {section}{\numberline {4.9}Optimizaci\IeC {\'o}n Multi-Objetivo}{21}% 
+\contentsline {chapter}{\numberline {5}Experiments}{24}% 
+\contentsline {subsection}{\numberline {5.0.1}Algorithm Implementations}{24}% 
+\contentsline {subsection}{\numberline {5.0.2}Single-Objective Algorithms}{24}% 
+\contentsline {subsubsection}{Local Search}{24}% 
+\contentsline {subsection}{\numberline {5.0.3}Genetic Generational Algorithmn}{24}% 
+\contentsline {subsection}{\numberline {5.0.4}Genetic Stready Algorithmn}{25}% 
+\contentsline {subsection}{\numberline {5.0.5}Elitist}{25}% 
+\contentsline {subsection}{\numberline {5.0.6}Non-Elitist}{25}% 
+\contentsline {subsection}{\numberline {5.0.7}Random search}{25}% 
+\contentsline {subsection}{\numberline {5.0.8}Random Descent (Replica Exchange Monte Carlo)}{26}% 
+\contentsline {subsection}{\numberline {5.0.9}Tabu Search}{26}% 
+\contentsline {subsection}{\numberline {5.0.10}Parallel Tempering}{26}% 
+\contentsline {section}{\numberline {5.1}Multi-Objective Algorithms}{26}% 
+\contentsline {subsection}{\numberline {5.1.1}MOMBI2}{26}% 
+\contentsline {subsection}{\numberline {5.1.2}NSGAII}{26}% 
+\contentsline {subsection}{\numberline {5.1.3}NSGAIII}{26}% 
+\contentsline {subsection}{\numberline {5.1.4}PAES}{26}% 
+\contentsline {subsection}{\numberline {5.1.5}RandomSearch}{26}% 
+\contentsline {subsection}{\numberline {5.1.6}RNSGAII}{26}% 
+\contentsline {subsection}{\numberline {5.1.7}SMSEMOA}{26}% 
+\contentsline {subsection}{\numberline {5.1.8}SPEA2}{26}% 
+\contentsline {section}{\numberline {5.2}Metrics}{26}% 
+\contentsline {subsection}{\numberline {5.2.1}Epsilon}{26}% 
+\contentsline {subsection}{\numberline {5.2.2}Spread}{26}% 
+\contentsline {subsection}{\numberline {5.2.3}Generational Distance}{26}% 
+\contentsline {subsection}{\numberline {5.2.4}Inverted Generational Distance}{26}% 
+\contentsline {subsection}{\numberline {5.2.5}Inverted Generational Distance +}{26}% 
+\contentsline {subsection}{\numberline {5.2.6}Hyper-volume}{26}% 
+\contentsline {subsection}{\numberline {5.2.7}Friedman Test}{26}% 
+\contentsline {section}{\numberline {5.3}Reference Front}{26}% 
+\contentsline {section}{\numberline {5.4}Hyper-parameters}{26}% 
+\contentsline {chapter}{\numberline {A}Appendix}{27}% 
+\contentsline {chapter}{Bibliography}{27}% 

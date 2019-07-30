@@ -149,24 +149,96 @@ James is a framework for discrete optimization, that uses a variety of local sea
 
 However, to make compatible between each other, all the problems were defined as jMetal problems and an adapter was used for conversion between both frameworks.
 
-% Brief introduction to the algorithms used, explaining that at the beginning a lot more were considered but were discarded since the problem is discrete (there can only be the users that are present in the dataset, there aren't new users created on the fly)
+% INSERT: Brief introduction to the algorithms used, explaining that at the beginning a lot more were considered but were discarded since the problem is discrete (there can only be the users that are present in the dataset, there aren't new users created on the fly)
 
+% REMINDER: Here are only the definitions of each of the algorithms the specific implementation will be defined in the experimentation phase.
+
+% Most of the definitios are taken from doi.org/10.1016/j.ins.2013.02.041 but further descriptions are taken from this article sources.
 \section{Single-Objective Algorithms}
 
-\subsection{Local Search (Steepest Descent)}
-\subsection{Genetic Generational Algorithm}
-\subsection{Genetic Steady Algorithm}
-\subsection{Elitist Algorithm}
-\subsection{Non-Elitist Algorithm}
+
+\subsection{Local Search}
+ 
+Also referred as Hill Climbing in maximization problems and Steepest Descent in minimization problems, the definition of this algorithm is taken from [doi.org/10.1016/j.ins.2013.02.041] and in there is Stutzle in his PhD dissertation who actually does not take credit for this approach and instead mentions specific instances of the algorithm included in the literature.
+
+Local Search is a single objective optimization meta-heuristic based on the idea of generating random starting solutions, then in each generation LS generates the starting solution for the next iteration by perturbing the local optimum found in the current iteration.  
+
+Its important to mention that the perturbing mechanism is an important feature of LS, since a weak perturbation may not be enough to escape the local optimum, and on the other hand a t oo strong perturbation may make the algorithm too similar to a multistart local search with randomly generated starting solutions.
+
+A pseudocode for this algorithm can be seen in the figure [Insert figure].
+
+\subsection{Genetic Algorithms}
+
+This is probably the most known kind of metaheuristic for optimization, it was developed in the early 70's in Michigan with John Hoolland and some of his students who were doing research in adaptive systems at the time. [https://doi.org/10.1016/j.ins.2013.02.041]
+
+The definition can be very generic an most of its parts are usually implemented differently according to each problem. Its essential parts include a representation of the solution known as Chromosome, a selection strategy a type of cross-over and a mutation operator.
+
+The Chromosome is a representation of the solution and usually includes inside of it a string of genes, most commonly represented as a fixed binary string, although it can also be represented by any kind of value for combinatorial problems. Mutation is therefore done by changing a single gene to a different value, performing a bit-flip in the case of the binary representation, for example.
+
+Crossover is a recombination of the genes, usually done with 2 individuals, which exchange their parts to create a new individual, this follows different strategies such as the n-point crossover in which a point will determine which parts will be inherited from one of its parent and which from the other. An external parameter known as pc (crossover rate) indicates the probability of each individual to undergo crossover, this value ranges from 0.6 to 1.0 according to [13 in https://doi.org/10.1016/j.ins.2013.02.041]. 
+
+Individuals that can produce offspring are then chosen using a selection strategy after the fitness of each individual has been evaluated. The most common selection scheme is the roulette-wheel selection, but other types of selections such as tournament selection and ranking selection are also common. 
+
+After the crossover the individuals are subjected to mutation. This mutation procedure introduces some kind of randomness which in essence introduces new genes in the solution, this is in order to prevent being trapped into the local optima. This operator is usually used with a small probability, as low as 1\%, according to [Article], but the appropriate mutation rate is still an open issue.
+
+Finally the replacement or survivor selection uses the fitness value to identify the individuals which will serve as the parents for the next generations and is responsible to assure the survival of the fitters individuals.
+
+\subsection{Evolution Strategy}
+
+Similar to the Genetic Algorithms, described in the last section, these algorithms try to follow the principles of natural evolution as their method to solve optimization problems. They were introduced during the 0's by Rechenberg [216, 217] and further developed by Schwefel later. The first algorithm used in experimentation was Two membered ES and had a simple mutation-selection scheme.
+
+The basic structure consist on a single parent which produces an offspring following a normally distributed mutation resulting in a λ number of individuals. Next a selection operator determines the fittest individual which then becomes the parent of the next generation.
+
+The selection process resembles a "extinction of the worst", which means the less fitted individuals are replaced, which sometimes may include the parents, the population is kept with the size λ constantly in each of the generations.
+
+At the time of its conception the idea of a population wasn't widely used so far, which is why Rechenberg proposed a multi-member ES in [(probably 216 or 217)] where more than one parent can participate in the generation of one offspring individual. This is denoted as (µ + 1) −ES where µ represents the number of parents. 
+
+Two other definitions were then introduced by Schwefel in [237 from the article], which were (µ + λ) − ES and (µ, λ) − ES.
+
+    - (µ + λ) − ES, known as Elitist Evolution Strategy, indicates that µ parents will create λ ≥ 1 descendants by recombination and mutation, keeping the best fitted individual of the previous generation and discarding the rest
+    
+    - (µ, λ) − ES, known as Non-Elitist Evolution Strategy, is similar with the difference that none of the parents is kept in any of the subsequent generations, disregarding how good or bad were its fitness compared to the generation they belong.
+
+Two other well-known ES are (µ/ρ + λ) −ES and (µ/ρ, λ) −ES, where the ρ refers to the number of parents involved in the procreation the offspring. Mutation in ES can be realized through normally distributed numbers with a mean of 0 and a standard deviation of σ, which represents the the size in the mutation step, when the problem has a continuous solution.
 
 \subsection{Random search} 
-\subsection{Random Descent (Replica Exchange Monte Carlo)} 
-\subsection{Tabu Search} 
-\subsection{Parallel Tempering} 
+
+Also known as Pure Random Search was first defined by Brooks in [https://www.jstor.org/stable/167616?seq=1#page_scan_tab_contents] and later named in the classic volumes by Dixon and Szego [44, 45 (from  https://link.springer.com/book/10.1007/978-1-4419-9182-9)].
+
+It is considered as one of the most basic search strategies. It consists in the following: in each step it creates a new random solution, and the best solution is updated if the new solution outperforms the fit value of the previous best solution.
+
+While this algorithm sacrifices the guarantee of determining the optimal solution within the search space, it can actually be shown that a pure random search converges to the global optimum with a probability of 1.0 according to [https://link.springer.com/book/10.1007/978-1-4419-9182-9].
+
+This is most commonly used in addition to other search algorithms compare its performance to random sampling according to [http://sci-hub.tw/https://doi.org/10.1002/spe.2459].
+
+\subsection{Random Descent} 
+
+Also known as Stochastic Hill Climbing. It is an algorithm similar to regular Hill Climbing, with the difference that it includes a neighborhood which limits the search to only the solutions that are close to the current best solution in each step.
+
+Perhaps the most popular implementation of it was done by Forrest and Mitchell naming it Random Mutation Hill Climbing (RMHC) algorithm (with communication from Richard Palmer) [M. Mitchell and J. H. Holland, "When Will a Genetic Algorithm Outperform Hill Climbing?", in Proceedings of the 5th International Conference on Genetic Algorithms, 1993.]
+
+The local improvements are determined by a neighborhood structure and a fitness function on the Search space of the algorithm. This neighborhood structure can be seen as a undirected graph G on vertex set S. The algorithm checks a member of its neighborhood randomly and transitions to this solution when there is an improvement in the fitness function result or its the same, the process is then repeated in each step.
+
+It was designed with discrete domains in mind, since they have explicit neighborhoods, such as with combinatorial optimization problems. However, even being a stochastic optimization process, it can still get stuck in a local optima.
+
+It is frequently used to have it as a comparison to GA's, according to [http://papers.nips.cc/paper/1172-stochastic-hillclimbing-as-a-baseline-method-for-evaluating-genetic-algorithms.pdf]
+
+\subsection{Parallel Tempering (Replica Exchange Monte Carlo)} 
+
+It's an algorithm Also known as Replica Exchange Monte Carlo It is considered Similar to Simulated Annealing since it also uses the concept of temperatures, but it has the advantage that takes an advantage by using a multi-core architecture. [http://www.jamesframework.org/docs/].
+
+It was originally mentioned as a simulation technique known as replica exchange in a paper by Swendsen and Wang.1. In this paper, a method of replica Monte Carlo was introduced in which replicas of a system of interest were simulated at a series of different temperatures. Then this replicas undergo a partial exchange of configuration information. The more general form of parallel tempering with complete exchange of configuration information was introduced in 1991 by Geyer according to [doi/10.1039/B509983H].
+
+This algorithm runs several replicas of a particular system of interest, using different temperatures in each one of them. High temperature are able to generate large volumes of phase spaces, while low temperature systems tend to have more precision in the sampling of the phase space and tend to be trapped in a local optima.
+
+This particular implementation of the algorithm uses Metropolis search as the system to replicate, which is an extension of Random Descent where Metropolis where a valid neighbor that is no improvement over the current solution may still be accepted as the new current solution, and the probability to accept an inferior neighbor is proportional to the difference in the evaluation of the current solution and the temperature of the search.
+
+Using this algorithm requires a minimum and maximum temperature, with each replica of the system with an assigned temperature, after each step the replicas are ordered according to their temperature, and then swapped to push the better solutions to the lowest temperatures, so they can eventually converge while higher temperature replicas are constantly modified in a search for improvement. Each of the replicas apply repeatedly a series of moves to a private solution, and then the global solution is tracked in the main search.
 
 \section{Multi-Objective Algorithms}
 
 \subsection{MOMBI2}
+
 \subsection{NSGAII}
 (Non-dominated Sorting Genetic Algorithm II) es uno de los métodos más conocidos y usados para los problemas de optimización multiobjetivo fue en primer lugar propuesto por Shinivas y Deb en 1994 y está basado en varias capas de clasificación de individuos. Antes de que se haga una selección la población es definida y es catalogada basada en su base de dominio. Todos los individuos no dominados se clasifican en una categoría. Para mantener la diversidad de la población estos individuos se comparten a su vez con valores de prueba. Entonces se remueve este grupo y se considera otra capa de individuos no dominados, siguiendo el ciclo hasta que todos los individuos hayan sido clasificados.[13]–[15]\\
 \subsection{NSGAIII}
