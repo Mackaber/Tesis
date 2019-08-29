@@ -97,6 +97,8 @@ Además Facebook permite que a través de una plataforma conocida como Facbook A
 
 También esta plataforma puede ser usada al mismo tiempo para generar la distribución de los datos ya que esta directamente ligada con la ontología y puede ser consultada para medir las distancias entre un interés y otro. Parte de la ontología puede ser vista en la Fig [ref]
 
+% Here it can include 2 examples to explain further that the ontology may have several branches
+
 \begin{figure}
     \centering
     \includegraphics[width=150mm]{ontology.png}
@@ -105,6 +107,8 @@ También esta plataforma puede ser usada al mismo tiempo para generar la distrib
 \end{figure}
 
 La ontología que ha creado Facebook se determina con un arbol de 8 intereses generales y 314 específicos cada uno clasificado según la relación a un interés general, esto nos permite buscar intereses específicos en común, por ejemplo si una persona le gustan los programas de televisión podemos asumir también que le gustan los reality shows o los programas de concursos etc, de esta forma otra persona que tenga un gusto de por ejemplo de series de televisión, tiene una relación directa con la primera y serán capaces de encontrar algún tema en común para iniciar una conversación.
+
+% It may also be important to explain the ontology by indicating its parts and how an interest of a branch may be related to one in another branch
 
 \section{CEFR}
 
@@ -237,13 +241,35 @@ Using this algorithm requires a minimum and maximum temperature, with each repli
 
 \section{Multi-Objective Algorithms}
 
+\subsection{ESPEA}
+
+Stands for Electrostatic Potential Energy Evolutionary Algorithm and its and its a very recent algorithm that generates several Pareto front approximations, focusing only in the solutions that appear interesting to the decision maker. It was first proposed in [https://sci-hub.se/https://dl.acm.org/citation.cfm?id=2754674] by [Authors]. It was proposed because it was noticed that many of the algorithms found in the literature make use of popular crowding distance metrics that doesn't necessarily converge into optimality according to [13 from https://sci-hub.se/https://dl.acm.org/citation.cfm?id=2754674]. It also has been shown in [28 from https://sci-hub.se/https://dl.acm.org/] that an optimal distribution depends on the chosen reference point, but these methods are not adequate for constrained problems or discontinuous Pareto fronts.
+
+The algorithm attempts to design a electromagnetism inspired heuristic, each solution has an assigned charge based on how close it is to a randomly selected subset from an archive of non-dominates solution. Then the charges are translated to force vectors which move the solutions in the search space. The best solutions are stored in an archive that uses clustering and crowding distance to prune the solutions.
+
 \subsection{MOMBI2}
+
+MOMBI stands for Many Objective Metaheuristic Based on the R2 indicator introduced first in [https://sci-hub.se/10.1145/2739480.2754776] by Carlos A. Coello. It has an advantage over other  many-objective optimization algorithms found in the literature since a lot of them such as NSGA-II relies on the Hypervolume indicator which can be become a costly function as the number of objectives grow, MOMBI2 uses the R2 indicator instead [8 from the article]. 
+
+The R2 indicator is considered part of the R indicator family first introduced by Hansen and Jaszkiewicz in 1998 [5 from http://www.cmapx.polytechnique.fr/~dimo.brockhoff/publicationListFiles/twb2013a.pdf]. All of them are based on a set of utility functions, in this case comparing 2 sets of points being a reference pareto front and another front,  having several variants introduced at the time, with the variation being the way the utility functions are evaluated and combined:
+    - R1, The ratio of the set being better than the other
+    - R2, The mean difference in utilities
+    - R3, The mean relative difference of in utilities 
+
+In particular the R2 definition has been broadly used and is one of the most recommended performance indicators [8 from the article] along with Hypervolume and it is highly correlated to it [https://sci-hub.se/10.1145/2739480.2754776].
+
+R2 is used because it induces the complete ranking in the set of all approximations. It is based on the assumption that it is allowed to add values of different utility functions in the set. Therefore it is also dependent on the scaling of its utility functions [https://sci-hub.se/10.1145/2739480.2754776].
+
+The first version of MOMBI was introduced in [9 of https://sci-hub.se/10.1145/2739480.2754776] but it had the problem that the it presented a loss of diversity in the solutions as the dimensions of the problem grew to address this problem the Chevishev function CHE set was changed to  the Achievement Scalarizing Function ASF which is similar to the former but introduces some normalization.
+
+The algorithm works as follows, each iteration new individuals are created from the parents selected randomly  here the looking for those individuals that minimized ASF
+
+The maximum values of each objective function constitute a point zmax, it is ensured that there are not repeated individuals and the size of the population is at least the desired size, if these requirements are not satisfied, then the zmax point is penalized by updating it with the worse values of the whole population.
+
+In the following steps, the population is ranked and then reduced to the desired size.
 
 \subsection{NSGAII}
 (Non-dominated Sorting Genetic Algorithm II) es uno de los métodos más conocidos y usados para los problemas de optimización multiobjetivo fue en primer lugar propuesto por Shinivas y Deb en 1994 y está basado en varias capas de clasificación de individuos. Antes de que se haga una selección la población es definida y es catalogada basada en su base de dominio. Todos los individuos no dominados se clasifican en una categoría. Para mantener la diversidad de la población estos individuos se comparten a su vez con valores de prueba. Entonces se remueve este grupo y se considera otra capa de individuos no dominados, siguiendo el ciclo hasta que todos los individuos hayan sido clasificados.[13]–[15]\\
-\subsection{NSGAIII}
-\subsection{PAES}
 \subsection{RandomSearch}
-\subsection{RNSGAII}
-\subsection{SMSEMOA}
+
 \subsection{SPEA2}
