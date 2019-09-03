@@ -22,6 +22,9 @@
 \usepackage{url}
 \usepackage{amsfonts}
 
+% Graphics Folder
+\graphicspath{ {./images/} }
+
 %% Definition of new commands
 \newcommand{\field}[1]{\mathbb{#1}}
 \renewcommand{\thefootnote}{\alph{footnote}}
@@ -61,11 +64,15 @@
 
 % Here you call the files that you prepared in order to get a nice and concise master thesis (i.e., the chapters).  Just call on the command as many times as necessary. Note that it is the same for either thesis chapters or appendices.
 
-\insertChapter{Cp_Intro}
-\insertChapter{Cp_Antecetendes}
-\insertChapter{Cp_funciones_a_optimizar}
-\insertChapter{Cp_Experimentos}
-\insertChapter{Cp_Experimentos_II}
+\insertChapter{Cp_1_Intro}
+\insertChapter{Cp_2_Background}
+\insertChapter{Cp_3_Methodology}
+\insertChapter{Cp_4_Experimental_Settings}
+\insertChapter{Cp_5_Experimental_Results}
+\insertChapter{Cp_6_Experimentation} % Single vs Multi
+\insertChapter{Cp_7_Observations_and_Corrections}
+\insertChapter{Cp_8_Results}
+\insertChapter{Cp_9_Conclusion}
 
 \appendix 
 %%  This command is needed before you start inserting your 

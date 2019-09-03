@@ -1,13 +1,14 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Caption}}{10}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Caption}}{17}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Tabla de valores de Intereses}}{16}% 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Vector de Intereses}}{16}% 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces This is an example of a dataset of 9 users, each with their id, exp, 3 different interests and a participation percentage}}{19}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Tabla de valores de Intereses}}{20}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vector de Intereses}}{20}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces B\IeC {\'u}squeda Local}}{22}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Algoritmo Gen\IeC {\'e}tico Mono-objetivo}}{22}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Multi-Objetivo (NSGAII)}}{23}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces B\IeC {\'u}squeda Local}}{25}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Algoritmo Gen\IeC {\'e}tico Mono-objetivo}}{26}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Multi-Objetivo (NSGAII)}}{27}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }

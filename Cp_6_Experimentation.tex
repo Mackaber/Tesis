@@ -1,0 +1,87 @@
+\chapter{Experiments}
+\label{chapter:chapter05}
+
+% This is a brief description
+For the experimentation phase, all the parameters were left as their default values indicated by the jMetal and James Framework, while they could be adjusted manually to improve their individual performance, this is out of the scope for this research. the only parameters adjusted to improve were the population size and number of generations (number of iterations for non-genetic algorithms).
+
+
+%Note...
+As indicated by [https://link.springer.com/book/10.1007/978-1-4419-9182-9] the performance is sensitive to the value of the population in the case of the genetic algorithms, if the population is too large, then it is essentially pure random search, so in essence, the parameters of an algorithm outperforming random search should be considered as an ideal size for the population.
+
+\subsection{Algorithm Implementations}
+
+Here the algorithms finally used are described in their specific implementation for the probelm, as previously noted, all the implementations were already included in the jMetal and JAMES frameworks, and the only definitions created were the mutation and crossover procedures and the problem and solution definitions.
+
+\subsection{Single-Objective Algorithms}
+
+\subsubsection{Local Search}
+
+In the framework used jMetal, didn't include the implementation as the for the other algorithms, but it did have as middle step for other algorithms as ABYSS, but here is used as a standalone algorithm. With this in mind, for the perturbation step the procedure of mutation is used, as it complies with the requirements of not being too weak in order to escape the basin of attraction or too strong to make it too similar o multistarch local search. These criteria defined in [doi.org/10.1016/j.ins.2013.02.041].
+
+\subsection{Genetic Generational Algorithmn}
+
+Is an implementation of the Genetic Algorithm which\dots
+
+\subsection{Genetic Stready Algorithmn}
+
+Is another implementation of the Genetic Algorithm which\dots
+
+
+
+\subsection{Elitist}
+
+Is an implementation of the Evolution Strategy which\dots
+
+In this case the parent is preserved each generation, which in essence means that if there is no offspring considered better, the parent then will produce another set of offspring, until a better individual is produced.
+
+%Note, not sure if this should be in another subsection or its ok to mention here, or should be mentioned in both.
+
+In the case of Evolutionary Strategies Elitist and Non-Elitist, the mutation should follow a normal distribution, but since the solutions are discrete the solutions are generated randomly using the mutation operator as with all the other algorithms.
+
+\subsection{Non-Elitist}
+
+Is another implementation of the Evolution Strategy which\dots
+
+\subsection{Random search} 
+
+It should be noted that Random Search is used for comparison, because it doens't perform any improvement in a given solution, it would be like generating a random set of solutions and selecting the best a determined number of times.
+
+\subsection{Random Descent (Replica Exchange Monte Carlo)} 
+\subsection{Tabu Search} 
+\subsection{Parallel Tempering} 
+
+\section{Multi-Objective Algorithms}
+% Intro
+
+\section{Reference Front}
+
+\section{Parameters Definition}
+
+\section{Comparison between Single-Objective Algorithms}
+
+\subsection{Epsilon}
+\subsection{Spread}
+\subsection{Generational Distance}
+\subsection{Inverted Generational Distance}
+\subsection{Inverted Generational Distance +}
+\subsection{Hyper-volume}
+\subsection{Friedman Test}
+\section{Comparison between Multi-Objective Algorithms}
+
+\section{Comparison between Single-Objective and Multi-Objective Algorithms}
+
+\section{Hyper-parameters}
+
+% Todo
+% - Mention the experiments to determine the population size and the number of generations/iterations
+% - Mention that the overall best wera the random because (note)
+% - Mention the new article of the rule of thumb to adjust the parameters
+% - Maybe? Mention the costly function and the memoization to comply with the population size
+%    => This works because most of the algorithms will only alter a single group and leave the rest intact, so it doens't make sense to make the evaluations again... and in the crossover the groups are actually the same, so again... no need to evaluate the fitness functions again...
+% Notes of the results...
+\section{Unfair comparison?}
+
+\section{Building pareto front from Single-Objective Algorithms}
+
+
+The First results (Recover data from the presentation), showed that apparently the random algorithms surpassed overall the other, this is because (note of the beginning) 

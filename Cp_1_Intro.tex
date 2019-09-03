@@ -1,0 +1,59 @@
+\chapter{Introducción}
+\label{chapter:chapter01}
+\section{Contexto de la Investigación}
+A medida que el mundo se vuelve cada vez más globalizado el contenido producido en distintos idiomas diferentes al materno aumenta, en especial el que se encuentra escrito en el idioma Inglés que resulta ser el dominante a nivel mundial. Las necesidades de aprender este idioma aumentan de manera radical a medida que el tiempo avanza y los métodos tradicionales de enseñanza no dan abasto para que se pueda enseñar a toda la población que requiere aprender, por lo que surge la necesidad de crear alternativas que resulten más accesibles y óptimas para usuarios que a menudo se encuentran ocupados por un ritmo de vida muy activo y por lo tanto tienen poca flexibilidad de horario como para practicarlo entre sus conocidos.\\ 
+
+Por lo que una de las soluciones propuestas consiste en  un sistema en el cual usuarios que no se conozcan entre sí sean agrupados según sus temas de interés, esto para practicar el uso del lenguaje conforme teniéndo conversaciones sobre estos intereses y a un nivel de experiencia similar para que todos los participantes que se encuentran en un determinado momento puedan entender y participar. Lo que se pretende desarrollar como parte de esta tesis es la forma de agrupar  los usuarios en los distintos grupos virtuales que se encuentran dentro de la plataforma.\\ 
+
+La intención es buscar la manera más óptima de poder distribuir a los nuevos usuarios en estos grupos para que puedan mejorar su uso del lenguaje y no resulte frustrante ya sea por la dificultad inalcanzable o por que los temas no resulten de su agrado. Hay diversos aspectos que pueden hacer que una agrupación sea mejor que otra: por ejemplo, el nivel de dominio del lenguaje debe ser relativamente compatible, o sea que no se pueden poner usuarios muy avanzados junto con principiantes, pues el usuario avanzado se aburre con las dificultades del principiante, y este último no entiende lo que dicen los avanzados. Adicionalmente, se busca que los intereses de los usuarios sean compatibles, para poder generar conversaciones de interés para todos. Por ejemplo, algunos usuarios pueden tener los deportes entre sus temas de interés (y aún dentro de los deportes hay unos de fútbol, otros de natación, etc.). Otro criterio más es el estilo de intervención de cada usuario, el cual puede ser más o menos activo y más o menos tímido. Así, si se ponen muchos usuarios tímidos y pasivos en un cuarto, difícilmente se va a dar una dinámica ágil que haga la sesión entretenida. Es por esto que se propone abordar el problema como uno de optimización multiobjetivo donde los temas de conversación y el nivel de experiencia del usuario resultan los objetivos que se pretenden optimizar. Para ello se planea implementar una solución mono-objetivo tomando distintos criterios como el nivel de experiencia del usuario, así como sus temas de interés, entre otros para tomarlos como pesos en una función mono-objetivo. Después se hará una comparación de los resultados obtenidos con distintos algoritmos genéticos tomando como base la solución mono-objetivo y comparándola con cada uno de los resultados de la solución multiobjetivo. Se cree que haciendo uso de una estrategia multiobjetivo la experiencia de los usuarios mejorará de manera significativa comparándola respecto a los métodos de enseñanza y práctica de idiomas extranjeros ya existentes.\\
+
+\section{Definición del Problema}
+
+El problema se define como una variación del Problema de compañeros de Habitación (Stable Roommate Problem SRP) Problem\cite{greenwade93}. Sólo que en este caso los individuos no conocen entre sí, por lo que no tienen una preferencia real, sin embargo ésta trata de ser predecida basándose en la similitud del nivel de experiencia en el lenguaje extranjero del usuario y los intereses en común que puedan compartirse con el resto del grupo, asumiendo que estos dos factores afectan directamente la preferencia del usuario para pertenecer al grupo.\\ 
+
+Además de esto, también se consideran como restricciones el tamaño del grupo y los estilos de participación para beneficio del resto del sistema, ya que si bien una persona puede preferir pertenecer a un grupo que tenga más en común con sigo, su forma de participar puede alterar el comportamiento del resto del grupo, por ejemplo, un usuario extrovertido que participa demasiado en una conversación puede evitar que el resto del grupo participe y por otro lado un grupo en el que nadie participa necesita de un usuario extrovertido que inicie las conversaciones.\\ 
+
+De la misma forma el tamaño del grupo se define de forma dinámica para obtener una participación homogénea entre sus integrantes, y se define de forma dinámica ya que es posible que la ausencia o presencia de algunos usuarios puede afectar el desempeño del grupo a pesar de que su tamaño no se considere ideal.\\
+
+Ésta búsqueda tiene como objetivo obtener la solución más estable posible con respecto a las preferencias predecidas de los usuarios dentro de un espacio de tiempo razonable, y que dentro de cada uno de los grupos exista una participación homogénea para optimizar la práctica del idioma.\\
+
+A pesar de que en la literatura existen muchos ejemplos y variaciones de SRP, por ejemplo [ref.], actualmente no existe una caracterización que se adapte directamente al problema que definido, por lo que se desconoce qué tipo de optimización resulta más conveniente, y tomando en cuenta que el tamaño de los grupos es variable se le considera como un problem NP-completo[ref.], por lo que resulta relevante la búsqueda de una solución de distintas formas. Principalmente comparando entre algoritmos mono-objetivo (por medio de una función compuesta que considere el tamaño de los grupos, el nivel de experiencia, los intereses y el estilo de participación del usuario) y multiobjetivo que considere cada una de estas funciones de forma individual.
+
+\section{Objetivos}
+
+El objetivo de la investigación es comparar distintas estrategias mono-objetivo y multi-objetivo con respecto a la calidad de las soluciones que se generan y el tiempo para obtener este resultado.\\
+
+Los objetivos específicos que esto conlleva se mencionan a continuación:
+
+\begin{enumerate}
+
+\item Los datos para la experimentación serán artificiales, debido a que no se cuentan con datos con las especificaciones requeridas, por lo que es necesario buscar bases de datos públicas que puedan servir para hacer pruebas, con el afán de que se acerquen lo más posible a datos reales.
+
+\item Definir los atributos y parámetros relevantes para formular las funciones mono-objetivo y multiobjetivo, para la función mono-objetivo se establecerá un peso para cada atributo.
+
+\item Implementar estrategias mono-objetivo para generar soluciones del problema, los cuales serán la base para poder comparar las soluciones multiobjetivo que se realicen. 
+
+\item Implementar y probar distintas estrategias multiobjetivo y compararlos con los resultados obtenidos con las estrategias mono-objetivo.
+
+\item Revisar los resultados y realizar un reporte indicando si se llegó a un mejor resultado con una estrategia multi-objetivo y cuál fue el algoritmo que tuvo mejores resultados.
+\end{enumerate}
+\clearpage
+\section{Hipótesis}
+
+La hipótesis consiste en que un método multiobjetivo puede encontrar soluciones de mejor calidad y en un tiempo menor, comparándola con una solución mono-objetivo.\\
+
+El proyecto busca contestar las siguientes preguntas:
+
+\begin{itemize}
+
+\item ¿Existen soluciones que estén dentro de los máximos locales en el caso del problema mono-objetivo?
+
+\item ¿Los modelos mono-objetivo que garantizan una solución pertenecen al frente de pareto?
+
+\item ¿Qué tipo de algoritmo entrega resultados de mayor calidad con respecto al problema?
+
+\item ¿Resulta mejor usar una estrategia mono-objetivo o multi-objetivo?
+
+\end{itemize}
+
+
