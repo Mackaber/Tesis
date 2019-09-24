@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.7)  3 SEP 2019 11:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.7)  3 SEP 2019 11:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -410,551 +410,113 @@ Overfull \hbox (13.6033pt too wide) in paragraph at lines 61--62
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 
-Overfull \hbox (5.64824pt too wide) in paragraph at lines 83--84
+Overfull \hbox (5.64824pt too wide) in paragraph at lines 82--83
 \OT1/ptm/m/n/12 tion prob-lems, the def-i-ni-tion of this al-go-rithm is taken from [doi.org/10.1016/j.ins.2013.02.041]
  []
 
 [7] [8]
-
-./Cp_2_Background.tex:111: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111 ...ly distributed mutation resulting in a λ
-                                                   number of individuals. Ne...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:113: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ..., the population is kept with the size λ
-                                                   constantly in each of the...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:115: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.115 ...spring individual. This is denoted as (µ
-                                                   + 1) −ES where µ repre...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:115: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.115 ...dividual. This is denoted as (µ + 1) −
-                                                  ES where µ represents the...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:115: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.115 ...his is denoted as (µ + 1) −ES where µ
-                                                   represents the number of ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:117: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.117 ...in [237 from the article], which were (µ
-                                                   + λ) − ES and (µ, λ)...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:117: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.117 ...37 from the article], which were (µ + λ
-                                                  ) − ES and (µ, λ) − ES.
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:117: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.117 ...om the article], which were (µ + λ) −
-                                                   ES and (µ, λ) − ES.
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:117: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.117 ...cle], which were (µ + λ) − ES and (µ
-                                                  , λ) − ES.
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:117: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.117 ..., which were (µ + λ) − ES and (µ, λ
-                                                  ) − ES.
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:117: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.117 ...ch were (µ + λ) − ES and (µ, λ) −
-                                                   ES.
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:119: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119     - (µ
-                + λ) − ES, known as Elitist Evolution Strategy, indicates...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:119: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119     - (µ + λ
-                    ) − ES, known as Elitist Evolution Strategy, indicates...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:119: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119     - (µ + λ) −
-                          ES, known as Elitist Evolution Strategy, indicates...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:119: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119 ...ist Evolution Strategy, indicates that µ
-                                                   parents will create λ �...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:119: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119 ... indicates that µ parents will create λ
-                                                   ≥ 1 descendants by reco...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:119: Package inputenc Error: Unicode character ≥ (U+2265)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.119 ...icates that µ parents will create λ ≥
-                                                   1 descendants by recombin...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:121: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121     - (µ
-               , λ) − ES, known as Non-Elitist Evolution Strategy, is sim...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:121: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121     - (µ, λ
-                   ) − ES, known as Non-Elitist Evolution Strategy, is sim...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:121: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.121     - (µ, λ) −
-                         ES, known as Non-Elitist Evolution Strategy, is sim...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 Two other well-known ES are (µ
-                                     /ρ + λ) −ES and (µ/ρ, λ) −ES, ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character ρ (U+03C1)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 Two other well-known ES are (µ/ρ
-                                         + λ) −ES and (µ/ρ, λ) −ES, ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 Two other well-known ES are (µ/ρ + λ
-                                             ) −ES and (µ/ρ, λ) −ES, ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 Two other well-known ES are (µ/ρ + λ) −
-                                                  ES and (µ/ρ, λ) −ES, ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character µ (U+00B5)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ...l-known ES are (µ/ρ + λ) −ES and (µ
-                                                  /ρ, λ) −ES, where the ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character ρ (U+03C1)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ...nown ES are (µ/ρ + λ) −ES and (µ/ρ
-                                                  , λ) −ES, where the ρ ...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character λ (U+03BB)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ... ES are (µ/ρ + λ) −ES and (µ/ρ, λ
-                                                  ) −ES, where the ρ refe...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character − (U+2212)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ...re (µ/ρ + λ) −ES and (µ/ρ, λ) −
-                                                  ES, where the ρ refers to...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character ρ (U+03C1)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ...−ES and (µ/ρ, λ) −ES, where the ρ
-                                                   refers to the number of p...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Cp_2_Background.tex:123: Package inputenc Error: Unicode character σ (U+03C3)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.123 ... mean of 0 and a standard deviation of σ
-                                                  , which represents the the...
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-./Cp_2_Background.tex:127: You can't use `macro parameter character #' in horizontal mode.
-l.127 ...ttps://www.jstor.org/stable/167616?seq=1#
-                                                  page_scan_tab_contents] an...
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-./Cp_2_Background.tex:127: Missing $ inserted.
-<inserted text> 
-                $
-l.127 ...//www.jstor.org/stable/167616?seq=1#page_
-                                                  scan_tab_contents] and lat...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 127.
-(/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Try loading font information for U+msa on input line 114.
+ (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 127.
+LaTeX Font Info:    Try loading font information for U+msb on input line 114.
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-./Cp_2_Background.tex:128: Missing $ inserted.
-<inserted text> 
-                $
-l.128 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (565.07913pt too wide) in paragraph at lines 127--128
-\OT1/ptm/m/n/12 Also known as Pure Ran-dom Search was first de-fined by Brooks in [https://www.jstor.org/stable/167616?seq=1page$[]\OML/cmm/m/it/12 can[]ab[]ontents\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 andlaternamedintheclassicvolumesbyDixonandSzego\OT1/cmr/m/n/12 [44\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 45(\OML/cmm/m/it/12 fromhttps \OT1/cmr/m/n/12 :
+Overfull \hbox (5.60052pt too wide) in paragraph at lines 126--129
+\OT1/ptm/m/n/12 clas-sic vol-umes by Dixon and Szego [44, 45 (from https://link.springer.com/book/10.1007/978-
  []
 
 [9]
-Overfull \hbox (0.3439pt too wide) in paragraph at lines 139--140
+Overfull \hbox (0.3439pt too wide) in paragraph at lines 140--141
 \OT1/ptm/m/n/12 Climb-ing?", in Pro-ceed-ings of the 5th In-ter-na-tional Con-fer-ence on Ge-netic Al-go-rithms, 1993.] 
  []
 
 
-Overfull \hbox (63.60739pt too wide) in paragraph at lines 145--146
+Overfull \hbox (63.60739pt too wide) in paragraph at lines 146--147
 []\OT1/ptm/m/n/12 It is fre-quently used to have it as a com-par-i-son to GA's, ac-cord-ing to [http://papers.nips.cc/paper/1172-
  []
 
 
-Overfull \hbox (25.819pt too wide) in paragraph at lines 149--150
+Overfull \hbox (25.819pt too wide) in paragraph at lines 150--151
 \OT1/ptm/m/n/12 that takes an ad-van-tage by us-ing a multi-core ar-chi-tec-ture. [http://www.jamesframework.org/docs/]. 
  []
 
 [10]
-Overfull \hbox (135.22247pt too wide) in paragraph at lines 171--175
+Overfull \hbox (135.22247pt too wide) in paragraph at lines 172--176
 \OT1/ptm/m/n/12 and Jaszkiewicz in 1998 [5 from http://www.cmapx.polytechnique.fr/ dimo.brockhoff/publicationListFiles/twb2013a.pdf].
  []
 
 [11]
-Overfull \hbox (44.69595pt too wide) in paragraph at lines 180--181
+Overfull \hbox (44.69595pt too wide) in paragraph at lines 181--182
 []\OT1/ptm/m/n/12 The first ver-sion of MOMBI was in-tro-duced in [9 of https://sci-hub.se/10.1145/2739480.2754776]
  []
 
-./Cp_2_Background.tex:197: Missing $ inserted.
-<inserted text> 
-                $
-l.197 ... sorting, which had a complexity of O(MN^
-                                                  3), where M is the number ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./Cp_2_Background.tex:198: Missing $ inserted.
-<inserted text> 
-                $
-l.198 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (2507.59512pt too wide) in paragraph at lines 197--198
-\OT1/ptm/m/n/12 of O(MN$[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; whereMisthenumberofobjectivesandNisthesizeofthepopulation; thisnewversionhasinsteadacomplexityofO\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 M\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 N\OT1/cmr/m/n/12 )[])\OML/cmm/m/it/12 ; thealgorithmforthisisshownin\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 fig\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 :Anotherproblemwasthelackofelitism; since\OT1/cmr/m/n/12 [25]\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 [18]\OML/cmm/m/it/12 haveshownthatelitismcanspeeduptheperformanceoftheGAsignificantly; theelitismasdescribedinthenextparagraphisnowassurebykeepingallthesolutionsfromthepreviousgenerationwhentherankingisdone:Finallyaneedforspecifyingasharingparameter; sincetraditionalmechanismsusetheconceptofsharingtokeepawidevarietyofequivalentsolutions:$ 
- []
-
-
-Overfull \hbox (26.09601pt too wide) in paragraph at lines 211--211
+[12]
+Overfull \hbox (26.09601pt too wide) in paragraph at lines 212--212
 []\OT1/ptm/b/n/17.28 Comparison Be-tween Single-Objective and Multi-Objective
  []
 
 
-LaTeX Warning: Citation `Jiao2017DynamicME' on page 12 undefined on input line 213.
+LaTeX Warning: Citation `Jiao2017DynamicME' on page 13 undefined on input line 214.
 
 
-LaTeX Warning: Citation `Jin2007-qu' on page 12 undefined on input line 213.
-
-[12]
-
-LaTeX Warning: Citation `Battiti2010-xo' on page 13 undefined on input line 215.
+LaTeX Warning: Citation `Jin2007-qu' on page 13 undefined on input line 214.
 
 
-LaTeX Warning: Citation `Wang2010-zh' on page 13 undefined on input line 215.
+LaTeX Warning: Citation `Battiti2010-xo' on page 13 undefined on input line 216.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+LaTeX Warning: Citation `Wang2010-zh' on page 13 undefined on input line 216.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--231
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
 
  []
 
 [14]
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
-LaTeX Warning: Citation `VinciarelliUnderstandingCorpus' on page 15 undefined on input line 267.
+ []
 
 
-LaTeX Warning: Citation `benne_sheats' on page 15 undefined on input line 267.
+LaTeX Warning: Citation `VinciarelliUnderstandingCorpus' on page 15 undefined on input line 268.
 
-[15]
-<./images/ontology.png, id=89, 1542.76375pt x 330.23375pt>
+
+LaTeX Warning: Citation `benne_sheats' on page 15 undefined on input line 268.
+
+[15] [16]
+<./images/ontology.png, id=92, 1542.76375pt x 330.23375pt>
 File: ./images/ontology.png Graphic file (type png)
 <use ./images/ontology.png>
-Package pdftex.def Info: ./images/ontology.png  used on input line 296.
+Package pdftex.def Info: ./images/ontology.png  used on input line 297.
 (pdftex.def)             Requested size: 426.79134pt x 91.35623pt.
- [16]) (./Cp_3_Methodology.tex [17 <./images/ontology.png>]
+ [17]) (./Cp_3_Methodology.tex [18 <./images/ontology.png>]
 Chapter 3.
 
 ./Cp_3_Methodology.tex:15: LaTeX Error: Unknown float option `d'.
@@ -1011,7 +573,7 @@ l.15 \begin{figure}[dataset]
                             
 Option `e' ignored and `p' used.
 
-<images/dataset_eg.png, id=98, 678.535pt x 312.16624pt>
+<images/dataset_eg.png, id=100, 678.535pt x 312.16624pt>
 File: images/dataset_eg.png Graphic file (type png)
 <use images/dataset_eg.png>
 Package pdftex.def Info: images/dataset_eg.png  used on input line 19.
@@ -1021,114 +583,114 @@ Overfull \hbox (258.90524pt too wide) in paragraph at lines 19--20
 [][] 
  []
 
-[18
+[19
 
 ]
 
-LaTeX Warning: Reference `eq_group_size' on page 19 undefined on input line 30.
+LaTeX Warning: Reference `eq_group_size' on page 20 undefined on input line 30.
 
 
-LaTeX Warning: Reference `eq_nivel' on page 19 undefined on input line 38.
+LaTeX Warning: Reference `eq_nivel' on page 20 undefined on input line 38.
 
-[19 <./images/dataset_eg.png>]
+[20 <./images/dataset_eg.png>]
 
-LaTeX Warning: Citation `taxonomy_semantic_similarity' on page 20 undefined on input line 46.
-
-
-LaTeX Warning: Reference `fig:interests_table' on page 20 undefined on input line 46.
+LaTeX Warning: Citation `taxonomy_semantic_similarity' on page 21 undefined on input line 46.
 
 
-LaTeX Warning: Reference `fig:interests_vector' on page 20 undefined on input line 46.
+LaTeX Warning: Reference `fig:interests_table' on page 21 undefined on input line 46.
+
+
+LaTeX Warning: Reference `fig:interests_vector' on page 21 undefined on input line 46.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
-<./images/interests_table.png, id=106, 785.93625pt x 176.66pt>
+<./images/interests_table.png, id=108, 785.93625pt x 176.66pt>
 File: ./images/interests_table.png Graphic file (type png)
 <use ./images/interests_table.png>
 Package pdftex.def Info: ./images/interests_table.png  used on input line 51.
 (pdftex.def)             Requested size: 426.79134pt x 95.9341pt.
-<./images/interests_vector.png, id=107, 915.42pt x 45.16875pt>
+<./images/interests_vector.png, id=109, 915.42pt x 45.16875pt>
 File: ./images/interests_vector.png Graphic file (type png)
 <use ./images/interests_vector.png>
 Package pdftex.def Info: ./images/interests_vector.png  used on input line 59.
 (pdftex.def)             Requested size: 426.79134pt x 21.05838pt.
 
-LaTeX Warning: Reference `eq_cos_sym' on page 20 undefined on input line 64.
+LaTeX Warning: Reference `eq_cos_sym' on page 21 undefined on input line 64.
 
-[20 <./images/interests_table.png> <./images/interests_vector.png>]
+[21 <./images/interests_table.png> <./images/interests_vector.png>]
 
-LaTeX Warning: Reference `alg:mutation' on page 21 undefined on input line 91.
+LaTeX Warning: Reference `alg:mutation' on page 22 undefined on input line 91.
 
 
 Overfull \hbox (12.17543pt too wide) in paragraph at lines 119--120
 \OT1/ptm/m/n/12 La her-ramienta de jMetal cuenta con dis-tin-tos al-go-rit-mos de crossover, y ya que es-tos []unicamente
  []
 
-[21]) (./Cp_4_Experimental_Settings.tex
+[22]) (./Cp_4_Experimental_Settings.tex
 Overfull \hbox (4.48387pt too wide) in paragraph at lines 121--1
 []\OT1/ptm/m/n/12 Para la primera fase los ex-per-i-men-tos que se definieron con-sistieron en pro-bar []unicamente
  []
 
-[22]
+[23]
 Chapter 4.
-[23
+[24
 
 ]
 
-LaTeX Warning: Reference `chapter:chapter02' on page 24 undefined on input line 26.
+LaTeX Warning: Reference `chapter:chapter02' on page 25 undefined on input line 26.
 
 
-LaTeX Warning: Citation `SeyedShirkhorshidi2015AData' on page 24 undefined on input line 26.
+LaTeX Warning: Citation `SeyedShirkhorshidi2015AData' on page 25 undefined on input line 26.
 
 
-LaTeX Warning: Citation `Sung-HyukChaComprehensiveFunctions' on page 24 undefined on input line 26.
+LaTeX Warning: Citation `Sung-HyukChaComprehensiveFunctions' on page 25 undefined on input line 26.
 
 
-LaTeX Warning: Reference `roles_table' on page 24 undefined on input line 35.
+LaTeX Warning: Reference `roles_table' on page 25 undefined on input line 35.
 
 
-LaTeX Warning: Reference `weighted_function' on page 24 undefined on input line 39.
+LaTeX Warning: Reference `weighted_function' on page 25 undefined on input line 39.
 
-[24]
-<./images/Local.png, id=127, 824.07875pt x 537.00626pt>
+[25]
+<./images/Local.png, id=130, 824.07875pt x 537.00626pt>
 File: ./images/Local.png Graphic file (type png)
 <use ./images/Local.png>
 Package pdftex.def Info: ./images/Local.png  used on input line 60.
 (pdftex.def)             Requested size: 426.79134pt x 278.11407pt.
- [25 <./images/Local.png>]
-<./images/Genetic.png, id=132, 821.0675pt x 407.5225pt>
+ [26 <./images/Local.png>]
+<./images/Genetic.png, id=135, 821.0675pt x 407.5225pt>
 File: ./images/Genetic.png Graphic file (type png)
 <use ./images/Genetic.png>
 Package pdftex.def Info: ./images/Genetic.png  used on input line 71.
 (pdftex.def)             Requested size: 426.79134pt x 211.82585pt.
-<./images/Multi-Objective.png, id=133, 778.91pt x 360.34625pt>
+<./images/Multi-Objective.png, id=136, 778.91pt x 360.34625pt>
 File: ./images/Multi-Objective.png Graphic file (type png)
 <use ./images/Multi-Objective.png>
 Package pdftex.def Info: ./images/Multi-Objective.png  used on input line 84.
 (pdftex.def)             Requested size: 426.79134pt x 197.44325pt.
-) (./Cp_5_Experimental_Results.tex) (./Cp_6_Experimentation.tex [26 <./images/Genetic.png>] [27 <./images/Multi-Objective.png>]
+) (./Cp_5_Experimental_Results.tex) (./Cp_6_Experimentation.tex [27 <./images/Genetic.png>] [28 <./images/Multi-Objective.png>]
 Chapter 5.
-[28
+[29
 
 ]
 Overfull \hbox (24.17796pt too wide) in paragraph at lines 71--71
 []\OT1/ptm/b/n/17.28 Comparison be-tween Single-Objective and Multi-Objective
  []
 
-) (./Cp_7_Observations_and_Corrections.tex) (./Cp_8_Results.tex) (./Cp_9_Conclusion.tex) (./Appendix_01.tex [29] [30]
+) (./Cp_7_Observations_and_Corrections.tex) (./Cp_8_Results.tex) (./Cp_9_Conclusion.tex) (./Appendix_01.tex [30] [31]
 Appendix A.
 )
 No file MIT-MasterThesis.bbl.
-[31
+[32
 
 ] (./vitaFile.tex)
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 84.
  (/usr/local/texlive/2019basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [32] (./MIT-MasterThesis.aux)
+) [33] (./MIT-MasterThesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1137,18 +699,18 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 3736 strings out of 494060
- 53157 string characters out of 6163036
+ 3730 strings out of 494060
+ 53125 string characters out of 6163036
  128818 words of memory out of 5000000
- 7285 multiletter control sequences out of 15000+600000
+ 7279 multiletter control sequences out of 15000+600000
  33597 words of font info for 71 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  41i,8n,25p,2166b,301s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on MIT-MasterThesis.pdf (41 pages, 1448307 bytes).
+Output written on MIT-MasterThesis.pdf (42 pages, 1447122 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 199 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

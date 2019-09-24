@@ -68,7 +68,6 @@ A continuación se describen los pasos que lleva a cabo un algoritmo evolutivo c
 \item \textbf{Variación}: este paso puede darse por medio de del paso de "cromosomas" o características de las soluciones que sobrevivieron en el paso anterior para combinarse entre sí y dar nuevas soluciones "hijas", el otro método es la mutación, donde una o varias de las características se modifica de manera aleatoria para introducir un nuevo valor a la población
 \end{enumerate}
 
-
 Este ciclo se repite dando paso cada vez a nuevas generaciones que cada vez se ajustan más a la función de evaluación hasta que se alcance el resultado deseado determinado por el paso de Terminación.[10] \\
 
 \section{Single-Objective Algorithms}
@@ -108,23 +107,25 @@ Finally the replacement or survivor selection uses the fitness value to identify
 
 Similar to the Genetic Algorithms, described in the last section, these algorithms try to follow the principles of natural evolution as their method to solve optimization problems. They were introduced during the 0's by Rechenberg [216, 217] and further developed by Schwefel later. The first algorithm used in experimentation was Two membered ES and had a simple mutation-selection scheme.
 
-The basic structure consist on a single parent which produces an offspring following a normally distributed mutation resulting in a λ number of individuals. Next a selection operator determines the fittest individual which then becomes the parent of the next generation.
+The basic structure consist on a single parent which produces an offspring following a normally distributed mutation resulting in a [lambda] number of individuals. Next a selection operator determines the fittest individual which then becomes the parent of the next generation.
 
-The selection process resembles a "extinction of the worst", which means the less fitted individuals are replaced, which sometimes may include the parents, the population is kept with the size λ constantly in each of the generations.
+The selection process resembles a "extinction of the worst", which means the less fitted individuals are replaced, which sometimes may include the parents, the population is kept with the size [lambda] constantly in each of the generations.
 
-At the time of its conception the idea of a population wasn't widely used so far, which is why Rechenberg proposed a multi-member ES in [(probably 216 or 217)] where more than one parent can participate in the generation of one offspring individual. This is denoted as (µ + 1) −ES where µ represents the number of parents. 
+At the time of its conception the idea of a population wasn't widely used so far, which is why Rechenberg proposed a multi-member ES in [(probably 216 or 217)] where more than one parent can participate in the generation of one offspring individual. This is denoted as $(\mu + 1) - ES$ where $\mu$ represents the number of parents. 
 
-Two other definitions were then introduced by Schwefel in [237 from the article], which were (µ + λ) − ES and (µ, λ) − ES.
+Two other definitions were then introduced by Schwefel in [237 from the article], which were $(\mu + \lambda) - ES$ and $(\mu, \lambda) - ES$.
 
-    - (µ + λ) − ES, known as Elitist Evolution Strategy, indicates that µ parents will create λ ≥ 1 descendants by recombination and mutation, keeping the best fitted individual of the previous generation and discarding the rest
+    - $(\mu + \lambda) - ES$, known as Elitist Evolution Strategy, indicates that $\mu$ parents will create $\mu \geq 1$ descendants by recombination and mutation, keeping the best fitted individual of the previous generation and discarding the rest
     
-    - (µ, λ) − ES, known as Non-Elitist Evolution Strategy, is similar with the difference that none of the parents is kept in any of the subsequent generations, disregarding how good or bad were its fitness compared to the generation they belong.
+    - $(\mu, \lambda) - ES$, known as Non-Elitist Evolution Strategy, is similar with the difference that none of the parents is kept in any of the subsequent generations, disregarding how good or bad were its fitness compared to the generation they belong.
 
-Two other well-known ES are (µ/ρ + λ) −ES and (µ/ρ, λ) −ES, where the ρ refers to the number of parents involved in the procreation the offspring. Mutation in ES can be realized through normally distributed numbers with a mean of 0 and a standard deviation of σ, which represents the the size in the mutation step, when the problem has a continuous solution.
+Two other well-known ES are $(\mu/\rho + \lambda) - ES$ and ($\mu/\rho, \lambda) - ES$, where the $\rho$ refers to the number of parents involved in the procreation the offspring. Mutation in ES can be realised through normally distributed numbers with a mean of $0$ and $a$ standard deviation of $\sigma$, which represents the the size in the mutation step, when the problem has a continuous solution.
 
 \subsection{Random search} 
 
-Also known as Pure Random Search was first defined by Brooks in [https://www.jstor.org/stable/167616?seq=1#page_scan_tab_contents] and later named in the classic volumes by Dixon and Szego [44, 45 (from  https://link.springer.com/book/10.1007/978-1-4419-9182-9)].
+Also known as Pure Random Search was first defined by Brooks in ... 
+% [https://www.jstor.org/stable/167616?seq=1#page_scan_tab_contents]
+and later named in the classic volumes by Dixon and Szego [44, 45 (from  https://link.springer.com/book/10.1007/978-1-4419-9182-9)].
 
 It is considered as one of the most basic search strategies. It consists in the following: in each step it creates a new random solution, and the best solution is updated if the new solution outperforms the fit value of the previous best solution.
 
@@ -194,19 +195,44 @@ Is one of the most known Multi-Objective optimization methods, it was first prop
 
 NSGAII was introduced as a response after the criticism of the first version NSGAII, which had the following problems, each one which has been addressed in this new version:
 
-A high computational complexity of the non-dominated sorting, which had a complexity of O(MN^3), where M is the number of objectives and N is the size of the population, this new version has instead a complexity of O(M(2N)^2), the algorithm for this is shown in [fig]. Another problem was the lack of elitism, since [25], [18] have shown that elitism can speed up the performance of the GA significantly, the elitism as described in the next paragraph is now assure by keeping all the solutions from the previous generation when the ranking is done. Finally a need for specifying a sharing parameter, since traditional mechanisms use the concept of sharing to keep a wide variety of equivalent solutions.
+A high computational complexity of the non-dominated sorting, which had a complexity of $O(MN^3)$, where M is the number of objectives and N is the size of the population, this new version has instead a complexity of $O(M(2N)^2)$, the algorithm for this is shown in [fig]. Another problem was the lack of elitism, since [25], [18] have shown that elitism can speed up the performance of the GA significantly, the elitism as described in the next paragraph is now assure by keeping all the solutions from the previous generation when the ranking is done. Finally a need for specifying a sharing parameter, since traditional mechanisms use the concept of sharing to keep a wide variety of equivalent solutions.
 
 This algorithms works as follows:
 
 After an initial population is created, each individual is ranked and sorted according to their dominance, each solution then is assigned a fitness according to their non-domination level (1 is assigned to the best, then 2 and so on). This for minimization problems. Then a binary tournament selection, crossover and mutation take place and an offspring population of size N is created, the process is then repeated joining the previous generation and their offspring as the same population, and it continues with the population always taking the parents of the previous generation, therefore Elitism is ensured. Is important to notice that in the following generations, the ranking will also consider the crowding distance for the ranking.
 
-
-
-
-
 \subsection{RandomSearch}
 
+Multi-Objective Random search is a probabilistic algorithms that, serves mostly as an algorithm to benchmark other optimization algorithms in the literature[https://sci-hub.se/10.1007/BFb0056872], just like its single objective counterpart, this produces a random set of solutions in each step. 
+
+It considers the rate of crossover and mutation, but none is actually performed, so the number of evaluations will be the same as for the other EA's. The output of the algorithm is the Pareto-optimal set of all solutions generated.
+
 \subsection{SPEA2}
+
+SPEA \textbf{Strength Pareto Evolutionary Algorithm} first introduced by Zitzler and Thiele in 1999, was among the first techniques that were extensively compared to several existing evolution-based methods (Zitzler
+and Thiele 1999; Zitzler, Deb, and Thiele 2000) according to [Coello's Book].
+
+It makes use of an external non dominated set, for each individual in this set a strength value is computed, this consist of the raw fitness value assigned from the objective functions and a density estimation similar to the ranking value of MOGA[504 from Coello's book]. The algorithm applies the respective selection, crossover and mutation operators to fill an archive of individuals, then applies this fitness function and the non-dominated individuals from both the original population an the archive are copied into a new population. If the number of non-dominated individuals is greater than the population size, a truncation operator based on the distance to the k-nearest neighbor is used. Hence the individuals having the minimum distance to every other are discarded. Pareto dominance is used to ensure that the solutions are properly distributed along the Pareto front.
+
+SPEAII introduced in [https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/145755/eth-24689-01.pdf] is different from its predecessor SPEA, has 3 main differences, it incorporates a fine-grained fitness assignment strategy that considers the number of individuals for each individual that dominates each one of them, and the number of individuals that are dominated by each one of them too. It also uses a nearest neighbor density estimation strategy that makes the search more efficient. And it has an enhanced archive truncation strategy that guarantees the preservation of boundary solutions.
+
+\textbf{Considering the fitness assignment}, the individuals that are dominated by the same archive members have identical fitness values. Which means that in case that the archive has only one individual all population members will have an independent rank value, therefore lowering the selection pressure and making SPEA behave like a random search algorithm.
+
+\textbf{For the density estimation}, If many individuals are indifferent to the current generation, which means there is no domination between them, there is little to no information that can be obtain from them, which happens rather frequently, density information is used to guide the search more effectively. Clustering makes use of this information but only regarding the archive and not the population.
+
+\textbf{Archive Truncation}, considers that, while in SPEA the clustering technique was able to reduce the non-dominated set without destroying its features, it could lose outer solutions, however these solutions must be kept in the archive to keep the spread of non-dominated solutions.
+
+The algorithms works as follows:
+
+First all non dominated members are copied to the archive, if there is any dominated individual or a duplicate (with the same objective function evaluation), then they are removed from it during the update operation. If the size of the updated archive exceeds the predefined limit, further members are removed by a clustering technique which preservers the features of the non-dominated front. 
+
+Then the fitness values are assigned to the archive and the population members. 
+\begin{itemize}
+    \item Each individual $i$ is assigned a strength value $S(i) ∈ [0, 1)$, which  at the same time considers the fitness function $F(i)$. $S(i)$ is the number of population members $j$ that are dominated or equal to i, divided by the population plus one.
+    \item The fitness $F(j)$ of an individual $j$ in the population is calculated by summing the values of $S(i)$ of the rest of the archive members that dominate or are equal to $j$ plus one.
+\end{itemize}
+
+Then for the mating selection, individuals are selected by binary tournaments. This assumes a minimization, each member of the archive has a higher chance of being selected than the rest of the population. Finally after crossover and mutation operators are applied, the of population is replaced by the resulting offspring population.
 
 \section{Comparison Between Single-Objective and Multi-Objective Optimization}
 % Here I could present the work of the article I used asa the basis of the experiments
@@ -217,6 +243,9 @@ Por último Battiti y Passerini\cite{Battiti2010-xo} hablan sobre el uso de algo
 \section{Metrics}
 
 \subsection{Epsilon}
+
+
+
 \subsection{Spread}
 \subsection{Generational Distance}
 \subsection{Inverted Generational Distance}
@@ -256,7 +285,7 @@ However, to make compatible between each other, all the problems were defined as
 
 
 
-\section{Psychometrics?}
+\section{Preference Criteria}
 
 % This section describes the different matrics used as a basis for the objective functions based on the predicted preference of the users according to the group they want to belong.
 

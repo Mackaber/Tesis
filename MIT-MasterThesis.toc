@@ -27,69 +27,69 @@
 \contentsline {subsection}{\numberline {2.7.4}RandomSearch}{13}% 
 \contentsline {subsection}{\numberline {2.7.5}SPEA2}{13}% 
 \contentsline {section}{\numberline {2.8}Comparison Between Single-Objective and Multi-Objective Optimization}{13}% 
-\contentsline {section}{\numberline {2.9}Metrics}{13}% 
-\contentsline {subsection}{\numberline {2.9.1}Epsilon}{13}% 
-\contentsline {subsection}{\numberline {2.9.2}Spread}{13}% 
-\contentsline {subsection}{\numberline {2.9.3}Generational Distance}{13}% 
-\contentsline {subsection}{\numberline {2.9.4}Inverted Generational Distance}{13}% 
-\contentsline {subsection}{\numberline {2.9.5}Inverted Generational Distance +}{13}% 
-\contentsline {subsection}{\numberline {2.9.6}Hypervolume}{13}% 
-\contentsline {subsection}{\numberline {2.9.7}Friedman Test}{13}% 
-\contentsline {section}{\numberline {2.10}Frameworks}{13}% 
-\contentsline {subsection}{\numberline {2.10.1}jMetal}{13}% 
-\contentsline {subsection}{\numberline {2.10.2}James}{14}% 
+\contentsline {section}{\numberline {2.9}Metrics}{14}% 
+\contentsline {subsection}{\numberline {2.9.1}Epsilon}{14}% 
+\contentsline {subsection}{\numberline {2.9.2}Spread}{14}% 
+\contentsline {subsection}{\numberline {2.9.3}Generational Distance}{14}% 
+\contentsline {subsection}{\numberline {2.9.4}Inverted Generational Distance}{14}% 
+\contentsline {subsection}{\numberline {2.9.5}Inverted Generational Distance +}{14}% 
+\contentsline {subsection}{\numberline {2.9.6}Hypervolume}{14}% 
+\contentsline {subsection}{\numberline {2.9.7}Friedman Test}{14}% 
+\contentsline {section}{\numberline {2.10}Frameworks}{14}% 
+\contentsline {subsection}{\numberline {2.10.1}jMetal}{14}% 
+\contentsline {subsection}{\numberline {2.10.2}James}{15}% 
 \contentsline {section}{\numberline {2.11}Psychometrics?}{15}% 
 \contentsline {section}{\numberline {2.12}AMI Meeting Corpus}{15}% 
 \contentsline {section}{\numberline {2.13}Roles funcionales de Benne and Sheats }{15}% 
-\contentsline {section}{\numberline {2.14}Facebook Ad Platform}{16}% 
-\contentsline {section}{\numberline {2.15}CEFR}{17}% 
-\contentsline {chapter}{\numberline {3}Methodology}{18}% 
-\contentsline {section}{\numberline {3.1}Problem Design}{18}% 
-\contentsline {section}{\numberline {3.2}Objective Functions}{19}% 
-\contentsline {subsection}{\numberline {3.2.1}Tama\IeC {\~n}o del Grupo}{19}% 
-\contentsline {subsection}{\numberline {3.2.2}Nivel de experiencia}{20}% 
-\contentsline {subsection}{\numberline {3.2.3}Intereses}{20}% 
-\contentsline {subsection}{\numberline {3.2.4}Estilo de Participaci\IeC {\'o}n}{21}% 
-\contentsline {section}{\numberline {3.3}Mutaci\IeC {\'o}n}{21}% 
-\contentsline {section}{\numberline {3.4}Crossover}{22}% 
-\contentsline {chapter}{\numberline {4}Experimentos Preliminares}{23}% 
-\contentsline {section}{\numberline {4.1}Creaci\IeC {\'o}n de la Base de Datos}{23}% 
-\contentsline {subsection}{\numberline {4.1.1}Datos sint\IeC {\'e}ticos}{23}% 
-\contentsline {subsection}{\numberline {4.1.2}Datos de Idiomas}{23}% 
-\contentsline {subsection}{\numberline {4.1.3}Datos de Intereses de Facebook}{23}% 
-\contentsline {section}{\numberline {4.2}Funci\IeC {\'o}n de Distancia entre intereses}{24}% 
-\contentsline {section}{\numberline {4.3}Funci\IeC {\'o}n de Participaci\IeC {\'o}n}{24}% 
-\contentsline {section}{\numberline {4.4}Optimizaci\IeC {\'o}n mono-objetivo}{24}% 
-\contentsline {section}{\numberline {4.5}B\IeC {\'u}squeda local}{25}% 
-\contentsline {section}{\numberline {4.6}Algoritmo Gen\IeC {\'e}tico}{26}% 
-\contentsline {section}{\numberline {4.7}Optimizaci\IeC {\'o}n Multi-Objetivo}{26}% 
-\contentsline {chapter}{\numberline {5}Experiments}{28}% 
-\contentsline {subsection}{\numberline {5.0.1}Algorithm Implementations}{28}% 
-\contentsline {subsection}{\numberline {5.0.2}Single-Objective Algorithms}{28}% 
-\contentsline {subsubsection}{Local Search}{28}% 
-\contentsline {subsection}{\numberline {5.0.3}Genetic Generational Algorithmn}{28}% 
-\contentsline {subsection}{\numberline {5.0.4}Genetic Stready Algorithmn}{29}% 
-\contentsline {subsection}{\numberline {5.0.5}Elitist}{29}% 
-\contentsline {subsection}{\numberline {5.0.6}Non-Elitist}{29}% 
-\contentsline {subsection}{\numberline {5.0.7}Random search}{29}% 
-\contentsline {subsection}{\numberline {5.0.8}Random Descent (Replica Exchange Monte Carlo)}{30}% 
-\contentsline {subsection}{\numberline {5.0.9}Tabu Search}{30}% 
-\contentsline {subsection}{\numberline {5.0.10}Parallel Tempering}{30}% 
-\contentsline {section}{\numberline {5.1}Multi-Objective Algorithms}{30}% 
-\contentsline {section}{\numberline {5.2}Reference Front}{30}% 
-\contentsline {section}{\numberline {5.3}Parameters Definition}{30}% 
-\contentsline {section}{\numberline {5.4}Comparison between Single-Objective Algorithms}{30}% 
-\contentsline {subsection}{\numberline {5.4.1}Epsilon}{30}% 
-\contentsline {subsection}{\numberline {5.4.2}Spread}{30}% 
-\contentsline {subsection}{\numberline {5.4.3}Generational Distance}{30}% 
-\contentsline {subsection}{\numberline {5.4.4}Inverted Generational Distance}{30}% 
-\contentsline {subsection}{\numberline {5.4.5}Inverted Generational Distance +}{30}% 
-\contentsline {subsection}{\numberline {5.4.6}Hyper-volume}{30}% 
-\contentsline {subsection}{\numberline {5.4.7}Friedman Test}{30}% 
-\contentsline {section}{\numberline {5.5}Comparison between Multi-Objective Algorithms}{30}% 
-\contentsline {section}{\numberline {5.6}Comparison between Single-Objective and Multi-Objective Algorithms}{30}% 
-\contentsline {section}{\numberline {5.7}Hyper-parameters}{30}% 
-\contentsline {section}{\numberline {5.8}Unfair comparison?}{30}% 
-\contentsline {section}{\numberline {5.9}Building pareto front from Single-Objective Algorithms}{30}% 
-\contentsline {chapter}{\numberline {A}Appendix}{31}% 
-\contentsline {chapter}{Bibliography}{31}% 
+\contentsline {section}{\numberline {2.14}Facebook Ad Platform}{17}% 
+\contentsline {section}{\numberline {2.15}CEFR}{18}% 
+\contentsline {chapter}{\numberline {3}Methodology}{19}% 
+\contentsline {section}{\numberline {3.1}Problem Design}{19}% 
+\contentsline {section}{\numberline {3.2}Objective Functions}{20}% 
+\contentsline {subsection}{\numberline {3.2.1}Tama\IeC {\~n}o del Grupo}{20}% 
+\contentsline {subsection}{\numberline {3.2.2}Nivel de experiencia}{21}% 
+\contentsline {subsection}{\numberline {3.2.3}Intereses}{21}% 
+\contentsline {subsection}{\numberline {3.2.4}Estilo de Participaci\IeC {\'o}n}{22}% 
+\contentsline {section}{\numberline {3.3}Mutaci\IeC {\'o}n}{22}% 
+\contentsline {section}{\numberline {3.4}Crossover}{23}% 
+\contentsline {chapter}{\numberline {4}Experimentos Preliminares}{24}% 
+\contentsline {section}{\numberline {4.1}Creaci\IeC {\'o}n de la Base de Datos}{24}% 
+\contentsline {subsection}{\numberline {4.1.1}Datos sint\IeC {\'e}ticos}{24}% 
+\contentsline {subsection}{\numberline {4.1.2}Datos de Idiomas}{24}% 
+\contentsline {subsection}{\numberline {4.1.3}Datos de Intereses de Facebook}{24}% 
+\contentsline {section}{\numberline {4.2}Funci\IeC {\'o}n de Distancia entre intereses}{25}% 
+\contentsline {section}{\numberline {4.3}Funci\IeC {\'o}n de Participaci\IeC {\'o}n}{25}% 
+\contentsline {section}{\numberline {4.4}Optimizaci\IeC {\'o}n mono-objetivo}{25}% 
+\contentsline {section}{\numberline {4.5}B\IeC {\'u}squeda local}{26}% 
+\contentsline {section}{\numberline {4.6}Algoritmo Gen\IeC {\'e}tico}{27}% 
+\contentsline {section}{\numberline {4.7}Optimizaci\IeC {\'o}n Multi-Objetivo}{27}% 
+\contentsline {chapter}{\numberline {5}Experiments}{29}% 
+\contentsline {subsection}{\numberline {5.0.1}Algorithm Implementations}{29}% 
+\contentsline {subsection}{\numberline {5.0.2}Single-Objective Algorithms}{29}% 
+\contentsline {subsubsection}{Local Search}{29}% 
+\contentsline {subsection}{\numberline {5.0.3}Genetic Generational Algorithmn}{29}% 
+\contentsline {subsection}{\numberline {5.0.4}Genetic Stready Algorithmn}{30}% 
+\contentsline {subsection}{\numberline {5.0.5}Elitist}{30}% 
+\contentsline {subsection}{\numberline {5.0.6}Non-Elitist}{30}% 
+\contentsline {subsection}{\numberline {5.0.7}Random search}{30}% 
+\contentsline {subsection}{\numberline {5.0.8}Random Descent (Replica Exchange Monte Carlo)}{31}% 
+\contentsline {subsection}{\numberline {5.0.9}Tabu Search}{31}% 
+\contentsline {subsection}{\numberline {5.0.10}Parallel Tempering}{31}% 
+\contentsline {section}{\numberline {5.1}Multi-Objective Algorithms}{31}% 
+\contentsline {section}{\numberline {5.2}Reference Front}{31}% 
+\contentsline {section}{\numberline {5.3}Parameters Definition}{31}% 
+\contentsline {section}{\numberline {5.4}Comparison between Single-Objective Algorithms}{31}% 
+\contentsline {subsection}{\numberline {5.4.1}Epsilon}{31}% 
+\contentsline {subsection}{\numberline {5.4.2}Spread}{31}% 
+\contentsline {subsection}{\numberline {5.4.3}Generational Distance}{31}% 
+\contentsline {subsection}{\numberline {5.4.4}Inverted Generational Distance}{31}% 
+\contentsline {subsection}{\numberline {5.4.5}Inverted Generational Distance +}{31}% 
+\contentsline {subsection}{\numberline {5.4.6}Hyper-volume}{31}% 
+\contentsline {subsection}{\numberline {5.4.7}Friedman Test}{31}% 
+\contentsline {section}{\numberline {5.5}Comparison between Multi-Objective Algorithms}{31}% 
+\contentsline {section}{\numberline {5.6}Comparison between Single-Objective and Multi-Objective Algorithms}{31}% 
+\contentsline {section}{\numberline {5.7}Hyper-parameters}{31}% 
+\contentsline {section}{\numberline {5.8}Unfair comparison?}{31}% 
+\contentsline {section}{\numberline {5.9}Building pareto front from Single-Objective Algorithms}{31}% 
+\contentsline {chapter}{\numberline {A}Appendix}{32}% 
+\contentsline {chapter}{Bibliography}{32}% 
