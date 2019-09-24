@@ -68,7 +68,6 @@ A continuación se describen los pasos que lleva a cabo un algoritmo evolutivo c
 \item \textbf{Variación}: este paso puede darse por medio de del paso de "cromosomas" o características de las soluciones que sobrevivieron en el paso anterior para combinarse entre sí y dar nuevas soluciones "hijas", el otro método es la mutación, donde una o varias de las características se modifica de manera aleatoria para introducir un nuevo valor a la población
 \end{enumerate}
 
-
 Este ciclo se repite dando paso cada vez a nuevas generaciones que cada vez se ajustan más a la función de evaluación hasta que se alcance el resultado deseado determinado por el paso de Terminación.[10] \\
 
 \section{Single-Objective Algorithms}
@@ -108,23 +107,25 @@ Finally the replacement or survivor selection uses the fitness value to identify
 
 Similar to the Genetic Algorithms, described in the last section, these algorithms try to follow the principles of natural evolution as their method to solve optimization problems. They were introduced during the 0's by Rechenberg [216, 217] and further developed by Schwefel later. The first algorithm used in experimentation was Two membered ES and had a simple mutation-selection scheme.
 
-The basic structure consist on a single parent which produces an offspring following a normally distributed mutation resulting in a λ number of individuals. Next a selection operator determines the fittest individual which then becomes the parent of the next generation.
+The basic structure consist on a single parent which produces an offspring following a normally distributed mutation resulting in a [lambda] number of individuals. Next a selection operator determines the fittest individual which then becomes the parent of the next generation.
 
-The selection process resembles a "extinction of the worst", which means the less fitted individuals are replaced, which sometimes may include the parents, the population is kept with the size λ constantly in each of the generations.
+The selection process resembles a "extinction of the worst", which means the less fitted individuals are replaced, which sometimes may include the parents, the population is kept with the size [lambda] constantly in each of the generations.
 
-At the time of its conception the idea of a population wasn't widely used so far, which is why Rechenberg proposed a multi-member ES in [(probably 216 or 217)] where more than one parent can participate in the generation of one offspring individual. This is denoted as (µ + 1) −ES where µ represents the number of parents. 
+At the time of its conception the idea of a population wasn't widely used so far, which is why Rechenberg proposed a multi-member ES in [(probably 216 or 217)] where more than one parent can participate in the generation of one offspring individual. This is denoted as $(\mu + 1) - ES$ where $\mu$ represents the number of parents. 
 
-Two other definitions were then introduced by Schwefel in [237 from the article], which were (µ + λ) − ES and (µ, λ) − ES.
+Two other definitions were then introduced by Schwefel in [237 from the article], which were $(\mu + \lambda) - ES$ and $(\mu, \lambda) - ES$.
 
-    - (µ + λ) − ES, known as Elitist Evolution Strategy, indicates that µ parents will create λ ≥ 1 descendants by recombination and mutation, keeping the best fitted individual of the previous generation and discarding the rest
+    - $(\mu + \lambda) - ES$, known as Elitist Evolution Strategy, indicates that $\mu$ parents will create $\mu \geq 1$ descendants by recombination and mutation, keeping the best fitted individual of the previous generation and discarding the rest
     
-    - (µ, λ) − ES, known as Non-Elitist Evolution Strategy, is similar with the difference that none of the parents is kept in any of the subsequent generations, disregarding how good or bad were its fitness compared to the generation they belong.
+    - $(\mu, \lambda) - ES$, known as Non-Elitist Evolution Strategy, is similar with the difference that none of the parents is kept in any of the subsequent generations, disregarding how good or bad were its fitness compared to the generation they belong.
 
-Two other well-known ES are (µ/ρ + λ) −ES and (µ/ρ, λ) −ES, where the ρ refers to the number of parents involved in the procreation the offspring. Mutation in ES can be realized through normally distributed numbers with a mean of 0 and a standard deviation of σ, which represents the the size in the mutation step, when the problem has a continuous solution.
+Two other well-known ES are $(\mu/\rho + \lambda) - ES$ and ($\mu/\rho, \lambda) - ES$, where the $\rho$ refers to the number of parents involved in the procreation the offspring. Mutation in ES can be realised through normally distributed numbers with a mean of $0$ and $a$ standard deviation of $\sigma$, which represents the the size in the mutation step, when the problem has a continuous solution.
 
 \subsection{Random search} 
 
-Also known as Pure Random Search was first defined by Brooks in [https://www.jstor.org/stable/167616?seq=1#page_scan_tab_contents] and later named in the classic volumes by Dixon and Szego [44, 45 (from  https://link.springer.com/book/10.1007/978-1-4419-9182-9)].
+Also known as Pure Random Search was first defined by Brooks in ... 
+% [https://www.jstor.org/stable/167616?seq=1#page_scan_tab_contents]
+and later named in the classic volumes by Dixon and Szego [44, 45 (from  https://link.springer.com/book/10.1007/978-1-4419-9182-9)].
 
 It is considered as one of the most basic search strategies. It consists in the following: in each step it creates a new random solution, and the best solution is updated if the new solution outperforms the fit value of the previous best solution.
 
@@ -148,7 +149,7 @@ It is frequently used to have it as a comparison to GA's, according to [http://p
 
 It's an algorithm Also known as Replica Exchange Monte Carlo It is considered Similar to Simulated Annealing since it also uses the concept of temperatures, but it has the advantage that takes an advantage by using a multi-core architecture. [http://www.jamesframework.org/docs/].
 
-It was originally mentioned as a simulation technique known as replica exchange in a paper by Swendsen and Wang.1. In this paper, a method of replica Monte Carlo was introduced in which replicas of a system of interest were simulated at a series of different temperatures. Then this replicas undergo a partial exchange of configuration information. The more general form of parallel tempering with complete exchange of configuration information was introduced in 1991 by Geyer according to [doi/10.1039/B509983H].
+It was originally mentioned as a simulation technique known as replica exchange in a paper by Swendsen and Wang.1. In this paper, a method of replica Monte Carlo was introduced in which replicas of a system of interest were simulated at a series of different temperatures. Then this replicas undergo a partial exchange of configuration information. The more general form of parallel tempering with complete exchange of configuration information was introduced in 1991 by Geyer according to [doi.org/10.1039/B509983H].
 
 This algorithm runs several replicas of a particular system of interest, using different temperatures in each one of them. High temperature are able to generate large volumes of phase spaces, while low temperature systems tend to have more precision in the sampling of the phase space and tend to be trapped in a local optima.
 
@@ -194,7 +195,7 @@ Is one of the most known Multi-Objective optimization methods, it was first prop
 
 NSGAII was introduced as a response after the criticism of the first version NSGAII, which had the following problems, each one which has been addressed in this new version:
 
-A high computational complexity of the non-dominated sorting, which had a complexity of O(MN^3), where M is the number of objectives and N is the size of the population, this new version has instead a complexity of O(M(2N)^2), the algorithm for this is shown in [fig]. Another problem was the lack of elitism, since [25], [18] have shown that elitism can speed up the performance of the GA significantly, the elitism as described in the next paragraph is now assure by keeping all the solutions from the previous generation when the ranking is done. Finally a need for specifying a sharing parameter, since traditional mechanisms use the concept of sharing to keep a wide variety of equivalent solutions.
+A high computational complexity of the non-dominated sorting, which had a complexity of $O(MN^3)$, where M is the number of objectives and N is the size of the population, this new version has instead a complexity of $O(M(2N)^2)$, the algorithm for this is shown in [fig]. Another problem was the lack of elitism, since [25], [18] have shown that elitism can speed up the performance of the GA significantly, the elitism as described in the next paragraph is now assure by keeping all the solutions from the previous generation when the ranking is done. Finally a need for specifying a sharing parameter, since traditional mechanisms use the concept of sharing to keep a wide variety of equivalent solutions.
 
 This algorithms works as follows:
 
