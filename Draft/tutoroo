@@ -1,0 +1,11 @@
+HyperVolume
+
+First defined in [https://tik-old.ee.ethz.ch/file//9470d680ed6190147908a1c2fb95b576/ZT1999.pdf] by Zitzler and Thiele, defined as:
+
+\italic{The size of space covered $S$ by a front $X' = (x_1, x_2,...,x_k)$, as a set of points in a Front, then $S(X')$ gives the volume enclosed by the union of the polytopes $p_1, p_2,... p_k$ where each $p_i$ is formed by the intersection of the hyperplanes arising out of ${x_i}$ along with the axes, for each of them in the objective space, there exists a hyperplane perpendicular to this axis and passing thought the point $(f_i(x_i), f_2(x_i), f_n(x_i))$. In the two dimensional case, each $p_i$ represents a rectangle defined by the points (0,0) and $(f_1(x_i),f_2(x_i))$.
+
+According to [] Is considered the only unary indicator that is capable of truly detecting that a front $A$ is not worse than another front $B$ for all its pairs $A \righttriangle B $, this concept is referred as \italic{pareto complaint} in other sources of literature. 
+
+For a known pareto front, the $HV$ can be calculated by:
+
+\equation

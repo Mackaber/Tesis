@@ -1,0 +1,17 @@
+Generational Distance
+
+It was first used by Van Veldhuizen and Lamont in the early experiments done in 1998 [https://pdfs.semanticscholar.org/f329/eb18a4549daa83fae28043d19b83fe8356fa.pdf] and later further defined in [https://apps.dtic.mil/dtic/tr/fulltext/u2/a364478.pdf] in 1999.
+
+Is a value that consists in representing how far a known Pareto front is from the real Pareto front defined in eq[]
+
+\equation 1
+
+where n is the number of solutions in the known Pareto front and $\d_i$ is the Euclidean distance in the objective space between each of the solutions and the nearest member of the real Pareto front. When the known and the real Pareto front are the same the distance should be zero. Any other result shows how much the known Pareto Front deviates from the real one. 
+
+Another definition of the $GD$ can be found in [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.343.9173&rep=rep1&type=pdf] by Okabe et al. which defines the $GD$ as:
+
+\equation 2
+
+
+
+According to [https://eventos.spc.org.pe/clei2015/pdfs/144491.pdf], the $GD$ metric has been lowering its presence in the literature in the recent years, as the $HV$ has being increasing is usage. One of its main drawbacks in comparison to other metrics is that if a known front presents a large fluctuation in the distance values the calculated value may not represent the true distance.

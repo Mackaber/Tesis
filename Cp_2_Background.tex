@@ -3,22 +3,8 @@
 
 \section{Optimization}
 
-\section{Single-Objective Optimization}
-% This can also be mentioned as "Optimization Heuristics and HyperHeuristics"
-
-La optimización mono-objetivo o optimización global es un tipo de problemas que consiste en encontrar el mínimo o el máximo global de una función, ya que en una función no lineal pueden haber mínimos locales, pero un mínimo global es más difícil de encontrar, también es importante tomar en cuenta que se considera un dominio de soluciones y otras limitantes, por lo que en general la solución más obvia suele ser realizar una búsqueda exhaustiva probando cada uno de los valores del dominio, sin embargo esta estrategia puede llegar a ser bastante ineficiente. En los problemas no lineales una función puede contener un número muy largo de máximos y mínimos, a estos se les denominan mínimos o máximos locales, y para encontrarlos basta con usar un método local de optimización clásico.[1], [7], [8] \\
-
-Los algoritmos para encontrar un mínimo global comprenden métodos exactos y heurísticos. Dentro de los algoritmos exactos existen La búsqueda exhaustiva, búsquedas bayesianas, aproximaciones sucesivas y algunos algoritmos estocásticos como el muestreo de Monte-Carlo en el cual una simulación aleatoria es usada para encontrar una solución aproximada, Tuneleo estocástico, etc.[7] \\
-
 \section{Multi-Objective Optimization}
 
-La optimización multiobjetivo es un área del análisis de decisión de múltiples criterios que se encuentra directamente relacionada con los problemas de optimización matemática, que involucra más de una función objetivo para que sea optimizada simultáneamente. [4] \\
-
-Estas soluciones pueden tener distintos criterios o características para ser consideradas opciones óptimas, por lo que se les denominan soluciones de pareto. Una solución Óptima de Pareto se define como una solución cuyas funciones objetivo pueden ser mejoradas sin degradar el resto de las funciones. Se refiere a una solución no dominada en el espacio de criterio del problema. \\
-
-Para los problemas de optimización multiobjetivo no triviales no existe una solución ideal óptima, sino que existen distintas soluciones que optimizan simultáneamente cada objetivo, en cuyo caso se dice que las funciones son contradictorias y existe un número de soluciones óptimas de Pareto. Todas las soluciones que son óptimas por Pareto se dice que son igualmente buenas para los objetivos que se hayan determinado.[4], [5] \\
-
-Usualmente la idea de resolver un problema multiobjetivo es entendido como ayudar a un tomador de decisiones a considerar múltiples objetivos simultáneamente y encontrar una solución óptima de pareto que a su discreción sea más adecuada. Por lo que el método para encontrar la solución requiere de un involucramiento del tomador de decisiones y es influenciado fuertemente por sus preferencias. Usualmente en este tipo de problemas solo se toma en cuenta un sólo tomador de decisiones pero también existe la posibilidad de múltiples tomadores de decisiones. [9]
 
 \section{Dominance}
 
@@ -76,6 +62,10 @@ Este ciclo se repite dando paso cada vez a nuevas generaciones que cada vez se a
 % REMINDER: Here are only the definitions of each of the algorithms the specific implementation will be defined in the experimentation phase.
 
 % Most of the definitios are taken from doi.org/10.1016/j.ins.2013.02.041 but further descriptions are taken from this article sources.
+
+La optimización mono-objetivo o optimización global es un tipo de problemas que consiste en encontrar el mínimo o el máximo global de una función, ya que en una función no lineal pueden haber mínimos locales, pero un mínimo global es más difícil de encontrar, también es importante tomar en cuenta que se considera un dominio de soluciones y otras limitantes, por lo que en general la solución más obvia suele ser realizar una búsqueda exhaustiva probando cada uno de los valores del dominio, sin embargo esta estrategia puede llegar a ser bastante ineficiente. En los problemas no lineales una función puede contener un número muy largo de máximos y mínimos, a estos se les denominan mínimos o máximos locales, y para encontrarlos basta con usar un método local de optimización clásico.[1], [7], [8] \\
+
+Los algoritmos para encontrar un mínimo global comprenden métodos exactos y heurísticos. Dentro de los algoritmos exactos existen La búsqueda exhaustiva, búsquedas bayesianas, aproximaciones sucesivas y algunos algoritmos estocásticos como el muestreo de Monte-Carlo en el cual una simulación aleatoria es usada para encontrar una solución aproximada, Tuneleo estocástico, etc.[7] \\
 
 \subsection{Local Search}
  
@@ -158,6 +148,14 @@ This particular implementation of the algorithm uses Metropolis search as the sy
 Using this algorithm requires a minimum and maximum temperature, with each replica of the system with an assigned temperature, after each step the replicas are ordered according to their temperature, and then swapped to push the better solutions to the lowest temperatures, so they can eventually converge while higher temperature replicas are constantly modified in a search for improvement. Each of the replicas apply repeatedly a series of moves to a private solution, and then the global solution is tracked in the main search.
 
 \section{Multi-Objective Algorithms}
+
+La optimización multiobjetivo es un área del análisis de decisión de múltiples criterios que se encuentra directamente relacionada con los problemas de optimización matemática, que involucra más de una función objetivo para que sea optimizada simultáneamente. [4] \\
+
+Estas soluciones pueden tener distintos criterios o características para ser consideradas opciones óptimas, por lo que se les denominan soluciones de pareto. Una solución Óptima de Pareto se define como una solución cuyas funciones objetivo pueden ser mejoradas sin degradar el resto de las funciones. Se refiere a una solución no dominada en el espacio de criterio del problema. \\
+
+Para los problemas de optimización multiobjetivo no triviales no existe una solución ideal óptima, sino que existen distintas soluciones que optimizan simultáneamente cada objetivo, en cuyo caso se dice que las funciones son contradictorias y existe un número de soluciones óptimas de Pareto. Todas las soluciones que son óptimas por Pareto se dice que son igualmente buenas para los objetivos que se hayan determinado.[4], [5] \\
+
+Usualmente la idea de resolver un problema multiobjetivo es entendido como ayudar a un tomador de decisiones a considerar múltiples objetivos simultáneamente y encontrar una solución óptima de pareto que a su discreción sea más adecuada. Por lo que el método para encontrar la solución requiere de un involucramiento del tomador de decisiones y es influenciado fuertemente por sus preferencias. Usualmente en este tipo de problemas solo se toma en cuenta un sólo tomador de decisiones pero también existe la posibilidad de múltiples tomadores de decisiones. [9]
 
 \subsection{ESPEA}
 
@@ -242,15 +240,123 @@ Por último Battiti y Passerini\cite{Battiti2010-xo} hablan sobre el uso de algo
 
 \section{Metrics}
 
+% The next section includes metrics to use for comparison with multi-objective algorithms. The only metric that has shown to represent the domination of a set to another is the Hypervolume, however this metric is considered costly as the number of objectives and solutions grows and is usually considered to compare the performance between different algorithms, while the rest of the metrics serve as good approximations of the HV, that require less computational cost and can be calculated in each generation or step to choose a set of solutions over another. In addition there exist other set of metrics such as spread $\increment$ that measure the distribution of the solutions within a given front, this helps determine the quality of the front because it consideres a wider space covered within the search space.
+
+
 \subsection{Epsilon}
 
+First defined in [https://sci2s.ugr.es/sites/default/files/files/Teaching/OtherPostGraduateCourses/MasterEstructuras/bibliografia/Zitzler_Assessment.pdf] by Zitzler and Thiele in 2003.
 
+For a long time it was considered the main indicator to describe the domination of the solutions according to \bib[https://eventos.spc.org.pe/clei2015/pdfs/144491.pdf].
+
+It consists in getting a factor $\epsilon$ from which if a objective front are multiplied the Pareto front or any another front still dominates the former.
+
+In the case of minimization, a vector $z_{1}$ is said to $\epsilon-$dominate another vector $z_{2}$ if and only if for all the points of the vector $z_{2}$ multiplied by a factor of $\epsilon$ remains higher than $z_{1}$, this can be best described in \ref[epsilon_eq]
+
+\begin{equation} \label{epsilon_eq}
+    I_{\in}(A,B) =  \inf_{ \epsilon \in \reals} x \{\forall z_{2} \in B \exists  z_{1}  \in A: z_{1}  \succeq_{ \in } z_{2}\}
+\end{equation}
+
+Loosely speaking a vector z is said to epsilon dominate another vector if the multiplication of each objective value in the other vector by a factor of e and the resulting objective vector is still weakly dominated by the first. The resulting Epsilon is actually the E precise factor.
+
+According to this the $\epsilon-$indicator gives the factor by which an approximation set is worst than another with respect to all its objectives, therefore $I_{\in}(A,B)$ equals to that minimum factor $\epsilon$ such that any objective in B multiplied by the factor $\epsilon$ is $\epsilon$-dominated by at least one objective vector in A. For a single objective evaluation $I_{\in}(A,B)$ is simply the ratio between the two objectives A and B.
+
+For example, in the fig \ref[epsilon_graph] The dark blue area represents the subspace $\epsilon$-dominated by the solutions in $A_{1}$ for an $\epsilon = 9/10$, the light blue area refers to the subspace $\epsilon$-dominated by the solutions in $A_{1}$ for an an $\epsilon = 4$.
 
 \subsection{Spread}
+
+First defined by Deb et al. in [ref], the metric spread often represented as $\bigtriangleup$. It measures the extent of spread achieved among the obtained solutions. Its goal is to get a set of solutions that spans the entire Pareto-optimal region.
+
+For its calculation, first, the euclidean distance $d_i$ is calculated between each consecutive solution in and obtained front. Then the average $\overline{d}$ is calculated for these distances, so for a front composed of non-dominated solutions, first the extreme solutions of the objective space are obtained, these are considered the boundaries of the obtained solutions, this is done by fitting a curve parallel to the Pareto front. Afterwards the spread is calculated using the following equation: 
+
+\equation
+
+here $d_f$ and $d_l$ are the Euclidean distances between the extreme solutions, this can be better seen in fig [] where all the non-dominated solutions are found within the curve drawn.
+
+\fig
+
+There may exist an scenario where are solutions lay within the same point, this isn't considered the worst case of spread. When there is a great variance between the distance of the solutions the $increment$ can be greater than one. On the other hand, a good distribution would make all the distances $d_i$ equal to the average $d_rayita$, making $d_f$ and $d_t$ equal to zero, thus making $\increment$ also zero. In the case of higher dimensions a triangularization technique is used to calculate the distances for the solutions.
+
+This metric is one of the most preferred in the literature, according to [https://eventos.spc.org.pe/clei2015/pdfs/144491.pdf], it was widely used prior 2015, however its usage has decreased in the recent years, one of the mayor drawbacks is that the metric alone only measures the diversity of the approximation to the Pareto front. However combined with other convergence metric is still a relevant approach to assess the quality at a low computational cost. It should also be noted that it remains as the most popular metric to measure the diversity, but there is no more interest in the literature to measure the diversity alone to determine a quality set of solutions.
+
 \subsection{Generational Distance}
+
+It was first used by Van Veldhuizen and Lamont in the early experiments done in 1998 [https://pdfs.semanticscholar.org/f329/eb18a4549daa83fae28043d19b83fe8356fa.pdf] and later further defined in [https://apps.dtic.mil/dtic/tr/fulltext/u2/a364478.pdf] in 1999.
+
+Is a value that consists in representing how far a known Pareto front is from the real Pareto front defined in eq[]
+
+\equation 1
+
+2019-09-30-14-55-26.png
+
+where n is the number of solutions in the known Pareto front and $d_i$ is the Euclidean distance in the objective space between each of the solutions and the nearest member of the real Pareto front. And $p$ representing the number of objective. When the known and the real Pareto front are the same the distance should be zero. Any other result shows how much the known Pareto Front deviates from the real one. 
+
+Another definition of the $GD$ can be found in [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.343.9173&rep=rep1&type=pdf] by Okabe et al. which defines the $GD$ as:
+
+\equation 2
+
+2019-09-30-14-54-50.png
+
+According to [https://eventos.spc.org.pe/clei2015/pdfs/144491.pdf], the $GD$ metric has been lowering its presence in the literature in the recent years, as the $HV$ has being increasing is usage. One of its main drawbacks in comparison to other metrics is that if a known front presents a large fluctuation in the distance values the calculated value may not represent the true distance.
+
 \subsection{Inverted Generational Distance}
+
+The first formal definition of Inverted Generational Distance $IGD$ can be recovered from [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.7016&rep=rep1&type=pdf] according to [https://sci-hub.se/10.1145/2739480.2754792] where the $IGD$ is simply calculated as the inverse of the $GD$ starting with the Real Pareto Front and calculating the distance to the fronts produced by their tested algorithms. An earlier definition can be found in [https://cswww.essex.ac.uk/staff/qzhang/papers/moead.pdf], however it was defined as the "Distance from the Representatives in the Pareto Front", but it uses the same equation for its calculation.
+
+\equation
+
+2019-09-30-15-40-23.png
+
+where $d(z_i,a_j)$ is the distance be a distance between $z_i$ and $a_j$ in the objective space. It is mentioned by [https://cswww.essex.ac.uk/staff/qzhang/papers/moead.pdf], that If $|Z|$ is large enough to represent the Pareto Front well, then $D(A,P*)$ can be used to measure both the diversity and the convergence.
+
+There are two main advantages of using $IGD$, the first is its computational efficiency even considering multiobjective problems with more than 4 objectives, called many objective problems, especially comparing it to $HV$. The other is its generality, it usually shoes the overall quality of an obtained front, considering its convergence and to it and its diversity. This is the main reason why its its often used in the found literature according to [https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7007204].
+
+However besides the advantages gained from $IGD$ it still has several disadvantages which are discussed in the following subsection.
+
 \subsection{Inverted Generational Distance +}
+
+While $IGD$ is increasing its use, there are several disadvantages mentioned in [https://sci-hub.se/10.1145/2739480.2754792], one of these known flaws, specially comparing it to the $HV$ is its lack of Pareto compliant property, this can be further be seen in fig
+
+% May be reverted to represent minimization
+\figure
+
+2019-09-30-15-55-18.png
+
+where it presents a comparison between the front $A = (a_1, a_2, a_3)$ and the front $B = (b_1, b_2, b_3)$, and a reference Pareto front $Z = (z_1, z_2, z_3)$ for a maximization problem, here every solution in the front $B$ is clearly dominated by the solutions in the front $A$, however the measurement of $IGD$ between $Z$ and $B$ would be lower, because of the way the solutions in $B$ are distributed which is have a similar spread to $Z$.
+
+To address these drawbacks, $IGD+$ was proposed in [https://sci-hub.se/10.1145/2739480.2754792] by Ishibuchi and Masuda, it is closely similar to $IGD$ with the difference of having a weak Pareto compliant property, and it is based on the idea of calculating the distance from each reference point to a dominated region instead of the nearest solution, this can be seen in fig.
+
+\figure
+
+2019-09-30-16-11-56.png
+
+Then, $IGD+$ is defined as the distance between a Pareto front $Z$ and a solution front $A$  
+
+\equation
+2019-09-30-16-16-21.png
+
+Here, if a solution $A$ is dominated by the reference front $Z$, then $d_{IGD+}(A,Z)$ is the same as the euclidean distance $d(A,Z)$, because all the solutions in the front $A$ are smaller than those from the reference front $Z$, and this is also holds for each point in their respective fronts. When $A$ and $Z$ are not dominated with each other, only the objectives in $A$ that are lower to their counterparts in $Z$ are used, which means that if a point in the front $A$ is better than another from point $Z$ with respect to some of its objective, then these are not used in the calculation of $IGD+$.
+
 \subsection{Hypervolume}
+
+First defined in [https://tik-old.ee.ethz.ch/file//9470d680ed6190147908a1c2fb95b576/ZT1999.pdf] by Zitzler and Thiele, defined as:
+
+\italic{The size of space covered $S$ by a front $X' = (x_1, x_2,...,x_k)$, as a set of points in a Front, then $S(X')$ gives the volume enclosed by the union of the polytopes $p_1, p_2,... p_k$ where each $p_i$ is formed by the intersection of the hyperplanes arising out of ${x_i}$ along with the axes, for each of them in the objective space, there exists a hyperplane perpendicular to this axis and passing thought the point $(f_i(x_i), f_2(x_i), f_n(x_i))$. In the two dimensional case, each $p_i$ represents a rectangle defined by the points (0,0) and $(f_1(x_i),f_2(x_i))$.
+
+According to [https://sci2s.ugr.es/sites/default/files/files/Teaching/OtherPostGraduateCourses/MasterEstructuras/bibliografia/Zitzler_Assessment.pdf] Is considered the only unary indicator that is capable of truly detecting that a front $A$ is not worse than another front $B$ for all its pairs $A \righttriangle B $, this concept is referred as \italic{pareto complaint} in other sources of literature like [https://sci-hub.se/10.1145/2739480.2754792]. It is also noticed that for all the points in a front $A$ and a front $B$, $A \righttriangle B $ follows $I_H(A) > IH(B)$, because this means that $A$ must include at least one point that is not weakly dominated by $B$, therefore a portion of the objective space is covered by $A$ but not by $B$.
+
+This can be more clearly seen in fig x, where in the former the gray area represents the $HV(S,r)$ in the search space.
+
+\figure x
+
+One more general definition can be found in [http://www.optimization-online.org/DB_FILE/2018/10/6887.pdf] where it is described as the volume of the space in the objective space dominated by an approximation of the Pareto Front $S$ and delimeted from the above by a reference point $r \in \real^m$, so, for all the points $z$ in the obtained front. The hypervolume is given by:
+
+\equation
+
+Where $\lambda_m$ is the $m-$dimensional Lebesgue measure.
+
+One of the major drawbacks of using $HV$ is that its complexity results in $\bigO(|S|^{m/2}log|S|)$ and is also the main reasons other measurements are preferred over $HV$ specially in many-objective problems. According to [https://sci-hub.se/10.1145/2739480.2754792] it has been used without issues with a number of objectives lower than 10 and a nondominated number of solutions less than 10000. However other methods and algorithms have been proposed to address this issue.
+
 \subsection{Friedman Test}
 
 \section{Frameworks}

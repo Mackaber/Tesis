@@ -1,0 +1,13 @@
+Inverted Generational Distance
+
+The first formal definition of Inverted Generational Distance $IGD$ can be recovered from [http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.7016&rep=rep1&type=pdf] according to [https://sci-hub.se/10.1145/2739480.2754792] where the $IGD$ is simply calculated as the inverse of the $GD$ starting with the Real Pareto Front and calculating the distance to the fronts produced by their tested algorithms. An earlier definition can be found in [https://cswww.essex.ac.uk/staff/qzhang/papers/moead.pdf], however it was defined as the "Distance from the Representatives in the Pareto Front", but it uses the same equation for its calculation.
+
+\equation
+
+2019-09-30-15-40-23.png
+
+where $d(\z_i,a_j)$ is the distance be a distance between $\z_i$ and $\a_j$ in the objective space. It is mentioned by [https://cswww.essex.ac.uk/staff/qzhang/papers/moead.pdf], that If $|Z|$ is large enough to represent the Pareto Front well, then $D(A,P*)$ can be used to measure both the diversity and the convergence.
+
+There are two main advantages of using $IGD$, the first is its computational efficiency even considering multiobjective problems with more than 4 objectives, called many objective problems, especially comparing it to $HV$. The other is its generality, it usually shoes the overall quality of an obtained front, considering its convergence and to it and its diversity. This is the main reason why its its often used in the found literature according to [https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7007204].
+
+However besides the advantages gained from $IGD$ it still has several disadvantages which are discussed in the following subsection.
