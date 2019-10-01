@@ -50,7 +50,9 @@ First defined in[https://www.iitk.ac.in/kangal/Deb_NSGA-II.pdf]
 
 # Generational Distance
 
-2) GD: Figure 2 shows the tendency of the second mostused metric: the generational distance. It is interesting to
+2) GD: Figure 2 shows the tendency of the second mostused metric: the generational distance.
+
+It is interesting to
 note that while HV was increasing in use, the opposite
 happened with GD. However, the proportion of citations in
 2013 improved for GD with respect to the years 2011 and
@@ -70,17 +72,21 @@ studies and hence considerable amount of time shall pass
 before researchers desist from using it. (from paper)
 
 (from http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.35.8924)
+
 ![](2019-09-17-15-56-12.png)
 
 (from http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.343.9173&rep=rep1&type=pdf)
+
 ![](2019-09-17-16-21-02.png)
 
 (from http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=C3191BEB5B96AC9EC0EF607729546902?doi=10.1.1.35.8924&rep=rep1&type=pdf)
-The generational distance used by Van Veldhuizen and Lamont in earlier experiments [148] may be an eective metric gauging MOEA performance. Generational distance is a value representing how \far" P Fknown is from P Ftrue (an
+The generational distance used by Van Veldhuizen and Lamont in earlier experiments [148] may be an effective metric gauging MOEA performance. Generational distance is a value representing how \far" P Fknown is from P Ftrue (an
 error measure).
 
 First defined in https://apps.dtic.mil/dtic/tr/fulltext/u2/a364478.pdf
+
 ![](2019-09-17-16-14-42.png)
+
 ![](2019-09-17-16-19-30.png)
 
 # Inverted Generational Distance
@@ -146,10 +152,12 @@ while A is evaluated as being better in Fig. 2.
 ![](2019-09-17-16-42-19.png)
 
 (from https://cswww.essex.ac.uk/staff/qzhang/papers/moead.pdf)
+
 ![](2019-09-17-18-05-52.png)
 ![](2019-09-17-18-06-00.png)
 
 (from https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7007204)
+
 ![](2019-09-17-18-09-45.png)
 
 First Defined in (http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.79.7016&rep=rep1&type=pdf) according to (https://sci-hub.se/10.1145/2739480.2754792), but is part of the same concept as the Generational Distance, so in a sense in the previous definition was the first definition...
@@ -200,9 +208,13 @@ Defined as... in https://sci-hub.se/10.1145/2739480.2754792 too
 # Hypervolume
 
 (from http://www.optimization-online.org/DB_FILE/2018/10/6887.pdf)
+
 ![](2019-09-17-19-37-41.png)
+
 ![](2019-09-17-19-37-57.png)
+
 ![](2019-09-17-19-38-09.png)
+
 ![](2019-09-17-19-38-20.png)
 
 (from http://www.wfg.csse.uwa.edu.au/publications/PhD_thesis_Lucas_Bradstreet.pdf)
@@ -215,28 +227,6 @@ for each of these purposes.
 The second part of this chapter examines hypervolume calculation algorithms, with
 a primary focus on its use in performance assessment. The final section investigates the calculation and application of hypervolume as a selection indicator within
 MOOs.
-### Definition 
-In a multi-objective optimisation problem, the goal is to find the set of optimal
-trade-off solutions known as the Pareto optimal set. Pareto optimality is defined
-with respect to the concept of non-domination between points in objective space.
-Given two objective vectors x and y, x dominates y iff x is at least as good as y in all objectives, and better in at least one. A vector x is non-dominated with
-respect to a set of solutions X iff there is no vector in X that dominates x. X is a
-non-dominated set iff all vectors in X are mutually non-dominating. Such a set of
-objective vectors is sometimes called a non-dominated front.
-A vector x is Pareto optimal iff x is non-dominated with respect to the set of all
-possible vectors. Pareto optimal vectors are characterised by the fact that improvement in any one objective means worsening at least one other objective. The Pareto
-optimal set or Pareto optimal front is the set of all possible Pareto optimal vectors.
-Relations commonly used to compare these vectors include:
-
-![](2019-09-17-19-49-23.png)
-
-Pareto dominance occurs when x is better than y in one objective and equal or
-better in the remaining objectives. Under weak Pareto dominance, x is not worse
-than y in all objectives. Under these definitions, a set is a Pareto optimal set if
-no solutions exist that weakly dominate solutions in the set. Precise definitions of
-these terms can be found in [4, 77].
-Throughout this thesis, m is used to refer to the size of non-dominated fronts, and
-n for the number of dimensions (objectives) in vectors contained in the front
 
 2.3 The Hypervolume Indicator
 The hypervolume indicator [60] or S-metric [69] has become widely used in recent years. Hypervolume is the n-dimensional space that is “contained” by an
@@ -261,6 +251,7 @@ of hypervolumes. While still an open problem, one suggestion is to take the wors
 known value in each objective and shift it by an appropriate amount [54].
 
 (from https://eventos.spc.org.pe/clei2015/pdfs/144491.pdf)
+
 The hypervolume (HV) [13], also known as S metric,
 hyper-area or Lebesgue measure, is an unary metric that
 measures the size of the objective space covered by an
@@ -307,13 +298,17 @@ al. [61] and Fonseca et al. [62] presented alternatives to deal
 with this situation.
 
 (from https://sci2s.ugr.es/sites/default/files/files/Teaching/OtherPostGraduateCourses/MasterEstructuras/bibliografia/Zitzler_Assessment.pdf)
+
 ![](2019-09-17-20-01-04.png)
 
 (from http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.343.9173&rep=rep1&type=pdf)
+
 ![](2019-09-17-20-02-41.png)
+
 ![](2019-09-17-20-02-31.png)
 
 (from https://sci-hub.se/10.1145/2739480.2754792)
+
 In the EMO community, the hypervolume [29] has been used to
 evaluate a set of obtained non-dominated solutions. This is mainly
 because no other Pareto compliant unary indicator is known [27],
@@ -328,7 +323,9 @@ high-dimensional objective space whereas some fast algorithms
 have been proposed for efficient calculation [4], [24], [18]. 
 
 (first defined in https://tik-old.ee.ethz.ch/file//9470d680ed6190147908a1c2fb95b576/ZT1999.pdf)
+
 ![](2019-09-17-19-53-36.png)
+
 ![](2019-09-17-19-53-44.png)
 
 PISA framework -> https://sop.tik.ee.ethz.ch/publicationListFiles/bltz2003a.pdf
@@ -340,3 +337,28 @@ PISA framework -> https://sop.tik.ee.ethz.ch/publicationListFiles/bltz2003a.pdf
 Wikipediazo! -> https://en.wikipedia.org/wiki/Friedman_test
 
 (originally from https://www.tandfonline.com/doi/abs/10.1080/01621459.1937.10503522?journalCode=uasa20)
+
+# Pareto Dominance
+ 
+### Definition 
+In a multi-objective optimisation problem, the goal is to find the set of optimal
+trade-off solutions known as the Pareto optimal set. Pareto optimality is defined
+with respect to the concept of non-domination between points in objective space.
+Given two objective vectors x and y, x dominates y iff x is at least as good as y in all objectives, and better in at least one. A vector x is non-dominated with
+respect to a set of solutions X iff there is no vector in X that dominates x. X is a
+non-dominated set iff all vectors in X are mutually non-dominating. Such a set of
+objective vectors is sometimes called a non-dominated front.
+A vector x is Pareto optimal iff x is non-dominated with respect to the set of all
+possible vectors. Pareto optimal vectors are characterised by the fact that improvement in any one objective means worsening at least one other objective. The Pareto
+optimal set or Pareto optimal front is the set of all possible Pareto optimal vectors.
+Relations commonly used to compare these vectors include:
+
+![](2019-09-17-19-49-23.png)
+
+Pareto dominance occurs when x is better than y in one objective and equal or
+better in the remaining objectives. Under weak Pareto dominance, x is not worse
+than y in all objectives. Under these definitions, a set is a Pareto optimal set if
+no solutions exist that weakly dominate solutions in the set. Precise definitions of
+these terms can be found in [4, 77].
+Throughout this thesis, m is used to refer to the size of non-dominated fronts, and
+n for the number of dimensions (objectives) in vectors contained in the front

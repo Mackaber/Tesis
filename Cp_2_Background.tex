@@ -34,7 +34,6 @@ In multi-objective optimisation, the goal is to find the set of optimal solution
 \end{equation}
 
 A Pareto optimal set is composed by optimal solutions, which its internal objectives cannot be improved simultaneously. Their corresponding vectors are termed as \textit{non-dominated}, the collection of Pareto optimal solutions being the result of the same MOP receive the name of \textbf{Pareto Front} where:
-
 \begin{equation}
     PF* := \{u= F(x) | x \in P*\}
 \end{equation}
@@ -285,8 +284,6 @@ Para los problemas de optimización multiobjetivo no triviales no existe una sol
 
 Usualmente la idea de resolver un problema multiobjetivo es entendido como ayudar a un tomador de decisiones a considerar múltiples objetivos simultáneamente y encontrar una solución óptima de pareto que a su discreción sea más adecuada. Por lo que el método para encontrar la solución requiere de un involucramiento del tomador de decisiones y es influenciado fuertemente por sus preferencias. Usualmente en este tipo de problemas solo se toma en cuenta un sólo tomador de decisiones pero también existe la posibilidad de múltiples tomadores de decisiones. [9]
 
-\subsection{ESPEA}
-
 Stands for Electrostatic Potential Energy Evolutionary Algorithm and its and its a very recent algorithm that generates several Pareto front approximations, focusing only in the solutions that appear interesting to the decision maker. Proposed in []
 % https://sci-hub.se/https://dl.acm.org/citation.cfm?id=2754674
 by [Authors]. It was proposed because it was noticed that many of the algorithms found in the literature make use of popular crowding distance metrics that doesn't necessarily converge into optimality according to [13 from https://sci-hub.se/https://dl.acm.org/citation.cfm?id=2754674]. It also has been shown in [28 from https://sci-hub.se/https://dl.acm.org/] that an optimal distribution depends on the chosen reference point, but these methods are not adequate for constrained problems or discontinuous Pareto fronts.\\
@@ -522,6 +519,7 @@ Another definition of the $GD$ can be found in %[http://citeseerx.ist.psu.edu/vi
 by Okabe et al. which defines the $GD$ as:
 
 % \equation 2
+
 2019-09-30-14-54-50.png
 
 According to [https://eventos.spc.org.pe/clei2015/pdfs/144491.pdf], the $GD$ metric has been lowering its presence in the literature in the recent years, as the $HV$ has being increasing is usage. One of its main drawbacks in comparison to other metrics is that if a known front presents a large fluctuation in the distance values the calculated value may not represent the true distance.
@@ -542,6 +540,7 @@ where $d(z_i,a_j)$ is the distance be a distance between $z_i$ and $a_j$ in the 
 
 There are two main advantages of using $IGD$, the first is its computational efficiency even considering multiobjective problems with more than 4 objectives, called many objective problems, especially comparing it to $HV$. The other is its generality, it usually shoes the overall quality of an obtained front, considering its convergence and to it and its diversity. This is the main reason why its its often used in the found literature according to 
 % [https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7007204].
+
 
 However besides the advantages gained from $IGD$ it still has several disadvantages which are discussed in the following subsection.
 
@@ -565,6 +564,7 @@ To address these drawbacks, $IGD+$ was proposed in [https://sci-hub.se/10.1145/2
 Then, $IGD+$ is defined as the distance between a Pareto front $Z$ and a solution front $A$  
 
 %\equation
+
 2019-09-30-16-16-21.png
 
 Here, if a solution $A$ is dominated by the reference front $Z$, then $d_{IGD+}(A,Z)$ is the same as the euclidean distance $d(A,Z)$, because all the solutions in the front $A$ are smaller than those from the reference front $Z$, and this is also holds for each point in their respective fronts. When $A$ and $Z$ are not dominated with each other, only the objectives in $A$ that are lower to their counterparts in $Z$ are used, which means that if a point in the front $A$ is better than another from point $Z$ with respect to some of its objective, then these are not used in the calculation of $IGD+$.
@@ -596,6 +596,7 @@ Where $\lambda_m$ is the $m-$dimensional Lebesgue measure.
 One of the major drawbacks of using $HV$ is that its complexity results in $\mathcal{O}(|S|^{m/2}log|S|)$ and is also the main reasons other measurements are preferred over $HV$ specially in many-objective problems. According to [https://sci-hub.se/10.1145/2739480.2754792] it has been used without issues with a number of objectives lower than 10 and a non-dominated number of solutions less than 10000. However other methods and algorithms have been proposed to address this issue.
 
 %\subsection{Friedman Test}
+
 
 \section{Frameworks}
 \subsection{jMetal}

@@ -1,0 +1,26 @@
+Inverted Generational Distance +
+
+While $IGD$ is increasing its use, there are several disadvantages mentioned in [https://sci-hub.se/10.1145/2739480.2754792], one of these known flaws, specially comparing it to the $HV$ is its lack of Pareto compliant property, this can be further be seen in fig
+
+% May be reverted to represent minimization
+\figure
+
+2019-09-30-15-55-18.png
+
+where it presents a comparison between the front $A = {a1, a2, a3}" and the front $B = {b1, b2, b3}$, and a reference Pareto front $Z = {z1, z2, z3}$ for a maximization problem, here every solution in the front $B$ is clearly dominated by the solutions in the front $A$, however the measurement of $IGD$ between $Z$ and $B$ would be lower, because of the way the solutions in $B$ are distributed which is have a similar spread to $Z$.
+
+To address these drawbacks, $IGD+$ was proposed in [https://sci-hub.se/10.1145/2739480.2754792] by Ishibuchi and Masuda, it is closely similar to $IGD$ with the difference of having a weak Pareto compliant property, and it is based on the idea of calculating the distance from each reference point to a dominated region instead of the nearest solution, this can be seen in fig.
+
+\figure
+
+2019-09-30-16-11-56.png
+
+Then, $IGD+$ is defined as the distance between a Pareto front $Z$ and a solution front $A$  
+
+\equation
+2019-09-30-16-16-21.png
+
+Here, if a solution $A$ is dominated by the reference front $Z$, then $\d_IGD+(A,Z)$ is the same as the euclidean distance $d(A,Z)$, because all the solutions in the front $A$ are smaller than those from the reference front $Z$, and this is also holds for each point in their respective fronts. When $A$ and $Z$ are not dominated with each other, only the objectives in $A$ that are lower to their counterparts in $Z$ are used, which means that if a point in the front $A$ is better than another from point $Z$ with respect to some of its objective, then these are not used in the calculation of $IGD+$, this can be more clearly seen in Fig. 5
+
+
+\figure
