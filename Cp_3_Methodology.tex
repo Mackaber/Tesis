@@ -88,25 +88,25 @@ Es por esto que al hacer el análisis de los datos como se describe en la secci�
 
 Una mutación de acuerdo a los algoritmos genéticos debe de introducir al sistema una solución que no se exista aún. Sin embargo no es suficiente con cambiar un usuario por otro en un grupo para la mutación ya que este usuario probablemente se encuentre en otro grupo diferente y el sistema prohíbe que un usuario este en 2 grupos distintos a la vez. Por ello el algoritmo para la mutación toma un grupo de origen al azar, quita un usuario de un grupo y lo pone en otro, tomando en cuenta las restricciones del tamaño del grupo, es decir, si es un grupo que quitándole un usuario resultaría menor a 3 entonces se debe seleccionar otro grupo. De forma similar para el grupo destino se verifica que no sobrepase el tamaño máximo de 6 una vez que el nuevo usuario sea agregado, y si es el caso se selecciona otro grupo. El algoritmo completo se presenta como pseudocódigo a continuación:
 
-\ref{alg:mutation}.
-\begin{algorithm}
-\caption{Group Combination Mutation}\label{alg:mutation}
-\begin{algorithmic}[1]
-\Procedure{Mutation}{$s$}
-\State $g1\gets getRandomVariable(s)$\Comment{Obtiene una variable aleatoria de la solución}
-\State $g2\gets getRandomVariable(s)$
-\While{$groupSize(g1)\leq minSize() + 1$}\Comment{Revisa si en grupo de origen es mayor que el tamaño menor posible}
-\State $g1 \gets getRandomVariable(s)$
-\EndWhile\label{euclidendwhile}
-\While{$groupSize(g2)> maxSize() - 1$}\Comment{Revisa si en grupo destino es menor que el tamaño mayor posible}
-\State $g2 \gets getRandomVariable(s)$
-\EndWhile\label{euclidendwhile}
-\State $u \gets getRandomUserFromGroup(g1)$ 
-\State $addUserToGroup(u,g2)$
-\State $removeUserFromGroup(u,g1)$
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+% \ref{alg:mutation}.
+% \begin{algorithm}
+% \caption{Group Combination Mutation}\label{alg:mutation}
+% \begin{algorithmic}[1]
+% \Procedure{Mutation3}{$s$}
+% \State $g1\gets getRandomVariable(s)$\Comment{Obtiene una % variable aleatoria de la solución}
+% \State $g2\gets getRandomVariable(s)$
+% \While{$groupSize(g1)\leq minSize() + 1$}\Comment{Revisa si % en grupo de origen es mayor que el tamaño menor posible}
+% \State $g1 \gets getRandomVariable(s)$
+% \EndWhile\label{euclidendwhile}
+% \While{$groupSize(g2)> maxSize() - 1$}\Comment{Revisa si en % grupo destino es menor que el tamaño mayor posible}
+% \State $g2 \gets getRandomVariable(s)$
+% \EndWhile\label{euclidendwhile}
+% \State $u \gets getRandomUserFromGroup(g1)$ 
+% \State $addUserToGroup(u,g2)$
+% \State $removeUserFromGroup(u,g1)$
+% \EndProcedure
+% \end{algorithmic}
+% \end{algorithm}
 
 jMetal cuenta con distintos algoritmos para realizar la mutación, sin embargo estos comprenden únicamente problemas binarios o de permutación, y ya que es necesario un algoritmo para obtener una solución combinatoria, fue necesaria la creación de un nuevo algoritmo que a continuación se propone.
 
