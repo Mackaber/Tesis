@@ -20,7 +20,4 @@ Then, $IGD+$ is defined as the distance between a Pareto front $Z$ and a solutio
 \equation
 2019-09-30-16-16-21.png
 
-Here, if a solution $A$ is dominated by the reference front $Z$, then $\d_IGD+(A,Z)$ is the same as the euclidean distance $d(A,Z)$, because all the solutions in the front $A$ are smaller than those from the reference front $Z$, and this is also holds for each point in their respective fronts. When $A$ and $Z$ are not dominated with each other, only the objectives in $A$ that are lower to their counterparts in $Z$ are used, which means that if a point in the front $A$ is better than another from point $Z$ with respect to some of its objective, then these are not used in the calculation of $IGD+$, this can be more clearly seen in Fig. 5
-
-
-\figure
+Here, if a solution $A$ is dominated by the reference front $Z$, then $\d_IGD+(A,Z)$ is the same as the euclidean distance $d(A,Z)$, because all the solutions in the front $A$ are smaller than those from the reference front $Z$, and this is also holds for each point in their respective fronts. When $A$ and $Z$ are not dominated with each other, only the objectives in $A$ that are lower to their counterparts in $Z$ are used, which means that if a point in the front $A$ is better than another from point $Z$ with respect to some of its objective, then these are not used in the calculation of $IGD+$.

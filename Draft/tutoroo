@@ -4,8 +4,17 @@ First defined in [https://tik-old.ee.ethz.ch/file//9470d680ed6190147908a1c2fb95b
 
 \italic{The size of space covered $S$ by a front $X' = (x_1, x_2,...,x_k)$, as a set of points in a Front, then $S(X')$ gives the volume enclosed by the union of the polytopes $p_1, p_2,... p_k$ where each $p_i$ is formed by the intersection of the hyperplanes arising out of ${x_i}$ along with the axes, for each of them in the objective space, there exists a hyperplane perpendicular to this axis and passing thought the point $(f_i(x_i), f_2(x_i), f_n(x_i))$. In the two dimensional case, each $p_i$ represents a rectangle defined by the points (0,0) and $(f_1(x_i),f_2(x_i))$.
 
-According to [] Is considered the only unary indicator that is capable of truly detecting that a front $A$ is not worse than another front $B$ for all its pairs $A \righttriangle B $, this concept is referred as \italic{pareto complaint} in other sources of literature. 
+According to [https://sci2s.ugr.es/sites/default/files/files/Teaching/OtherPostGraduateCourses/MasterEstructuras/bibliografia/Zitzler_Assessment.pdf] Is considered the only unary indicator that is capable of truly detecting that a front $A$ is not worse than another front $B$ for all its pairs $A \righttriangle B $, this concept is referred as \italic{pareto complaint} in other sources of literature like [https://sci-hub.se/10.1145/2739480.2754792]. It is also noticed that for all the points in a front $A$ and a front $B$, $A \righttriangle B $ follows $I_H(A) > IH(B)$, because this means that $A$ must include at least one point that is not weakly dominated by $B$, therefore a portion of the objective space is covered by $A$ but not by $B$.
 
-For a known pareto front, the $HV$ can be calculated by:
+This can be more clearly seen in fig x, where in the former the gray area represents the $HV(S,r)$ in the search space.
+
+\figure x
+
+One more general definition can be found in [http://www.optimization-online.org/DB_FILE/2018/10/6887.pdf] where it is described as the volume of the space in the objective space dominated by an approximation of the Pareto Front $S$ and delimeted from the above by a reference point $r \in \real^m$, so, for all the points $z$ in the obtained front. The hypervolume is given by:
 
 \equation
+
+Where $\lambda_m$ is the $m-$dimensional Lebesgue measure.
+
+One of the major drawbacks of using $HV$ is that its complexity results in $\bigO(|S|^{m/2}log|S|)$ and is also the main reasons other measurements are preferred over $HV$ specially in many-objective problems. According to [https://sci-hub.se/10.1145/2739480.2754792] it has been used without issues with a number of objectives lower than 10 and a nondominated number of solutions less than 10000. However other methods and algorithms have been proposed to address this issue.
+

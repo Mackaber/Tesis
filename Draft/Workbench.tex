@@ -1,0 +1,14 @@
+\textbf{Input:} \textit{population size} $N$, \textif{archive size} $\bar N$, \textit{maximum number of generations} $T$\;\\
+\textbf{Output:} \textit{nondominated set} \textbf{A}\;\\
+\textit{Initialize:} Generate an initial population $P_0$ and create the empty archive $\bar P_o = 0.$ Set $t = 0$\;\\
+\Repeat{$t \leq T$ or any stopping criterion is satisfied.}{
+    \textit{Fitness assignment:} Calculate fitness values of individuals in $P_t$ and $\bar P_t$\;\\
+    \textit{Environmental selection} Copy all nondominated individuals in $P_t$ and $\bar P_t$ to $\bar P_{t+1}$. \;\\
+    \eIf{$size(\bar P_{t+1}) > \bar N$}{
+        \textit{Reduce} $\bar P_{t+1}$ by means of the truncator operator
+    }{
+        \textit{Fill} $\bar P_{t+1}$ with dominated individuals in $P_t$ and $\bat P_t$
+    }
+}
+\textit{Termination:} $A \gets$ the set of decision vectors represented by the nondominated individuals in $\bar P_{t+1}$\;\\
+\textit{Mating selection:} Perform binary tournament selection with replacement on $\bar P_{t+1}$ in order to fill the mating pool.
