@@ -56,21 +56,56 @@ El nivel de experiencia en el lenguaje hace referencia al estándar CEFR\cite{}.
 
 Para calcular la similitud entre intereses se usa una estrategia similar a Madylova y Gunduz \cite{taxonomy_semantic_similarity} donde los intereses son considerados como un vector valores en los que se señala una cantidad que indica el orden jerárquico de acuerdo a la ontología definida por la red social de Facebook, por ejemplo si un usuario tiene como intereses: Los perros, Correr y las Citas, su vector de intereses se estaría dado por los valores en la Figura \ref{fig:interests_table}. En la parte de arriba se indica el valor de la jerarquía, en la parte de abajo se normaliza usando $1/(1+v)$, después se eligen los valores mayores de cada una de las columnas de esta forma da el vector resultante como se muestra en la Figura \ref{fig:interests_vector} \\
 
-% Cambiar por tabla
-\begin{figure}
-    \centering
-    \includegraphics[width=150mm]{interests_table.png}
-    \caption{Tabla de valores de Intereses}
-    \label{fig:interests_table}
-\end{figure}
+\begin{table}[]
+\caption{Interests mapping of a $s_1$ example user}
+\label{tab:interests_s_1}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+                & Interests & Business & Design   & Graphic Design & Interior Design & Banking  \\ \hline
+Graphic Design  & 3         & 2                     & 1        & 0              & $\infty$        & $\infty$ \\ \hline
+Interior Design & 3         & 2                     & 1        & $\infty$       & 0               & $\infty$ \\ \hline
+Banking         & 2         & 1                     & $\infty$ & $\infty$       & $\infty$        & 0        \\ \hline
+                &           &                       &          &                &                 &          \\ \hline 
+Graphic Design  & 0.25      & 0.333...              & 0.5      & 1              & 0               & 0        \\ \hline
+Interior Design & 0.25      & 0.333...              & 0.5      & 0              & 1               & 0        \\ \hline
+Banking         & 0.333...  & 0.5                   & 0        & 0              & 0               & 1        \\ \hline
+\end{tabular}
+\end{table}
 
-% Cambiar por tabla
-\begin{figure}
-    \centering
-    \includegraphics[width=150mm]{interests_vector.png}
-    \caption{Vector de Intereses}
-    \label{fig:interests_vector}
-\end{figure}
+
+\begin{table}[]
+\caption{Interests mapping of a $s_2$ example user}
+\label{tab:interests_s_1}
+\centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+                        & Interests & Business & Advertising & Banking  & Retail Banking & Hobbies  & Running  \\ \hline
+        Graphic Design  & 3         & 2        & $\infty$    & 1        & 0              & $\infty$ & $\infty$ \\ \hline
+        Interior Design & 2         & 1        & 1           & $\infty$ & $\infty$       & $\infty$ & $\infty$ \\ \hline
+        Banking         & 3         & $\infty$ & $\infty$    & $\infty$ & $\infty$       & 1        & 0        \\ \hline
+                        &           &          &             &          &                &          &          \\ \hline
+        Graphic Design  & 0.25      & 0.333... & 0           & 0.5      & 1              & 0        & 0        \\ \hline
+        Interior Design & 0.333...  & 0.5      & 0.5         & 0        & 0              & 0        & 0        \\ \hline
+        Banking         & 0.25      & 0        & 0           & 0        & 0              & 0.5      & 1        \\ \hline
+        \end{tabular}
+    }
+\end{table}
+
+\begin{table}[]
+\caption{Interests mapping of a $s_2$ example user}
+\label{tab:interests_s_1}
+\centering
+\resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+          & Interests & Business & Design & Graphic Design & Interior Design & Banking & Retail Banking & Hobbies & Running \\ \hline
+    $s_1$ & 0.75      & 0.5      & 0.5    & 1              & 1               & 1       & 0              & 0       & 0       \\ \hline
+    $s_2$ & 0.33      & 0.5      & 0      & 0              & 0               & 0.5     & 1              & 0.5     & 1       \\ \hline
+    \end{tabular}
+}
+\end{table}
 
 Para calcular que tan similar es un usuario con respecto a otro se usa la formula de distancia cosenoidal, que se muestra en la ecuación \ref{eq_cos_sym} donde \(A\) es el vector de intereses del primer usuario y \(B\) es el vector de intereses del segundo. Cabe destacar que es muy frecuente que los vectores de intereses de los usuarios contengan ceros al momento de compararlos, de tal manera que si el resultado de la función da como resultado exactamente 0, significa que ambos usuarios no tienen nada en común. 
 
@@ -228,3 +263,5 @@ The fill algorithm can be seen in \ref{alg:repair}
         }
     }
 \end{algorithm}
+
+% Synthetic Dataset?
