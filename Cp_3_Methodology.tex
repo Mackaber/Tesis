@@ -5,20 +5,34 @@ In the following chapter is explained the different parts of the problem to solv
 
 \section{Problem Design}
 
-The problem established is described as given a database of n users, an optimal arrangement of these users must be found, this arrangements puts each user in a group, with the users being in the same group that optimizes their predefined preference as described in [ref I], this optimization is described as finding the less distance between the level of experience of the users inside the same group, finding the less distance among an ontology of interests, where similar interests related interests are in the same branch, as well as the having a group size near the optimal group size which is defined as between 4 and 5, and the percentage of participation which is how much the users may participate in the group, maximizing in the most participation.
+The problem established is described as given a data set $D$ of $n$ students $D = (s_1,...,s_n)$, A solution $A$ consists of an optimal arrangement of groups $G$, this arrangements assigns each student to a group $A = \langle s_i \leftarrow G_j, s_n \leftarrow G_m...  \rangle$, with the students being in the same group optimising their preference criteria as described in \ref{chapter:chapter02}, this optimisation is described as finding the less distance between the level of experience of the students inside the same group , finding the less distance among an ontology of interests, where similar interests related interests are in the same branch, as well as the having a group size near the optimal group size which is defined as between 4 and 5, and the percentage of participation which is how much the students participate in the conversation of the group, maximising for the most participation.\\
 
-The solution is then the number of the group for each user, serving it as an id only, without any relevance in the order the groups are presented, only that the preference of the users is mantained within the group, this can more clearly be seen in ref[fig. ] and [fig. ]
+The solution is then the number of the group for each user, serving it as an id only, without any relevance in the order the groups are presented, only that the preference of the users is maintained within the group, this can more clearly be seen in figure \ref{dataset_eg} and equation \ref{eq:students_groups}.\\
 
-\begin{figure}[dataset]
-    \caption{This is an example of a dataset of 9 users, each with their id, exp, 3 different interests and a participation percentage}
-    
-\end{figure}
-\includegraphics[]{images/dataset_eg.png}
+The problem was approached in two different ways, considering the groups as the variables and the students as the values, and the other way around, considering the students as the variables and the groups as the values. The former approach had the disadvantage that the number of variables was inconsistent depending on the size of the groups, and that reflected at the moment of testing the algorithms, because most of have a crossover and mutation rate related to the size of the variables, another disadvantage was that some groups could remain empty and the crossover and mutation added unnecessary complexity to the task.\\
 
+In addition a linked list is kept in order to keep track of the groups internally and make the evaluation of objective functions easier, which means if $s_i \leftarrow G_j$ then $G_j = (...,s_i,...)$
+
+The search space comprehends all the possible assignments of groups to the students, which means that is roughly $(n/n!)$, for a solution $S$, the neighbourhood is composed by every solution that has a single student in a different group, among the feasible solutions.
+
+\begin{figure*}
+    \caption{This is an example of a data set of 9 users, each with their experience, 3 different interests and a participation percentage, as it can be seen the Group $G_3$ is assigned to students according to the preference criteria.}
+    \label{dataset_eg}
+    \includegraphics[width=0.85\textwidth]{images/dataset_eg.png}
+\end{figure*}
+
+\begin{equation*}
+  \label{eq:students_groups}
+  \begin{gathered}
+        D = (s_0,s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_9,...,s_n),\\
+        A = \langle s_0 \leftarrow G_3, s_1 \leftarrow G_0, s_2 \leftarrow G_2,     s_3 \leftarrow G_1, s_4 \leftarrow G_3, s_5 \leftarrow G_1,...  \rangle
+  \end{gathered}
+\end{equation*}
 
 \section{Objective Functions}
 
-En la siguiente sección se describen distintas funciones objetivo para predecir la preferencia del usuario y la estabilidad del grupo, buscando minimizar el valor de cada una de ellas.
+In the following section, the different objective functions are described, this are proposed according to the preference criteria defined in \ref{chapter:chapter02}.
+
 
 \subsection{Tamaño del Grupo}
 
@@ -40,7 +54,7 @@ El nivel de experiencia en el lenguaje hace referencia al estándar CEFR\cite{}.
 
 \subsection{Intereses}
 
-Para calcular la similitud entre intereses se usa una estrategia similar a Madylova y Gunduz \cite{taxonomy_semantic_similarity} donde los intereses son considerados como un vector valores en los que se señala una cantidad que indica el orden jerárquico de acuerdo a la ontología definida por la red social de Facebook, por ejemplo si un usuario tiene como intereses: Los perros, Correr y las Citas, su vector de intereses se estaría dado por los valores en la Figura \ref{fig:interests_table}. En la parte de arriba se indica el valor de la jerarquía, en la parte de abajo se normaliza usando \(1/(1+v)\), después se eligen los valores mayores de cada una de las columnas de esta forma da el vector resultante como se muestra en la Figura \ref{fig:interests_vector} \\
+Para calcular la similitud entre intereses se usa una estrategia similar a Madylova y Gunduz \cite{taxonomy_semantic_similarity} donde los intereses son considerados como un vector valores en los que se señala una cantidad que indica el orden jerárquico de acuerdo a la ontología definida por la red social de Facebook, por ejemplo si un usuario tiene como intereses: Los perros, Correr y las Citas, su vector de intereses se estaría dado por los valores en la Figura \ref{fig:interests_table}. En la parte de arriba se indica el valor de la jerarquía, en la parte de abajo se normaliza usando $1/(1+v)$, después se eligen los valores mayores de cada una de las columnas de esta forma da el vector resultante como se muestra en la Figura \ref{fig:interests_vector} \\
 
 % Cambiar por tabla
 \begin{figure}
@@ -81,38 +95,136 @@ Es por esto que al hacer el análisis de los datos como se describe en la secci�
 % - TODOS los usuarios se comportan como protagonistas en algún punto, ya que este es el estilo que nos interesa optimizar es en el que nos basamos.
 % - Más adelante al momento de generar la base de datos esto también hace sentido y así... 
 
-\section{Mutación}
+\section{Operators}
+
+This next section describes the different operators applied by the algorithms to the solutions, in the case of meta-heuristics like LC or PT, where in each iteration a step in the search space is perform, the operator of mutation is used, and for the case of RD which requires all a defined neighbourhood all the possible mutations are used. For the genetic algorithms and other evolutionary strategies a crossover operator is also used. The same mutation and crossover operators are used for all the algorithms that allow them.
+
+\section{Initialisation}
+
+All the algorithms start with a random initial population, first, the groups are generated according to the maximum possible groups which is $(\lfloor\frac{n}{gs_{min}}\rfloor)$, this groups are stored in a vector $AG$ which comprehend the available groups, when a group is filled, that means has reached the $gs_{max}$ number of students leaves the vector $AG$, if a move is performed by the operators and the group misses a student, then this group returns to the $AG$ vector.\\
+
+Then each student is assigned to a random group from $AG$, to prevent the solutions becoming unfeasible, that is, for example if a single student is left alone in a group, a $Repair$ operator is applied after the initialisation, this is defined later in this section. This completed process is defined in algorithm \ref{alg:initialisation}.
+
+\begin{algorithm}[H]
+\caption{Initialisation}
+\label{alg:initialisation}
+\SetAlgoLined 
+$AG \leftarrow$ Create $(\lfloor\frac{n}{gs_{min}}\rfloor)$ groups;\\
+\For{$s_i \in D$}{
+    $s_i \gets G \in AG$ \Comment Assign a random group to $s_i$\;\\ 
+    $A \gets s_i$
+}
+Perform $Repair$ in $A$
+\end{algorithm}
+
+\subsection{Mutation}
 
 Una mutación de acuerdo a los algoritmos genéticos debe de introducir al sistema una solución que no se exista aún. Sin embargo no es suficiente con cambiar un usuario por otro en un grupo para la mutación ya que este usuario probablemente se encuentre en otro grupo diferente y el sistema prohíbe que un usuario este en 2 grupos distintos a la vez. Por ello el algoritmo para la mutación toma un grupo de origen al azar, quita un usuario de un grupo y lo pone en otro, tomando en cuenta las restricciones del tamaño del grupo, es decir, si es un grupo que quitándole un usuario resultaría menor a 3 entonces se debe seleccionar otro grupo. De forma similar para el grupo destino se verifica que no sobrepase el tamaño máximo de 6 una vez que el nuevo usuario sea agregado, y si es el caso se selecciona otro grupo. El algoritmo completo se presenta como pseudocódigo a continuación:
-
-% \ref{alg:mutation}.
-% \begin{algorithm}
-% \caption{Group Combination Mutation}\label{alg:mutation}
-% \begin{algorithmic}[1]
-% \Procedure{Mutation3}{$s$}
-% \State $g1\gets getRandomVariable(s)$\Comment{Obtiene una % variable aleatoria de la solución}
-% \State $g2\gets getRandomVariable(s)$
-% \While{$groupSize(g1)\leq minSize() + 1$}\Comment{Revisa si % en grupo de origen es mayor que el tamaño menor posible}
-% \State $g1 \gets getRandomVariable(s)$
-% \EndWhile\label{euclidendwhile}
-% \While{$groupSize(g2)> maxSize() - 1$}\Comment{Revisa si en % grupo destino es menor que el tamaño mayor posible}
-% \State $g2 \gets getRandomVariable(s)$
-% \EndWhile\label{euclidendwhile}
-% \State $u \gets getRandomUserFromGroup(g1)$ 
-% \State $addUserToGroup(u,g2)$
-% \State $removeUserFromGroup(u,g1)$
-% \EndProcedure
-% \end{algorithmic}
-% \end{algorithm}
 
 jMetal cuenta con distintos algoritmos para realizar la mutación, sin embargo estos comprenden únicamente problemas binarios o de permutación, y ya que es necesario un algoritmo para obtener una solución combinatoria, fue necesaria la creación de un nuevo algoritmo que a continuación se propone.
 
 For the mutation task, a individual value of the solution set is changed to another group
 
+\begin{algorithm}[H]
+    \caption{Group Swap mutation}
+    \label{alg:mutation}
+    \SetAlgoLined 
+    Get a random student $s_i \in A$\;\\
+    Get a random group $G_j \in AG$\;\\
+    $s_i$ \gets $G_j$ \Comment{Assign $G_j$ to $s_i$}
+\end{algorithm}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/mutation_g.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+
 % ASK: 
 
-\section{Crossover}
+\subsection{Crossover}
 
 La herramienta de jMetal cuenta con distintos algoritmos de crossover, y ya que estos únicamente se basan en los cromosomas que corresponden a los grupos creados, es posible usar cualquier algoritmo de esta herramienta para generar soluciones nuevas en la población. El algoritmo que se usó en cuestión recibe el nombre de N-Point Crossover, donde la N corresponde al número de cromosomas que se cruzaran, es decir suponiendo que n = 10 entonces 10 grupos se tomarán de una solución y se pasarán a otra que a su vez también intercambiará 10 grupos y el resto... ya que se busca que el crossover se realice justo a la mitad, esta N corresponde al número de cromosomas/variables o bien el número de grupos.
 
 Para la primera fase los experimentos que se definieron consistieron en probar únicamente las funciones objetivo de forma individual y determinar su factibilidad con respecto a si son reproducibles y pueden ser útiles para cualquier tipo de solución generada.
+
+\begin{algorithm}[H]
+    \caption{K-point Crossover}
+    \label{alg:crossover}
+    \SetAlgoLined 
+Select two parents $A$ and $B$ from a parent pool\;\\
+Create two offspring $C$ and $D$ a follows:\;\\
+Randomly choose $k$ crossover points $cp_1,...cp_k \in {1,...,n-1}$\;\\
+\For{$i \gets 1$ to $cp_1$}{
+    $c_i \gets a_i$\;\\
+    $d_i \gets b_i$
+}
+$switch \gets 0$
+\For{$j \gets 2 to k$}{
+    \eIf{$switch = 0$}{
+        \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
+            $c_i \gets b_i$\;\\
+            $d_i \gets a_i$
+        }
+        $switch \gets 1$        
+    }{
+        \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
+            $c_i \gets a_i$\;\\
+            $d_i \gets b_i$
+        }
+        $switch \gets 0$        
+    }
+}
+\eIf{$switch = 0$}{
+    \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
+        $c_i \gets b_i$\;\\
+        $d_i \gets a_i$
+    }
+}{
+    \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
+        $c_i \gets a_i$\;\\
+        $d_i \gets b_i$
+    }
+}
+Perform $Repair$ in $C$ and $D$
+\end{algorithm}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=1.1\textwidth]{images/cross_over_g.png}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure*}
+
+
+\subsection{Repair}
+
+Is possible that after performing the crossover operation, either a group ends up with a higher number of students than the allowed $gs_{max}$ or a smaller number $gs_{min}$, for this reason a repair procedure is performed after the initial population and after each crossover, to make sure the solutions produced remains within the problem constraints.\\
+
+The algorithm consists of checking each group size, if the size is higher than $gs_{max}$, then its split in half, if the size is lower than $gs_{min}$ then it requires more members to be feasible and is marked as a pending group $P_g$, therefore after a group $G_i$ with $Size(G_i) > gs_{max}$ is found a user from $G_i$ is assigned to $P_g$, and the algorithm continues until all the groups become feasible.
+The fill algorithm can be seen in \ref{alg:repair}
+
+\begin{algorithm}[H]
+    \caption{Group Repair}
+    \label{alg:repair}
+    \SetAlgoLined 
+    $A_r = ()$\;\\
+    $P_g \leftarrow NULL$\;\\
+    \For{$ G_i \in A$}{
+        \If{$Size(G_i) > 0$}{
+            \If{$P_g$ is not $NULL$ $\textbf{AND}$ $Size(P_g) \leq gs_{max}$ $\textbf{AND}$ $Size(P_g) > gs_{min} $}{
+                $A_r \gets MergeGroups(P_g,G_i)$\;\\
+                $P_g \leftarrow NULL$
+            }\;\\
+            \If{$Size(G_i) < gs_{min}$}{
+                $A_r \leftarrow SplitGroup(G_i)$ \Comment{Split $G_i$ the group in half}
+            }\;\\
+            \eIf{$Size(G_i) > gs_{max}$}{
+                $P_g \leftarrow G_i$ 
+            }{
+                $A_r \leftarrow G_i$
+            }
+        }
+    }
+\end{algorithm}
