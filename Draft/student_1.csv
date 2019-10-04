@@ -1,0 +1,8 @@
+'',	'Interests','Business and Industry','Design','Graphic Design','Interior Design','Banking'
+'Graphic Design',3,2,1,0,$\infty$,$\infty$ 
+'Interior Design',3,2,1,$\infty$,0,$\infty$ 
+'Banking',2,1,$\infty$,$\infty$,$\infty$,0
+'','','','','','',''					
+'Graphic Design',0.250.3333333333,0.5,1,0,0
+'Interior Design',0.25,0.333...,0.5,0,1,0
+'Banking',0.333...,0.5,0,0,0,1

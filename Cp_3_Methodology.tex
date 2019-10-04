@@ -31,48 +31,87 @@ The search space comprehends all the possible assignments of groups to the stude
 
 \section{Objective Functions}
 
-In the following section, the different objective functions are described, this are proposed according to the preference criteria defined in \ref{chapter:chapter02}.
+In the following section, the different objective functions are described, this are proposed according to the preference criteria defined in \ref{chapter:chapter02}. It should be noticed that all of these objective functions are evaluated per group $G$, in order to have the value for the whole solution $A$ that include all of its groups, an average of each objective function is considered, for instance, for the Group Size$GroupSize(A) = AVG(GroupSize(G_i),...,GroupSize(G_n))$.
 
 
-\subsection{Tamaño del Grupo}
+\subsection{Group Size}
 
-Para propósitos de la investigación el tamaño ideal del grupo se considera como de \textbf{4 a 5} personas, ya que este tamaño usualmente permite una participación de todos los usuarios que pertenezcan al grupo. Es posible que puedan existir grupos de \textbf{3 o 6} personas, pero esto no es lo ideal, sin embargo se deja abierta la posibilidad en caso de que alguna otra característica como los intereses en común o el estilo de participación resulten más relevantes para el grupo que su tamaño.
+For the purpose of this research the ideal group size $gs$ is considered from \textbf{4 to 5} students, this is just by emprirical knowledge, because it is beieved that this size usually allows an homogeneous participation of all the users belonging to the group. It is also possible that there might be groups from  \textbf{$gs_{min} = 3 or gs_{max} = 6$} students, but these aren't considered ideal group sizes, nevertheless is still considered as a feasible group size, so other features such as the \textit{participation style} or the \textit{interests} end up being more relevant to the group.
 
-La función para calcular este objetivo mide la cercanía al valor \textbf{4.5}, ya que 4 y 5 se consideran igual de ideales y 4.5 es simplemente el promedio entre ambos valores. Esta función esta definida a continuación:\ref{eq_group_size}
+The corresponding objective function meaures the distance to $\textbf{4.5}$, since 4 and 5 are considered equally ideal and $\textbf{4.5}$ is just the average between both, the equation for this function is defined in \ref{eq_group_size}
 
 \begin{equation} \label{eq_group_size}
     f = | groupSize - 4.5|
 \end{equation}
 
-\subsection{Nivel de experiencia}
+\subsection{Experience level}
 
-El nivel de experiencia en el lenguaje hace referencia al estándar CEFR\cite{}. Los valores que se consideran para ello son A1, A2, B1, B2, C1 y C2, por lo que se les asigna un valor numérico a cada uno siendo A1 0 y C2 5. Lo que se busca principalmente es que los usuarios dentro del grupo no tengan mucha variación en cuanto a su nivel de experiencia. De esta forma el vocabulario usado no se considera tan avanzado para integrantes con un nivel bajo ni tan sencillo para integrantes más avanzados. La fórmula\ref{eq_nivel} consiste en una desviación estándar del valor del nivel de cada uno de los integrantes, de forma ideal que sea alcanzado el 0 indicando que todos los usuarios del grupo forman parte del mismo.
+The experience level in the language is taken from the standard \textbf{CEFR} mentioned in \cite{chapter:chapter02}. The values considered for each level are A1, A2, B1, B2, C1 y C2, these are already sorted by the most basic to the most advanced level, therefore a numeric value is assigned to each of them from 0 to 5, A1 corresponding to 0, A2 corresponding to 1, etc. The intention for assembling the groups is that the users inside them don't have much variation in their experience level. In this way the vocabulary used is not too advanced for the lower student levels or to simple for more advanced users. The equation \ref{eq_nivel} consist in calculating the standard deviation $\sigma$ of the level of each student is considered, the ideal would be that all of the students of a group are the same level, being 0, indicating that all users from a group have the same experience level.
 
 \begin{equation} \label{eq_nivel}
     \sigma = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x})^2}
 \end{equation}
 
-\subsection{Intereses}
+\subsection{Interests Similarity}
 
-Para calcular la similitud entre intereses se usa una estrategia similar a Madylova y Gunduz \cite{taxonomy_semantic_similarity} donde los intereses son considerados como un vector valores en los que se señala una cantidad que indica el orden jerárquico de acuerdo a la ontología definida por la red social de Facebook, por ejemplo si un usuario tiene como intereses: Los perros, Correr y las Citas, su vector de intereses se estaría dado por los valores en la Figura \ref{fig:interests_table}. En la parte de arriba se indica el valor de la jerarquía, en la parte de abajo se normaliza usando $1/(1+v)$, después se eligen los valores mayores de cada una de las columnas de esta forma da el vector resultante como se muestra en la Figura \ref{fig:interests_vector} \\
+To calculate the interests similarity a strategy similar to the one described in \cite{taxonomy_semantic_similarity} is used. All the interests are considered a vector of values where each of them are sorted by their rank according to the ontology defined by the Social Network Facebook and mentioned in \ref{chapter:chapter02}. For example if a student $s_1$ can have her interests as: "Graphic Design", "Interior Design" and "Banking". 
 
-% Cambiar por tabla
-\begin{figure}
-    \centering
-    \includegraphics[width=150mm]{interests_table.png}
-    \caption{Tabla de valores de Intereses}
-    \label{fig:interests_table}
-\end{figure}
+Each interest is assigned a value according to their distance $d$ in the ontology to other interests, which represents how related is a particular interest related to others, for example, the interest "Graphic Design" is a branch of "Design" which in turn is a branch of "Business and Industry", therefore it would have a value of 2 in respect to "Business and Industry", a value of 1 in respect to "Design" and a value of 0 for itself.
 
-% Cambiar por tabla
-\begin{figure}
-    \centering
-    \includegraphics[width=150mm]{interests_vector.png}
-    \caption{Vector de Intereses}
-    \label{fig:interests_vector}
-\end{figure}
+These values are then normalized by a factor of $1/(1+d)$, the interest vector for a user is conformed by the maximum value of these normalizations, for our example student $s_i$, her interest vector would be $s_1 = \langle Business \gets 0.5, Design \gets 0.5, Graphic Design \gets 1.0,...\rangle$ the complete process can be seen in table \ref{tab:interests_s_1} for the student $s_1$ and \ref{tab:interests_s_2} for another sample student $s_2$.
 
-Para calcular que tan similar es un usuario con respecto a otro se usa la formula de distancia cosenoidal, que se muestra en la ecuación \ref{eq_cos_sym} donde \(A\) es el vector de intereses del primer usuario y \(B\) es el vector de intereses del segundo. Cabe destacar que es muy frecuente que los vectores de intereses de los usuarios contengan ceros al momento de compararlos, de tal manera que si el resultado de la función da como resultado exactamente 0, significa que ambos usuarios no tienen nada en común. 
+\begin{table}[]
+\caption{Interests mapping of a $s_1$ example user}
+\label{tab:interests_s_1}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+                & Interests & Business & Design   & Graphic Design & Interior Design & Banking  \\ \hline
+Graphic Design  & 3         & 2                     & 1        & 0              & $\infty$        & $\infty$ \\ \hline
+Interior Design & 3         & 2                     & 1        & $\infty$       & 0               & $\infty$ \\ \hline
+Banking         & 2         & 1                     & $\infty$ & $\infty$       & $\infty$        & 0        \\ \hline
+                &           &                       &          &                &                 &          \\ \hline 
+Graphic Design  & 0.25      & 0.333...              & 0.5      & 1              & 0               & 0        \\ \hline
+Interior Design & 0.25      & 0.333...              & 0.5      & 0              & 1               & 0        \\ \hline
+Banking         & 0.333...  & 0.5                   & 0        & 0              & 0               & 1        \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[]
+\caption{Interests mapping of a $s_2$ example user}
+\label{tab:interests_s_1}
+\centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+                        & Interests & Business & Advertising & Banking  & Retail Banking & Hobbies  & Running  \\ \hline
+        Graphic Design  & 3         & 2        & $\infty$    & 1        & 0              & $\infty$ & $\infty$ \\ \hline
+        Interior Design & 2         & 1        & 1           & $\infty$ & $\infty$       & $\infty$ & $\infty$ \\ \hline
+        Banking         & 3         & $\infty$ & $\infty$    & $\infty$ & $\infty$       & 1        & 0        \\ \hline
+                        &           &          &             &          &                &          &          \\ \hline
+        Graphic Design  & 0.25      & 0.333... & 0           & 0.5      & 1              & 0        & 0        \\ \hline
+        Interior Design & 0.333...  & 0.5      & 0.5         & 0        & 0              & 0        & 0        \\ \hline
+        Banking         & 0.25      & 0        & 0           & 0        & 0              & 0.5      & 1        \\ \hline
+        \end{tabular}
+    }
+\end{table}
+
+\begin{table}[]
+\caption{Comparison of interests between $s_1$ and $s_2$}
+\label{tab:interests_comparison}
+\centering
+\resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+            & Interests & Business & Design & Graphic Design & Interior Design & Banking & Retail Banking & Hobbies & Running \\ \hline
+    $s_1$ & 0.75      & 0.5      & 0.5    & 1              & 1               & 1       & 0              & 0       & 0       \\ \hline
+    $s_2$ & 0.33      & 0.5      & 0      & 0              & 0               & 0.5     & 1              & 0.5     & 1       \\ \hline
+    \end{tabular}
+}
+\end{table}
+
+To compare the interests of a student to another student, the cosine $cos(\theta)$ distance is used which is shown in equation \ref{eq_cos_sym} where $A$ is the interest vector of a user and $B$ is the interest vector of another, this has the advantage that when the users have identical interests their cosine distance becomes 1 and for completly different interests it becomes 0, since we are minimising the objective function is considered as $1 - cos(\theta)$. An example of two interests vectors of two users can be seen in table \ref{interests_comparison}, here $1 - cos(s_1,s_2) = 0.292696$ which is considerably similar.
 
 \begin{equation} \label{eq_cos_sym}
     \cos(\theta) = \frac{ \sum\limits_{i=1}^{n}{A_i  B_i} }{ \sqrt{\sum\limits_{i=1}^{n}{A_i^2}}  \sqrt{\sum\limits_{i=1}^{n}{B_i^2}} }   
@@ -81,19 +120,17 @@ Para calcular que tan similar es un usuario con respecto a otro se usa la formul
 	f = 1 - \cos(\theta) 
 \end{equation}
 
-\subsection{Estilo de Participación}
+\subsection{Participation style}
 
-Para esta función trato de buscarse en la literatura algún tipo de función matemática ya definida para evaluar que tipo de roles son los que provocan que haya una participación más homogénea dentro del grupo dependiendo del rol funcional de cada uno de los participantes y su compatibilidad entre si. Sin embargo no se encontró ninguna, por lo que fue necesario definirla por medios propios. Afortunadamente se cuenta con una definición concreta de como debe ser la función, tomar en cuenta como parámetro los roles funcionales de cada usuario y dando como resultado de su evaluación el nivel de participación del grupo de forma numérica con la idea de optimizar dicho resultado.
+It was a difficult task to find a defined function that calculated the participation in a group, or a special configuration of participation styles that promoted the participation of all students. However as mentioned in \ref{chapter:chapter02} we make use of Benne and Sheats functional roles, one particular role is defined as \textit{protagonist}, which is a role that implies participation. A member in a group don't have a particular role defined, but they may have different roles as the conversation goes on. Therefore a percentage of \textit{protagonism} can be defined for each student representing how much was the role \textit{protagonist} present in a conversation.
 
-Es por esto que al hacer el análisis de los datos como se describe en la sección de Experimentación [ref], se toman en cuenta 
+Since is desired have a high participation in a group, and the problem is minimisation, then the participation style is considered as the inverse of the sum of all the participation percentage or protagonism of the students of a group, this is simply defined in equiation \ref{eq:participation}
 
-%Ya que no hay ningún paper que diga que función usar para esto se le hizo un análisis de datos al AMI meeting corpus para ver que relación había entre el número de silencios y la homogeneidad de las participaciones de acuerdo con los funcional roles de Benne & Sheats, y pues resulta que si hay una correlación con respecto al porcentaje de participaciones por lo que se uso esta medida para tratar de predecir la interacción del grupo, considerando que esta participación debe ser homogénea entre ellos por lo que es el inverso a la suma de las participaciones y así...
-
-% - Esta función está pensada para que pueda haber fluidez para hablar dentro del grupo; minimizando los silencios y aumentando volviendo el número de participaciones uniforme con respecto a los usuarios.
-% - Hay mucha literatura mencionando porque esto funciona, pero nadie dice una medida matemática que se pueda usar para esto...
-% - Se hizo un análisis de los datos a la base de datos de AMI, y se descubrió que los silencios y las participaciones están directamente relacionados con respecto a una medida de participación dentro del grupo, en efecto, se necesita.
-% - TODOS los usuarios se comportan como protagonistas en algún punto, ya que este es el estilo que nos interesa optimizar es en el que nos basamos.
-% - Más adelante al momento de generar la base de datos esto también hace sentido y así... 
+\begin{equation}
+    \caption{Participation style objective function}
+    \label{eq:particiation}
+    P = \frac{1}{\sum p_i} 
+\end{equation}
 
 \section{Operators}
 
@@ -119,11 +156,9 @@ Perform $Repair$ in $A$
 
 \subsection{Mutation}
 
-Una mutación de acuerdo a los algoritmos genéticos debe de introducir al sistema una solución que no se exista aún. Sin embargo no es suficiente con cambiar un usuario por otro en un grupo para la mutación ya que este usuario probablemente se encuentre en otro grupo diferente y el sistema prohíbe que un usuario este en 2 grupos distintos a la vez. Por ello el algoritmo para la mutación toma un grupo de origen al azar, quita un usuario de un grupo y lo pone en otro, tomando en cuenta las restricciones del tamaño del grupo, es decir, si es un grupo que quitándole un usuario resultaría menor a 3 entonces se debe seleccionar otro grupo. De forma similar para el grupo destino se verifica que no sobrepase el tamaño máximo de 6 una vez que el nuevo usuario sea agregado, y si es el caso se selecciona otro grupo. El algoritmo completo se presenta como pseudocódigo a continuación:
+The mutation operator, according to the literature related to genetic algorithms, must introduce solutions that aren't present in the system yet, this is in order to prevent being stuck in a local minima. A way of to define this operator for a combinatorial problem, it should change a single value of a variable, since we are considering the students as our variables and the groups as our values, the mutation simply changes the assignation of a group of a particular random user to another diffent group.
 
-jMetal cuenta con distintos algoritmos para realizar la mutación, sin embargo estos comprenden únicamente problemas binarios o de permutación, y ya que es necesario un algoritmo para obtener una solución combinatoria, fue necesaria la creación de un nuevo algoritmo que a continuación se propone.
-
-For the mutation task, a individual value of the solution set is changed to another group
+In to prevent a student to end up in a group that has more students than $gs_{max} + 1$ a random group is selected from $AG$ which guarantees to produce only feasible solutions. The resulting algorithm \ref{alg:mutation} is known as group swap mutation, because it swaps the group for a single user once the mutation rate has met. An example of this can be seen in figure \ref{mutation_ex}
 
 \begin{algorithm}[H]
     \caption{Group Swap mutation}
@@ -137,17 +172,15 @@ For the mutation task, a individual value of the solution set is changed to anot
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{images/mutation_g.png}
-    \caption{Caption}
-    \label{fig:my_label}
+    \caption{An example of a mutation of a solution $A$}
+    \label{fig:mutation_ex}
 \end{figure}
-
-% ASK: 
 
 \subsection{Crossover}
 
-La herramienta de jMetal cuenta con distintos algoritmos de crossover, y ya que estos únicamente se basan en los cromosomas que corresponden a los grupos creados, es posible usar cualquier algoritmo de esta herramienta para generar soluciones nuevas en la población. El algoritmo que se usó en cuestión recibe el nombre de N-Point Crossover, donde la N corresponde al número de cromosomas que se cruzaran, es decir suponiendo que n = 10 entonces 10 grupos se tomarán de una solución y se pasarán a otra que a su vez también intercambiará 10 grupos y el resto... ya que se busca que el crossover se realice justo a la mitad, esta N corresponde al número de cromosomas/variables o bien el número de grupos.
+The crossover operator is meant to add some convergence to already good solutions, so their offspring can reach a local minima, the crossover used in this work was k-point crossover \cite{nomura1997analysis} which puts a random number of crossover points to indicate where the solution will be splitted and have their partitions recombined with another solution. An example of this can be seen in figure \ref{crossover_ex} where a crossover point is present in the middle. In terms of this research it means that a portion of the students will remain in the group defined by their parent solution and the rest wil come from another parent solution, so good solutions can explore part of their good results with their offspring but at the same look improve their quality if they land with a similar part of another group.
 
-Para la primera fase los experimentos que se definieron consistieron en probar únicamente las funciones objetivo de forma individual y determinar su factibilidad con respecto a si son reproducibles y pueden ser útiles para cualquier tipo de solución generada.
+It should be noted that, since the assigment is not done with only compatible groups, it is posible that some groups become infeasible, that is having more than $gs_{max}$ or less than $gs_{min}$, to prevent this issue after the crossover operator is applied a repair of the offspring solutions is performed. The whole process can be seen in algorithm \ref{alg:crossover}.
 
 \begin{algorithm}[H]
     \caption{K-point Crossover}
@@ -194,7 +227,7 @@ Perform $Repair$ in $C$ and $D$
     \centering
     \includegraphics[width=1.1\textwidth]{images/cross_over_g.png}
     \caption{Caption}
-    \label{fig:my_label}
+    \label{fig:crossover_ex}
 \end{figure*}
 
 
