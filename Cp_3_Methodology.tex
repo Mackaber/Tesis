@@ -1,52 +1,60 @@
 \chapter{Methodology}
 \label{chapter:chapter03}
 
-In the following chapter is explained the different parts of the problem to solve and...
+In the following chapter is explained the different parts of the problem and the different parts to solve it. Section~\ref{sec:Problem_design} describes how the problem is structured, the size of the search space, and how a feasible solution looks like. Then, Section~\ref{sec:objective_functions} details the objective functions to minimise, as well as a justification of why each of them were chosen. Finally, Section~\ref{sec:operators} defines the operators to be used by the optimisation algorithms and the reasoning behind them.\\
 
-\section{Problem Design}
+\section{Problem Design} \label{sec:Problem_design}
 
-The problem established is described as given a data set $D$ of $n$ students $D = (s_1,...,s_n)$, A solution $A$ consists of an optimal arrangement of groups $G$, this arrangements assigns each student to a group $A = \langle s_i \leftarrow G_j, s_n \leftarrow G_m...  \rangle$, with the students being in the same group optimising their preference criteria as described in \ref{chapter:chapter02}, this optimisation is described as finding the less distance between the level of experience of the students inside the same group , finding the less distance among an ontology of interests, where similar interests related interests are in the same branch, as well as the having a group size near the optimal group size which is defined as between 4 and 5, and the percentage of participation which is how much the students participate in the conversation of the group, maximising for the most participation.\\
+The problem established is described as given a data set $D$ of $n$ students, $D = (s_1,...,s_n)$, a solution $A$ consists of an optimal arrangement of groups $G$, which assigns each student to a group $A = \langle s_i \leftarrow G_j, s_n \leftarrow G_m\ldots  \rangle$, with the students being in the same group optimising their preference criteria as described in Chapter~\ref{chapter:chapter02}. Thus, the optimisation encompasses the following goals:
 
-The solution is then the number of the group for each user, serving it as an id only, without any relevance in the order the groups are presented, only that the preference of the users is maintained within the group, this can more clearly be seen in figure \ref{dataset_eg} and equation \ref{eq:students_groups}.\\
+\begin{itemize}
+    \item finding the less distance between the level of experience of the students inside the same group;
+    \item finding the less distance among an ontology of interests, where similar interests related interests are in the same branch;
+    \item having a group size near the optimal group size which is defined as between 4 and 5; and
+    \item the percentage of participation which is how much the students participate in the conversation of the group, maximising for the most participation.
+\end{itemize}
 
-The problem was approached in two different ways, considering the groups as the variables and the students as the values, and the other way around, considering the students as the variables and the groups as the values. The former approach had the disadvantage that the number of variables was inconsistent depending on the size of the groups, and that reflected at the moment of testing the algorithms, because most of have a crossover and mutation rate related to the size of the variables, another disadvantage was that some groups could remain empty and the crossover and mutation added unnecessary complexity to the task.\\
+The solution is then the group number for each user, serving it only as an identification. The solution should ensure maintaining the users' preference within the group, regardless of the order in which the groups are presented. This can be seen in Figure~\ref{dataset_eg} and Equation~\ref{eq:students_groups}.\\
 
-In addition a linked list is kept in order to keep track of the groups internally and make the evaluation of objective functions easier, which means if $s_i \leftarrow G_j$ then $G_j = (...,s_i,...)$
+The problem is approached in two different ways. The first considers the groups as the variables and the students as the values, while the second considers the students as the variables and the groups as the values. A disadvantage of the former is the number of variables, which become inconsistent depending on the size of the groups. Another disadvantage is that some groups could remain empty and the crossover and mutation added unnecessary complexity to the task.\\
 
-The search space comprehends all the possible assignments of groups to the students, which means that is roughly $(n/n!)$, for a solution $S$, the neighbourhood is composed by every solution that has a single student in a different group, among the feasible solutions.
+A linked list is further kept to internally track the groups and make easy the evaluation of objective functions, which means if $s_i \leftarrow G_j$ then $G_j = (...,s_i,...)$.\\
+
+The search space comprehends all the possible assignments of groups to the students, which means that is roughly $(\frac{n}{4.5})!$, for a solution $S$. The neighbourhood is composed by every solution that has a single student in a different group, among the feasible solutions.\\
 
 \begin{figure*}
+    \includegraphics[width=0.85\textwidth]{images/dataset_eg.png}
     \caption{This is an example of a data set of 9 users, each with their experience, 3 different interests and a participation percentage, as it can be seen the Group $G_3$ is assigned to students according to the preference criteria.}
     \label{dataset_eg}
-    \includegraphics[width=0.85\textwidth]{images/dataset_eg.png}
 \end{figure*}
 
-\begin{equation*}
+\begin{equation}
   \label{eq:students_groups}
   \begin{gathered}
         D = (s_0,s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_9,...,s_n),\\
         A = \langle s_0 \leftarrow G_3, s_1 \leftarrow G_0, s_2 \leftarrow G_2,     s_3 \leftarrow G_1, s_4 \leftarrow G_3, s_5 \leftarrow G_1,...  \rangle
   \end{gathered}
-\end{equation*}
+\end{equation}
 
-\section{Objective Functions}
+\section{Objective Functions} \label{sec:objective_functions}
 
-In the following section, the different objective functions are described, this are proposed according to the preference criteria defined in \ref{chapter:chapter02}. It should be noticed that all of these objective functions are evaluated per group $G$, in order to have the value for the whole solution $A$ that include all of its groups, an average of each objective function is considered, for instance, for the Group Size$GroupSize(A) = AVG(GroupSize(G_i),...,GroupSize(G_n))$.
-
+In the following section, the different objective functions are described. These are proposed according to the preference criteria defined in Chapter~\ref{chapter:chapter02}. It should be noticed that all of these objective functions are evaluated per group $G$, in order to have the value for the whole solution $A$ that include all of its groups, an average of each objective function is considered, for instance, for the Group Size $GroupSize(A) = AVG(GroupSize(G_i),...,GroupSize(G_n))$.\\
 
 \subsection{Group Size}
 
-For the purpose of this research the ideal group size $gs$ is considered from \textbf{4 to 5} students, this is just by emprirical knowledge, because it is beieved that this size usually allows an homogeneous participation of all the users belonging to the group. It is also possible that there might be groups from  \textbf{$gs_{min} = 3 or gs_{max} = 6$} students, but these aren't considered ideal group sizes, nevertheless is still considered as a feasible group size, so other features such as the \textit{participation style} or the \textit{interests} end up being more relevant to the group.
+For the purpose of this research, the ideal group size $gs$ is considered from \textbf{4 to 5} students. This size is based on the idea that it will allow to a users belonging to the same group to participate homogeneously. It is also possible that there might be groups from  \textbf{$gs_{min} = 3$ or $gs_{max} = 6$} students, but these are not considered as ideal group sizes. These non-ideal groups sizes can be,  nevertheless, considered as feasible group sizes, so that other features, such as the \textit{participation style} or the \textit{interests}, end up being more relevant to the group.\\
 
-The corresponding objective function meaures the distance to $\textbf{4.5}$, since 4 and 5 are considered equally ideal and $\textbf{4.5}$ is just the average between both, the equation for this function is defined in \ref{eq_group_size}
+The corresponding objective function measures the distance to $\textbf{4.5}$, since 4 and 5 are considered equally ideal and $\textbf{4.5}$ is just the average between both. Thus, the objective function is defined as:
 
 \begin{equation} \label{eq_group_size}
-    f = | groupSize - 4.5|
+    f_1 = | groupSize - 4.5|
 \end{equation}
 
 \subsection{Experience level}
 
-The experience level in the language is taken from the standard \textbf{CEFR} mentioned in \cite{chapter:chapter02}. The values considered for each level are A1, A2, B1, B2, C1 y C2, these are already sorted by the most basic to the most advanced level, therefore a numeric value is assigned to each of them from 0 to 5, A1 corresponding to 0, A2 corresponding to 1, etc. The intention for assembling the groups is that the users inside them don't have much variation in their experience level. In this way the vocabulary used is not too advanced for the lower student levels or to simple for more advanced users. The equation \ref{eq_nivel} consist in calculating the standard deviation $\sigma$ of the level of each student is considered, the ideal would be that all of the students of a group are the same level, being 0, indicating that all users from a group have the same experience level.
+The experience level in the language is taken from the standard \textbf{CEFR}. The values considered for each level are A1, A2, B1, B2, C1 y C2, which are sorted from the most basic to the most advanced level. Therefore, a numeric value is assigned to each of them from 0 to 5, A1 corresponding to 0, A2 corresponding to 1, etc. The intention for assembling the groups is that the users inside them do not have much variation in their experience level.\\
+
+In this way the vocabulary used is not too advanced for the lower student levels or too simple for more advanced users.Equation \ref{eq_nivel} calculates the standard deviation, $\sigma$, of the level of each student is considered. Ideally, all students of a group would be in the same level. Hence, a zero-variance indicates that all users from a group have the same experience level.\\
 
 \begin{equation} \label{eq_nivel}
     \sigma = \sqrt{\frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x})^2}
@@ -55,16 +63,17 @@ The experience level in the language is taken from the standard \textbf{CEFR} me
 
 \subsection{Interests Similarity}
 
-To calculate the interests similarity a strategy similar to the one described in \cite{taxonomy_semantic_similarity} is used. All the interests are considered a vector of values where each of them are sorted by their rank according to the ontology defined by the Social Network Facebook and mentioned in \ref{chapter:chapter02}. For example if a student $s_1$ can have her interests as: "Graphic Design", "Interior Design" and "Banking". 
+To calculate the interests similarity, a strategy similar to the one described in \cite{taxonomy_semantic_similarity} is used. All the interests are considered a vector of values, where each of them is ranked based on the ontology defined by the Social Network Facebook (see Chapter~\ref{chapter:chapter02}). For example, if a student $s_1$ can have his/her interests as: "Graphic Design", "Interior Design" and "Banking" \textcolor{red}{\bf How does this impact in the ranking?}.\\ 
 
-Each interest is assigned a value according to their distance $d$ in the ontology to other interests, which represents how related is a particular interest related to others, for example, the interest "Graphic Design" is a branch of "Design" which in turn is a branch of "Business and Industry", therefore it would have a value of 2 in respect to "Business and Industry", a value of 1 in respect to "Design" and a value of 0 for itself.
+Each interest has assigned a value $d_i$, which indicates the distance in the ontology to other interests. This distance represents how related is a particular interest related to others. For example, the interest "Graphic Design" is a branch of "Design" which in turn is a branch of "Business and Industry", therefore it would have a value of 2 in respect to "Business and Industry", a value of 1 in respect to "Design" and a value of 0 for itself \textcolor{red}{\bf You can consider including the image of the ontology}.\\
 
-These values are then normalized by a factor of $1/(1+d)$, the interest vector for a user is conformed by the maximum value of these normalizations, for our example student $s_i$, her interest vector would be $s_1 = \langle Business \gets 0.5, Design \gets 0.5, Graphic Design \gets 1.0,...\rangle$ the complete process can be seen in table \ref{tab:interests_s_1} for the student $s_1$ and \ref{tab:interests_s_2} for another sample student $s_2$.
+These values are then normalised by a factor of $1/(1+d)$. The interest vector for a user is conformed by the maximum value of this normalisation. In our example, the student $s_i$ has an interest vector equals to $s_1 = \langle Business \gets 0.5, Design \gets 0.5, Graphic Design \gets 1.0,...\rangle$. The complete process can be seen in Table~\ref{tab:interests_s_1} for the student $s_1$ and in Table~\ref{tab:interests_s_2} for another sample student $s_2$.\\
 
 \begin{table}[]
-\caption{Interests mapping of a $s_1$ example user}
+\caption{Interests mapping of a $s_1$ example user.}
 \label{tab:interests_s_1}
 \centering
+\resizebox{\textwidth}{!}{
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
                 & Interests & Business & Design   & Graphic Design & Interior Design & Banking  \\ \hline
@@ -76,12 +85,13 @@ Graphic Design  & 0.25      & 0.333...              & 0.5      & 1              
 Interior Design & 0.25      & 0.333...              & 0.5      & 0              & 1               & 0        \\ \hline
 Banking         & 0.333...  & 0.5                   & 0        & 0              & 0               & 1        \\ \hline
 \end{tabular}
+}
 \end{table}
 
 
 \begin{table}[]
-\caption{Interests mapping of a $s_2$ example user}
-\label{tab:interests_s_1}
+\caption{Interests mapping of a $s_2$ example user.}
+\label{tab:interests_s_2}
 \centering
     \resizebox{\textwidth}{!}{
         \begin{tabular}{|c|c|c|c|c|c|c|c|}
@@ -100,7 +110,7 @@ Banking         & 0.333...  & 0.5                   & 0        & 0              
 
 \begin{table}[]
 
-\caption{Comparison of interests between $s_1$ and $s_2$}
+\caption{Comparison of interests between $s_1$ and $s_2$.}
 \label{tab:interests_comparison}
 
 \centering
@@ -114,36 +124,38 @@ Banking         & 0.333...  & 0.5                   & 0        & 0              
 }
 \end{table}
 
-To compare the interests of a student to another student, the cosine $cos(\theta)$ distance is used which is shown in equation \ref{eq_cos_sym} where $A$ is the interest vector of a user and $B$ is the interest vector of another, this has the advantage that when the users have identical interests their cosine distance becomes 1 and for completly different interests it becomes 0, since we are minimising the objective function is considered as $1 - cos(\theta)$. An example of two interests vectors of two users can be seen in table \ref{interests_comparison}, here $1 - cos(s_1,s_2) = 0.292696$ which is considerably similar.
+To compare the interests of a student to another student, the cosine $cos(\theta)$ distance, shown in Equation \ref{eq:cos_sym}, is used. When the users have identical interests, their cosine distance becomes 1 and for completely different interests it becomes 0. Since we are minimising the objective function is considered as $f = 1 - cos(\theta)$. An example of two interests vectors of two users can be seen in table \ref{tab:interests_comparison}, here $1 - cos(s_1,s_2) = 0.292696$ which is considerably similar \textcolor{red}{\bf (Why?)}.\\
 
-\begin{equation} \label{eq_cos_sym}
+\begin{equation} \label{eq:cos_sym}
     \cos(\theta) = \frac{ \sum\limits_{i=1}^{n}{A_i  B_i} }{ \sqrt{\sum\limits_{i=1}^{n}{A_i^2}}  \sqrt{\sum\limits_{i=1}^{n}{B_i^2}} }   
 \end{equation}
-\begin{equation}\label{eq_interests}
-	f = 1 - \cos(\theta) 
-\end{equation}
+
+\noindent where $A$ is the interest vector of a user and $B$ is the interest vector of another.
 
 \subsection{Participation style}
 
-It was a difficult task to find a defined function that calculated the participation in a group, or a special configuration of participation styles that promoted the participation of all students. However as mentioned in \ref{chapter:chapter02} we make use of Benne and Sheats functional roles, one particular role is defined as \textit{protagonist}, which is a role that implies participation. A member in a group don't have a particular role defined, but they may have different roles as the conversation goes on. Therefore a percentage of \textit{protagonism} can be defined for each student representing how much was the role \textit{protagonist} present in a conversation.
+%It was a difficult task to find a defined function that calculated the participation in a group, or a special configuration of participation styles that promoted the participation of all students. 
+There is no defined function that allows calculating participation in a group or a special configuration of participation styles, which promotes the participation of all students. 
+However, as mentioned in Chapter~\ref{chapter:chapter02}, we make use of Benne and Sheats functional roles~\cite{FunctionalRoles}. One particular role is defined as \textit{protagonist}, which is a role that implies participation. A member in a group do not have a particular role defined, but they may have different roles as the conversation goes on. Therefore, a percentage of \textit{protagonism} can be defined for each student representing how much was the role \textit{protagonist} present in a conversation.\\
 
-Since is desired have a high participation in a group, and the problem is minimisation, then the participation style is considered as the inverse of the sum of all the participation percentage or protagonism of the students of a group, this is simply defined in equiation \ref{eq:participation}
+Since it is desired to have high participation in a group, and the problem is minimisation, then the participation style is considered as the inverse of the sum of all the participation percentage of protagonism of the students of a group, this is simply defined in the equation.\\ \ref{eq:particiPation}
+
+The decision to take the protagonism as the metric to optimise is further discussed in Chapter~\ref{chapter:chapter04}.
 
 \begin{equation}
-    \caption{Participation style objective function}
-    \label{eq:particiation}
+    \label{eq:particiPation}
     P = \frac{1}{\sum p_i} 
 \end{equation}
 
-\section{Operators}
+\section{Operators} \label{sec:operators}
 
-This next section describes the different operators applied by the algorithms to the solutions, in the case of meta-heuristics like LC or PT, where in each iteration a step in the search space is perform, the operator of mutation is used, and for the case of RD which requires all a defined neighbourhood all the possible mutations are used. For the genetic algorithms and other evolutionary strategies a crossover operator is also used. The same mutation and crossover operators are used for all the algorithms that allow them.
+This next section describes the different operators applied by the algorithms to the solutions, in the case of meta-heuristics like LC or PT, where in each iteration a step in the search space is perform, the operator of mutation is used, and for the case of RD which requires all a defined neighbourhood all the possible mutations are used. For the genetic algorithms and other evolutionary strategies a crossover operator is also used. The same mutation and crossover operators are used for all the algorithms that allow them.\\
 
 \section{Initialisation}
 
 All the algorithms start with a random initial population, first, the groups are generated according to the maximum possible groups which is $(\lfloor\frac{n}{gs_{min}}\rfloor)$, this groups are stored in a vector $AG$ which comprehend the available groups, when a group is filled, that means has reached the $gs_{max}$ number of students leaves the vector $AG$, if a move is performed by the operators and the group misses a student, then this group returns to the $AG$ vector.\\
 
-Then each student is assigned to a random group from $AG$, to prevent the solutions becoming unfeasible, that is, for example if a single student is left alone in a group, a $Repair$ operator is applied after the initialisation, this is defined later in this section. This completed process is defined in algorithm \ref{alg:initialisation}.
+Then each student is assigned to a random group from $AG$, to prevent the solutions becoming unfeasible, that is, for example if a single student is left alone in a group, a $Repair$ operator is applied after the initialisation, this is defined later in this section. This completed process is defined in algorithm \ref{alg:initialisation}.\\
 
 \begin{algorithm}[H]
 \caption{Initialisation}
@@ -159,7 +171,7 @@ Perform $Repair$ in $A$
 
 \subsection{Mutation}
 
-The mutation operator, according to the literature related to genetic algorithms, must introduce solutions that aren't present in the system yet, this is in order to prevent being stuck in a local minima. A way of to define this operator for a combinatorial problem, it should change a single value of a variable, since we are considering the students as our variables and the groups as our values, the mutation simply changes the assignation of a group of a particular random user to another diffent group.
+The mutation operator, according to the literature related to genetic algorithms, must introduce solutions that aren't present in the system yet, this is in order to prevent being stuck in a local minimum. A way of to define this operator for a combinatorial problem, it should change a single value of a variable, since we are considering the students as our variables and the groups as our values, the mutation simply changes the assignation of a group of a particular random user to another different group.\\
 
 In to prevent a student to end up in a group that has more students than $gs_{max} + 1$ a random group is selected from $AG$ which guarantees to produce only feasible solutions. The resulting algorithm \ref{alg:mutation} is known as group swap mutation, because it swaps the group for a single user once the mutation rate has met. An example of this can be seen in figure \ref{mutation_ex}
 
@@ -181,9 +193,9 @@ In to prevent a student to end up in a group that has more students than $gs_{ma
 
 \subsection{Crossover}
 
-The crossover operator is meant to add some convergence to already good solutions, so their offspring can reach a local minima, the crossover used in this work was k-point crossover \cite{nomura1997analysis} which puts a random number of crossover points to indicate where the solution will be splitted and have their partitions recombined with another solution. An example of this can be seen in figure \ref{crossover_ex} where a crossover point is present in the middle. In terms of this research it means that a portion of the students will remain in the group defined by their parent solution and the rest wil come from another parent solution, so good solutions can explore part of their good results with their offspring but at the same look improve their quality if they land with a similar part of another group.
+The crossover operator is meant to add some convergence to already good solutions, so their offspring can reach a local minimum, the crossover used in this work was k-point crossover \cite{nomura1997analysis} which puts a random number of crossover points to indicate where the solution will be split and have their partitions recombined with another solution. An example of this can be seen in figure \ref{crossover_ex} where a crossover point is present in the middle. In terms of this research it means that a portion of the students will remain in the group defined by their parent solution and the rest will come from another parent solution, so good solutions can explore part of their good results with their offspring but at the same look improve their quality if they land with a similar part of another group.\\
 
-It should be noted that, since the assigment is not done with only compatible groups, it is posible that some groups become infeasible, that is having more than $gs_{max}$ or less than $gs_{min}$, to prevent this issue after the crossover operator is applied a repair of the offspring solutions is performed. The whole process can be seen in algorithm \ref{alg:crossover}.
+It should be noted that, since the assignment is not done with only compatible groups, it is possible that some groups become infeasible, that is having more than $gs_{max}$ or less than $gs_{min}$, to prevent this issue after the crossover operator is applied a repair of the offspring solutions is performed, this is explained in the following subsection. The whole process can be seen in algorithm.\\ \ref{alg:crossover}.
 
 \begin{algorithm}[H]
     \caption{K-point Crossover}
@@ -228,8 +240,8 @@ Perform $Repair$ in $C$ and $D$
 
 \begin{figure*}
     \centering
-    \includegraphics[width=1.1\textwidth]{images/cross_over_g.png}
-    \caption{Caption}
+    \includegraphics[width=1.0\textwidth]{images/cross_over_g.png}
+    \caption{Example of a crossover operation}
     \label{fig:crossover_ex}
 \end{figure*}
 
@@ -239,7 +251,7 @@ Perform $Repair$ in $C$ and $D$
 Is possible that after performing the crossover operation, either a group ends up with a higher number of students than the allowed $gs_{max}$ or a smaller number $gs_{min}$, for this reason a repair procedure is performed after the initial population and after each crossover, to make sure the solutions produced remains within the problem constraints.\\
 
 The algorithm consists of checking each group size, if the size is higher than $gs_{max}$, then its split in half, if the size is lower than $gs_{min}$ then it requires more members to be feasible and is marked as a pending group $P_g$, therefore after a group $G_i$ with $Size(G_i) > gs_{max}$ is found a user from $G_i$ is assigned to $P_g$, and the algorithm continues until all the groups become feasible.
-The fill algorithm can be seen in \ref{alg:repair}
+The fill algorithm can be seen in \ref{alg:repair}.\\
 
 \begin{algorithm}[H]
     \caption{Group Repair}
@@ -266,3 +278,5 @@ The fill algorithm can be seen in \ref{alg:repair}
 \end{algorithm}
 
 % Synthetic Dataset?
+
+% Selection operators?
