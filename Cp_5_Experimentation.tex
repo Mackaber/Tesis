@@ -1,80 +1,150 @@
 \chapter{Experiments}
 \label{chapter:chapter05}
 
-% This is a brief description
-For the experimentation phase, all the parameters were left as their default values indicated by the jMetal and James Framework, while they could be adjusted manually to improve their individual performance, this is out of the scope for this research. the only parameters adjusted to improve were the population size and number of generations (number of iterations for non-genetic algorithms).
+The next chapter represents the core experiments of the research. The main purpose of it was to do a benchmark, as a starting point for the comparison between Single Objective Algorithms $SOA$ and Multi Objective algorithms $MOA$. The basis for the experimentation layout was based on the experiments made by  Hisao Ishibuchi, Yusuke Nojima and Tsutomu Doi in \cite{Ishibuchi_single_vs_multiobjective}. 
 
+The chapter is divided in four different sections, the first section describes the experimental setup. Which are a set of experiments to determine a reference pareto front and the parameters to be used by the algorithms for the rest of the experimentation. whole experimentation process is divided in three different phases: 
 
-%Note...
-As indicated by [https://link.springer.com/book/10.1007/978-1-4419-9182-9] the performance is sensitive to the value of the population in the case of the genetic algorithms, if the population is too large, then it is essentially pure random search, so in essence, the parameters of an algorithm outperforming random search should be considered as an ideal size for the population.
+\begin{itemize}
+    \item The first phase consist in the run of the algorithms without any adjustment using the parameters found in the experimental setup for all the algorithms that applied. 
+    \item The second phase is takes into account the results of the first phase of experiments, and the observations and feedback made for about its results. This discusses one of the main issues made by the feedback which remarks wether or not there was made a fair comparison between $SOA$ and $MOA$.
+    \item The third phase is the result of a discussion about the tuning of parameters. Using only the best algorithms, chosen by their performance from algorithms from phase one. 
+\end{itemize}
 
-\subsection{Algorithm Implementations}
+\section{Experiments Setup}
 
-Here the algorithms finally used are described in their specific implementation for the probelm, as previously noted, all the implementations were already included in the jMetal and JAMES frameworks, and the only definitions created were the mutation and crossover procedures and the problem and solution definitions.
+The next section discusses a set of experiments that took place before the core experiments could be made. The first subsection shows the experiment made to search for a Reference Pareto Front for the performance comparison. The next subsection shows a experiment for obtaining the base parameters that would be used to have a fair comparison between the algorithms. And the last subsection discusses some of the specific details about each of the individual algorithm implementations. 
 
-\subsection{Single-Objective Algorithms}
+\subsection{Searching for a Reference Pareto Front}
 
-\subsubsection{Local Search}
+In order to do a proper comparison, most of the metrics require to have an already established \textbf{Reference Pareto Front}, which in a testing problem would be the \textbf{Real Pareto Front}.
 
-In the framework used jMetal, didn't include the implementation as the for the other algorithms, but it did have as middle step for other algorithms as ABYSS, but here is used as a standalone algorithm. With this in mind, for the perturbation step the procedure of mutation is used, as it complies with the requirements of not being too weak in order to escape the basin of attraction or too strong to make it too similar o multistarch local search. These criteria defined in [doi.org/10.1016/j.ins.2013.02.041].
+In order to establish a \textbf{Pareto Front} for this, the most used algorithm in the literature which is NSGA-II was used with exaggerated parameters to make sure the most of the search space is covered. These parameters consisted of a population of \textbf{300} individuals for \textbf{1000 generations}, having \textbf{100} independent runs and selecting the best front for each of the problem sizes.
 
-\subsection{Genetic Generational Algorithmn}
+% -----
 
-Is an implementation of the Genetic Algorithm which\dots
+The results are shown in fig, table and table\dots
+it should be noticed the concave shape\dots
 
-\subsection{Genetic Stready Algorithmn}
+\subsection{Searching for Reference Parameters}
 
-Is another implementation of the Genetic Algorithm which\dots
+Considering that a fair comparison requires a level of complexity similar for each algorithm. The research used the same parameters and the same operators for each of the algorithms. It should be noted that not all the algorithms used all the parameters, only the most shared parameters where considered. This were the number of generations or steps and the population size. 
 
+In this experiment a set of parameters was tested for a $SOA$ and $MOA$. For the $SOA$ a Generational Genetic algorithm $GGA$ was used, whereas for the $MOA$, the algorithm $NSGA-II$ was used. The sets of parameters to be tested were established by a constant scale 100, 150, 200, 250 and 300 for both of them. This was run only for the problem sizes of 20 and 200 students.
 
+For this there 2 algorithms were tested $GGA$ and $NSGA-II$ for the $SOA$ and $MOA$ reference respectively, noting that even if both algorithms had a very different optimal set of parameters, another pair would be choose that could fairly benefit both type of algorithms.
 
-\subsection{Elitist}
+% -----
 
-Is an implementation of the Evolution Strategy which\dots
+The results are shown in fig, table and table\dots
+The set of parameters selected were 100 and 100...
 
-In this case the parent is preserved each generation, which in essence means that if there is no offspring considered better, the parent then will produce another set of offspring, until a better individual is produced.
+\subsection{Details per implementation}
 
-%Note, not sure if this should be in another subsection or its ok to mention here, or should be mentioned in both.
+Since this part of the research is only considered as a starting point, the default values and additional configurations for all the algorithms were left for each experiment. Here the descriptions for all the algorithms is given with each of their specific implementations for the problem. As previously noted, all the implementations were already included in the jMetal and JAMES frameworks, and the only extra functions created were the mutation and crossover operators and the problem and solution definitions.
 
-In the case of Evolutionary Strategies Elitist and Non-Elitist, the mutation should follow a normal distribution, but since the solutions are discrete the solutions are generated randomly using the mutation operator as with all the other algorithms.
+\subsubsection{Single-Objective Algorithms}
 
-\subsection{Non-Elitist}
+A disadvantage found in the experiments of \ref{chapter:chapter04} were that for the $SOA$, the ranges of each of the objective functions varied considerably, which added more weight for the higher evaluation results. To address this issue an a posteriori normalization of the parameters was established shown in Table~\ref{table:normalization_parameters} using the Equation~\ref{eq:normalization_equation}.
 
-Is another implementation of the Evolution Strategy which\dots
+The full details of each of the implementations can be seen in Table~\ref{table:soa_details}
 
-\subsection{Random search} 
+\begin{equation}
+    v_{norm} = \frac{v- v_{min}}{v_{max} - v_{vmin}} 
+    \label{eq:normalization_equation}
+\end{equation}
 
-It should be noted that Random Search is used for comparison, because it doens't perform any improvement in a given solution, it would be like generating a random set of solutions and selecting the best a determined number of times.
+\begin{table}[]
+    \begin{tabular}{lll}
+    \hline
+    Objective function & Minimum value $v_{min}$ & Maximum value $v_{max}$ \\
+    \hline
+    Group Size Function                  & 0.5                     & 1.5                     \\
+    Participation Style Function         & 0.001666                & 1.0                     \\
+    Level Function                       & 0.0                     & 2.82843                 \\
+    Interests Cosine Similarity Function & 0.0                     & 1.0                     \\
+    \hline
+    \end{tabular}
+    \caption{The $v_{min}$ and $v_{max}$ values for each objective function used in the normalization}
+    \label{table:normalization_parameters}
+\end{table}
 
-\subsection{Random Descent (Replica Exchange Monte Carlo)} 
-\subsection{Tabu Search} 
-\subsection{Parallel Tempering} 
+\begin{table}[]
+    \begin{tabular}{p{0.15\textwidth}p{0.15\textwidth}p{0.30\textwidth}p{0.14\textwidth}p{0.10\textwidth}}
+    \hline
+    Denomination  & Full name & Details & Additional Parameters & Framework
+    \\
+    \hline
+    $GGA$ & Genetic Generational Algorithm & Is an implementation of the Genetic Algorithm in which all the solutions are replaced in each of the generations. & n/a & jMetal \\
+    $GSA$ & Genetic Steady Algorithm & Is an implementation of the Genetic Algorithm in which a single solution is added and another one is eliminated in each generation & n/a & jMetal  \\
+    $Elitist$ & Elitist Algorithm $(\mu + \lambda)$ & Randomly selects a parent form the set of $\mu$ individuals from both the parents and offspring of the last generation, the parent is then mutated and generates $\lambda$ offsprings. & $\mu = 1$; $\lambda = pop (100)$& jMetal \\
+    $Non-Elitist$ & Non-Elitist Algorithm $(\mu,\lambda)$ & Randomly selects a parent form the set of $\mu$ individuals from both the parents and offspring of the last generation, and the parent is then mutated and generates $\lambda$ offsprings  & $\lambda = pop (100)$ & jMetal. \\
+    $LS$ & Local Search (Steepest Descent/Hill Climbing) & The implementation found in the framework jMetal, was the one used as a middle step procedure for other algorithms like ABYSS. it makes use of a Dominance comparator & $\epsilon = 0$ & jMetal \\
+    $RS$ & Random Search & n/a & n/a  & jMetal \\
+    $RD$ & Random Descent & The neighborhood is considered as a mutation step, so all the possible mutations are considered in each step. & n/a & James \\
+    $PT$ & Parallel Tempering (Replica Exchange Monte Carlo) & Similar to Simulated Annealing this algorithm uses a max temperature and a low temperature, also running parallel replicas of Metropolis search.& $temp_{min} = 1 * 1e^{-8}$;$temp_{max} = 1 * 0.6$; $steps_{max} = 100$; $replicas = 2$ & James
+    \hline
+    \end{tabular}
+    \caption{Specific details of the Single-Objective Algorithms Implementations}
+    \label{table:soa_details}
+\end{table}
 
-\section{Multi-Objective Algorithms}
-% Intro
+\subsubsection{Multi-Objective algorithms}
 
-\section{Reference Front}
+The details and specific parameters for the Multi-Objective algorithms can be seen in Table~\ref{table:moa_details}
 
-\section{Parameters Definition}
+% All of them used Binary Tournament selection and Ranking and Crowding distance comparator
 
-\section{Comparison between Single-Objective Algorithms}
+\begin{table}[]
+    \begin{tabular}{p{0.15\textwidth}p{0.15\textwidth}p{0.40\textwidth}p{0.30\textwidth}}
+    \hline
+    Denomination  & Full Name & Details \\
+    \hline
+    ESPEA         & Electrostatic Potential Energy Evolutionary Algorithm  & Since no scalarized preference is specified, uniform preferences are assumed
+    Uses a Worst in Archive Replacement Strategy. 
+    Where Among all eligible archive members that can be replaced the one exhibiting the largest energy contribution is replaced. & Replacement Strategy: Worst in Archive \\
+    MOMBI2        & Many Objective Metaheuristic Based on the R2 Indicator & Requires a number of weights equal to the population size. These weights were selected according to the population size using the Simplex-Lattice Design method & Vector of weights, using Simple-Lattice Design method; According to the population size. \\
+    NSGA-II       & Non-dominated Sorting Genetic Algorithm               & n/a \\
+    RS           & Random Search                                          & n/a  & n/a \\
+    SPEA2        & Strength Pareto Evolutionary Algorithm                 & n/a  & n/a \\
+    \hline                                                                                                                 
+    \end{tabular}
+    \caption{Specific details of the Multi-Objective Algorithms Implementations}
+    \label{table:moa_details}
+\end{table}
 
-\section{Comparison between Multi-Objective Algorithms}
+\section{First Phase}
 
-\section{Comparison between Single-Objective and Multi-Objective Algorithms}
+The first phase of experiments run all the algorithms with the established operators and parameters defined in the previous section, and using the found Pareto Front approximation for the metrics. Then for the results, the first set of $SOA$ were compared with each other. This is also the case for $MOA$, finally the best algorithm for each of these two categories was taken and compared with each other.
 
-\section{Hyper-parameters}
+\subsection{Comparison between Single-Objective Algorithms}
 
-% Todo
-% - Mention the experiments to determine the population size and the number of generations/iterations
-% - Mention that the overall best wera the random because (note)
-% - Mention the new article of the rule of thumb to adjust the parameters
-% - Maybe? Mention the costly function and the memoization to comply with the population size
-%    => This works because most of the algorithms will only alter a single group and leave the rest intact, so it doens't make sense to make the evaluations again... and in the crossover the groups are actually the same, so again... no need to evaluate the fitness functions again...
-% Notes of the results...
-\section{Unfair comparison?}
+\subsection{Comparison between Multi-Objective Algorithms}
 
-\section{Building pareto front from Single-Objective Algorithms}
+\subsection{Comparison between Single-Objective and Multi-Objective Algorithms}
 
+% - Also mention that is clear that MOA outperformed SOA.
+% - And the separation between them grew as the problem size also got higher, this is a similar behavior seen in [ishibuchi]
+% As indicated by [https://link.springer.com/book/10.1007/978-1-4419-9182-9] the performance is sensitive to the value of the population in the case of the genetic algorithms, if the population is too large, then it is essentially pure random search, so in essence, the parameters of an algorithm outperforming random search should be considered as an ideal size for the population.
 
-The First results (Recover data from the presentation), showed that apparently the random algorithms surpassed overall the other, this is because (note of the beginning) 
+\section{Second Phase}
+
+After receiving some feedback about phase one, there was the discussion if the $SOA$ and $MOA$ were actually comparing the same objectives. To prove this another set of experiments was proposed. The first one consisted in Normalizing the objective functions a priori in contrast to the a posteriori normalization that was made in phase one. Then do an experiment took place which consisted in building a Pareto front using each function individually with every $SOA$, to check if the $SOA$ would have an advantage optimizing each objective separately. 
+
+For this set of experiments it was only considered the 20 and 200 problem sizes, since it was clear that for bigger sized problems multi-objective algorithms clearly outperform $SOA$.
+
+\subsection{A priori Normalization}
+
+\subsection{Pareto Front Construction from Single Objective Algorithms}
+
+% - After the experiments ran, it was noted that even after the pareto front construction none of the algorithms were able to outperform MOAs
+
+\section{Third Phase}
+
+As already established in Phase one and Phase two, $MOA$ outperformed $SOA$ starting from a 200 size problem, and mostly outperformed them also in the smaller problem of 20. However, according to the Friedman test, the algorithm that outperformed all the algorithms overall was $RS$ which meant that no optimization was taken place, just random solutions outperforming each other.
+
+This suggests that there is opportunity for additional parameter tuning. Therefore for this last set of experiments, it was considered only the two other best algorithms from $SOA$ which were ESPEA and NSGAII. These were adjusted according to a set of parameters according to the ones used to obtain best performance for $SMP$ found in \cite{}. Also it was applied a rule of thumb indicating to use 3 to 7 times the size of the problem for the population to have a better coverage for the search space \cite{}. Finally, other variations for these algorithms were also tested, using different replacement strategies for ESPEA and different variations of the NSGAII algorithm.
+
+Like the in last phase, these experiments were only tested for the 20 and 200 dataset sizes.
+
+% - NSGAII was finally able to outperform RS using X parameters with an improvement in its Hypervolume.

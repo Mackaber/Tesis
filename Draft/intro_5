@@ -1,0 +1,12 @@
+The next chapter represents the core experiments of the research. The main purpose of it was to do a benchmark, as a starting point for the comparison between algorithms. The basis for the experimentation layout was based on the experiments made by  Hisao Ishibuchi, Yusuke Nojima and Tsutomu Doi in \cite{Ishibuchi_single_vs_multiobjective}. 
+
+The chapter is divided in four different sections, the first section describes the experimental setup. Which are a set of experiments to determine a reference pareto front and the parameters to be used by the algorithms for the rest of the experimentation. whole experimentation process is divided in three different phases: 
+
+\begin{itemize}
+    \item The first phase consist in the run of the algorithms without any adjustment using the parameters found in the experimental setup for all the algorithms that applied. 
+    \item The second phase is takes into account the results of the first phase of experiments, and the observations and feedback made for about its results. This discusses one of the main issues made by the feedback which remarks wether or not there was made a fair comparison between single objective and multi objective algorithms.
+    \item The third phase is the result of a discussion about the tuning of parameters. Using only the best algorithms, chosen by their performance from algorithms from phase one. 
+\end{itemize}
+
+
+
