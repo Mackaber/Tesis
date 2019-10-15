@@ -76,13 +76,13 @@ Cada uno de estos componente se deben de ser especificados para definir un algor
 
 A continuación se describen los pasos que lleva a cabo un algoritmo evolutivo comúnmente:
 
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Inicialización}: Se generan distintas soluciones de forma aleatoria
 \item \textbf{Evaluación}: Cada una de las soluciones pasa a ser evaluada por la función de ajuste y se determina que tanto se acerca a su valor óptimo
 \item \textbf{Terminación}: Se determina si se alcanzó el objetivo con alguno de los candidatos o si se sobrepasó el número de generaciones límite que se estableció previamente.
 \item \textbf{Selección}: Se selecciona las soluciones que "sobreviven" y pasan a la siguiente generación
 \item \textbf{Variación}: este paso puede darse por medio de del paso de "cromosomas" o características de las soluciones que sobrevivieron en el paso anterior para combinarse entre sí y dar nuevas soluciones "hijas", el otro método es la mutación, donde una o varias de las características se modifica de manera aleatoria para introducir un nuevo valor a la población
-\end{enumerate}
+\end{itemize}
 
 Este ciclo se repite dando paso cada vez a nuevas generaciones que cada vez se ajustan más a la función de evaluación hasta que se alcance el resultado deseado determinado por el paso de Terminación.[10] \\
 
@@ -384,19 +384,19 @@ After an initial population is created, each individual is ranked and sorted acc
 \label{nsgaii_alg}
 \caption{NSGAII}
 \SetAlgoLined
-Generate a random initial population $P_t$\;\\
-$R_t \gets P_t \cup Q_t$ \Comment{combine parent and offspring population}\;\\
-$F \gets fast-non-dominated-sort(R_t)$ \Comment{run the fast non dominates sort procedure and collect $F = (F_1,F_2,...)$ with the nondominated fronts of $R_t$}\;\\
-$P_{t+1} = 0$ and $i = 1$\;\\
+Generate a random initial population $P_t$\\
+$R_t \gets P_t \cup Q_t$ \Comment{combine parent and offspring population}\\
+$F \gets fast-non-dominated-sort(R_t)$ \Comment{run the fast non dominates sort procedure and collect $F = (F_1,F_2,...)$ with the nondominated fronts of $R_t$}\\
+$P_{t+1} = 0$ and $i = 1$\\
 \Repeat{$|P_{t+1}| + |F_i| \leq N$ \Comment{until the parent population is filled}}{
-    $crowding-distance-assigment(F_i)$ \Comment{calculate crowding-distance in $F_i$}\;\\
-    $P_{t+1} = P_{t+1} \cups F_i$\;\\
+    $crowding-distance-assigment(F_i)$ \Comment{calculate crowding-distance in $F_i$}\\
+    $P_{t+1} = P_{t+1} \cups F_i$\\
     $i = i + 1$
 }
-$Sort(F_i, \prec_n)$\;\\
-$P_{t+1} = P_{t+1} \cups F_i[1:(N-|P_{t+1}|)]$\;\\
-$Q_{t+1} = make-new-pop(P_{t+1})$\;\\
-$t = t+1$\;\\
+$Sort(F_i, \prec_n)$\\
+$P_{t+1} = P_{t+1} \cups F_i[1:(N-|P_{t+1}|)]$\\
+$Q_{t+1} = make-new-pop(P_{t+1})$\\
+$t = t+1$\\
 \end{algorithm}
 
 
