@@ -1,0 +1,67 @@
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+\begin{table}[]
+            \begin{tabular}{ll}
+            Metric            & Value         \\
+            Cosine Similarity & 0             \\
+            Pearson + 1       & 0.5662712739  \\
+            Pearson           & -0.4337287261 \\
+            CD - Pearson      & 0.4337287261 
+            \end{tabular}
+            \caption{Comparison between $S_1$ and $S_2$}
+        \end{table}\\
+        \begin{table}[]
+            \begin{tabular}{ll}
+            Metric            & Value         \\
+            Cosine Similarity & 0.02975643611 \\
+            Pearson + 1       & 0.6510457773  \\
+            Pearson           & -0.3489542227 \\
+            CD - Pearson      & 0.3787106588
+            \end{tabular}
+            \caption{Comparison between $S_2$ and $S_3$}
+        \end{table}\\
+        \begin{table}[]
+            \begin{tabular}{ll}
+            Metric            & Value         \\
+            Cosine Similarity & 0.04646766902 \\
+            Pearson + 1       & 0.7170945873  \\
+            Pearson           & -0.2829054127 \\
+            CD - Pearson      & 0.3293730817
+            \end{tabular}
+            \caption{Comparison between $S_3$ and $S_4$}
+        \end{table}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\begin{table}[]
+            \begin{tabular}{ll}
+            Metric            & Value         \\
+            Cosine Similarity & 0             \\
+            Pearson + 1       & 0.6096268784  \\
+            Pearson           & -0.3903731216 \\
+            CD - Pearson      & 0.3903731216
+            \end{tabular}
+            \caption{Comparison between $S_1$ and $S_3$}
+        \end{table}\\
+        \begin{table}[]
+            \begin{tabular}{ll}
+            Metric            & Value         \\
+            Cosine Similarity & 0.2134561996  \\
+            Pearson + 1       & 0.9120319917  \\
+            Pearson           & -0.08796800825 \\
+            CD - Pearson      & 0.3014242079
+            \end{tabular}
+            \caption{Comparison between $S_2$ and $S_4$}
+        \end{table}\\
+        \begin{table}[]
+            \begin{tabular}{ll}
+            Metric            & Value         \\
+            Cosine Similarity & 0.1797525892  \\
+            Pearson + 1       & 0.8653233148  \\
+            Pearson           & -0.1346766852 \\
+            CD - Pearson      & 0.3144292744
+            \end{tabular}
+            \caption{Comparison between $S_1$ and $S_4$}
+        \end{table}
+\end{subfigure}
+\end{figure}
