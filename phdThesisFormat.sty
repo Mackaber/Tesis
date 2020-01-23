@@ -96,7 +96,7 @@
 
 %% Defines the commands to generate the first pages of the dissertation
 \def\abstractFile#1{\gdef\@abstractFile{#1}}
-	\abstractFile{Resumen}
+	\abstractFile{Abstract}
 \def\acknowledgementFile#1{\gdef\@acknowledgementFile{#1}}
   	\acknowledgementFile{Acknowledgement}
 \def\dedicationFile#1{\gdef\@dedicationFile{#1}}
@@ -195,11 +195,11 @@
 	\hspace*{0cm} \hfill Committee Member
 	
     %Uncomment for more Committee Member
-	%\vspace*{0.65cm}
-	%\hspace*{3.5in}\hrulefill\\
-	%\hspace*{0cm} \hfill {\@committeeMemberC}\\
-	%\hspace*{0cm} \hfill {\@committeeMemberCInstitution}\\
-	%\hspace*{0cm} \hfill Committee Member
+	\vspace*{0.65cm}
+	\hspace*{3.5in}\hrulefill\\
+	\hspace*{0cm} \hfill {\@committeeMemberC}\\
+	\hspace*{0cm} \hfill {\@committeeMemberCInstitution}\\
+	\hspace*{0cm} \hfill Committee Member
 	
 	%\vspace*{0.65cm}
 	%\hspace*{3.5in}\hrulefill\\
@@ -212,8 +212,7 @@
 	\begin{center}
     	\hspace*{1.5in} \hrulefill \hspace*{1.5in} \\
     	{\@graduateProgramDirector}\\
-    	Associate Dean of Graduate Studies \\
-    	School of Engineering and Sciences
+    	Program Director \\
 	\end{center}
 	\begin{center}
 		Monterrey, Nuevo Le\'{o}n, {\@dissertationMonth}, {\@dissertationYear}
@@ -285,14 +284,14 @@
 %% Sets up abstract page where you provide a short summary of what your work is about
 \newcommand{\Abstract}{
 	\newpage
-	\addcontentsline{toc}{chapter}{Resumen}
+	\addcontentsline{toc}{chapter}{Abstract}
 	\parindent 5ex
 	\begin{center}
    		{\Large {{\bf \@dissertationTitle}\\
-			por\\
+			by\\
    			\@doctoralStudent\\
 	   		\vspace*{0.7cm}
-   			Resumen}
+   			Abstract}
 		}
 	\end{center}
 	\vspace*{0.7cm}
@@ -306,13 +305,13 @@
 \newcommand{\contentsAndLists}{
 	\newpage
 	\listoffigures
-	\addcontentsline{toc}{chapter}{Lista de Figuras}
+	\addcontentsline{toc}{chapter}{List of Figures}
 	\if@twoside
 		\clearemptydoublepage
 	\fi
 	\newpage
 	\listoftables
-	\addcontentsline{toc}{chapter}{Lista de Tablas}	
+	\addcontentsline{toc}{chapter}{List of Tables}	
 	\if@twoside
 		\clearemptydoublepage
 	\fi

@@ -1,63 +1,108 @@
-\chapter{Introducción}
+\chapter{Introduction}
 \label{chapter:chapter01}
-\section{Contexto de la Investigación}
-A medida que el mundo se vuelve cada vez más globalizado el contenido producido en distintos idiomas diferentes al materno aumenta, en especial el que se encuentra escrito en el idioma Inglés que resulta ser el dominante a nivel mundial. Las necesidades de aprender este idioma aumentan de manera radical a medida que el tiempo avanza y los métodos tradicionales de enseñanza no dan abasto para que se pueda enseñar a toda la población que requiere aprender, por lo que surge la necesidad de crear alternativas que resulten más accesibles y óptimas para usuarios que a menudo se encuentran ocupados por un ritmo de vida muy activo y por lo tanto tienen poca flexibilidad de horario como para practicarlo entre sus conocidos.\\ 
+\section{Research Context}
+As the world becomes increasingly globalised, the content produced in languages other than that of the mother tongue increases, especially that in the English language, which turns out to be the dominant worldwide. The need to learn this language dramatically increases as time progresses, and traditional teaching methods do not provide enough for the entire population that needs to learn it. It is thus necessary to create alternatives that are more accessible and optimal for students who are often occupied by a very active pace of life and have little flexibility in their schedule to practice among their acquaintances.\\
 
-Por lo que una de las soluciones propuestas consiste en  un sistema en el cual usuarios que no se conozcan entre sí sean agrupados según sus temas de interés, esto para practicar el uso del lenguaje conforme teniéndo conversaciones sobre estos intereses y a un nivel de experiencia similar para que todos los participantes que se encuentran en un determinado momento puedan entender y participar. Lo que se pretende desarrollar como parte de esta tesis es la forma de agrupar  los usuarios en los distintos grupos virtuales que se encuentran dentro de la plataforma.\\ 
+One alternative to help learn a new language consists of a system in which students who do not know each other are grouped according to their topics of interest. In this manner, students practice the use of language according to having conversations about these interests and a similar level of experience, allowing all participants to understand and take part.\\
 
-La intención es buscar la manera más óptima de poder distribuir a los nuevos usuarios en estos grupos para que puedan mejorar su uso del lenguaje y no resulte frustrante ya sea por la dificultad inalcanzable o por que los temas no resulten de su agrado. Hay diversos aspectos que pueden hacer que una agrupación sea mejor que otra: por ejemplo, el nivel de dominio del lenguaje debe ser relativamente compatible, o sea que no se pueden poner usuarios muy avanzados junto con principiantes, pues el usuario avanzado se aburre con las dificultades del principiante, y este último no entiende lo que dicen los avanzados. Adicionalmente, se busca que los intereses de los usuarios sean compatibles, para poder generar conversaciones de interés para todos. Por ejemplo, algunos usuarios pueden tener los deportes entre sus temas de interés (y aún dentro de los deportes hay unos de fútbol, otros de natación, etc.). Otro criterio más es el estilo de intervención de cada usuario, el cual puede ser más o menos activo y más o menos tímido. Así, si se ponen muchos usuarios tímidos y pasivos en un cuarto, difícilmente se va a dar una dinámica ágil que haga la sesión entretenida. Es por esto que se propone abordar el problema como uno de optimización multiobjetivo donde los temas de conversación y el nivel de experiencia del usuario resultan los objetivos que se pretenden optimizar. Para ello se planea implementar una solución mono-objetivo tomando distintos criterios como el nivel de experiencia del usuario, así como sus temas de interés, entre otros para tomarlos como pesos en una función mono-objetivo. Después se hará una comparación de los resultados obtenidos con distintos algoritmos genéticos tomando como base la solución mono-objetivo y comparándola con cada uno de los resultados de la solución multiobjetivo. Se cree que haciendo uso de una estrategia multiobjetivo la experiencia de los usuarios mejorará de manera significativa comparándola respecto a los métodos de enseñanza y práctica de idiomas extranjeros ya existentes.\\
+This thesis aims to determine an optimal manner to group students into different virtual groups so that they can improve their use of language and not be frustrated either because of the unattainable difficulty or because the topics do not suit their liking. There are several aspects that can make one grouping better than another; for example, the level of language proficiency must be relatively compatible, that is, very advanced students cannot be put together with beginners, as the advanced student gets bored with the difficulties of the beginner, and the latter does not understand what the advanced say. Additionally, it is sought that the interests of the students are compatible, in order to generate conversations of interest to all. For example, while some students may have sports among their subjects of interest, some prefer football and others prefer swimming. Another criterion is the intervention style of each student, which can be more or less active and more or less shy. Thus, if many shy and passive students are in the same room, it will be difficult to have an agile dynamic that makes the session entertaining. For this reason, it is proposed to address the problem as one of multi-objective optimisation, where the topics of conversation and the level of the student experience are the objectives to optimise. To this end, a mono-objective solution that combines the above criteria in a weighted aggregate function will be implemented. Then a comparison will be made of the results obtained with different genetic algorithms based on the mono-objective solution and the multi-objective solution. It is believed that through the use of a multi-objective strategy, the student's experience will improve significantly compared to existing methods of teaching and practising foreign languages.\\
 
-\section{Definición del Problema}
+\section{Problem Definition}
 
-El problema se define como una variación del Problema de compañeros de Habitación (Stable Roommate Problem SRP) Problem\cite{greenwade93}. Sólo que en este caso los individuos no conocen entre sí, por lo que no tienen una preferencia real, sin embargo ésta trata de ser predecida basándose en la similitud del nivel de experiencia en el lenguaje extranjero del usuario y los intereses en común que puedan compartirse con el resto del grupo, asumiendo que estos dos factores afectan directamente la preferencia del usuario para pertenecer al grupo.\\ 
+The problem is defined as a variation of the Stable Roommate Problem (SRP), which is a variation of the Stable Marriage Problem (SMP)~\cite{Iwama_SMP_variants}. Only in this case, individuals do not know each other, so they have no real preference; nevertheless, the preference is predicted based on the similarity of the level of experience in the foreign language of the student and the interest that is shared with the rest of the group. The above is based on the fact that these two factors directly affect the student's preference to belong to the group.\\
 
-Además de esto, también se consideran como restricciones el tamaño del grupo y los estilos de participación para beneficio del resto del sistema, ya que si bien una persona puede preferir pertenecer a un grupo que tenga más en común con sigo, su forma de participar puede alterar el comportamiento del resto del grupo, por ejemplo, un usuario extrovertido que participa demasiado en una conversación puede evitar que el resto del grupo participe y por otro lado un grupo en el que nadie participa necesita de un usuario extrovertido que inicie las conversaciones.\\ 
+In addition to this, group size and participation styles are also considered as restrictions for the benefit of the rest of the system, as a person may prefer to belong to a group that has more in common with him/her; however, his/her way of participating can alter the behaviour of the rest of the group. For example, an outgoing student who participates too much in a conversation can prevent the rest of the group from participating; conversely, a group in which no one participates needs an outgoing student to initiate the conversations.\\
 
-De la misma forma el tamaño del grupo se define de forma dinámica para obtener una participación homogénea entre sus integrantes, y se define de forma dinámica ya que es posible que la ausencia o presencia de algunos usuarios puede afectar el desempeño del grupo a pesar de que su tamaño no se considere ideal.\\
+In the same way, the size of the group is defined dynamically to obtain homogeneous participation among its members. It is defined dynamically since the absence or presence of some students can affect the performance of the group, although its size is not considered ideal.\\
 
-Ésta búsqueda tiene como objetivo obtener la solución más estable posible con respecto a las preferencias predecidas de los usuarios dentro de un espacio de tiempo razonable, y que dentro de cada uno de los grupos exista una participación homogénea para optimizar la práctica del idioma.\\
-
-A pesar de que en la literatura existen muchos ejemplos y variaciones de SRP, por ejemplo [ref.], actualmente no existe una caracterización que se adapte directamente al problema que definido, por lo que se desconoce qué tipo de optimización resulta más conveniente, y tomando en cuenta que el tamaño de los grupos es variable se le considera como un problem NP-completo[ref.], por lo que resulta relevante la búsqueda de una solución de distintas formas. Principalmente comparando entre algoritmos mono-objetivo (por medio de una función compuesta que considere el tamaño de los grupos, el nivel de experiencia, los intereses y el estilo de participación del usuario) y multiobjetivo que considere cada una de estas funciones de forma individual.
+This research aims to obtain the most stable solution possible concerning the predicted preferences of students within a reasonable time. Although there are many examples and variations of SRP in the literature, there is no characterisation that adapts directly to the problem defined considering the groups as variables. SRP is considered as a NP-complete problem, so it is relevant to find a solution in different by the use of heuristics and meta-heuristics. A comparison between single-objective algorithms and multi-objective is suggested to find a good enough solution for this problem.
 
 \section{Objectives}
 
-Define the problem's structure as well as its objective functions to optimise the perceived preference of the users an the system and Determine which Strategy whether Single-objective or Multi-Objective is better suited for this optimisation.\\
+Compare single-objective and multi-objective strategies to find stable studying groups based on their interests and levels of experience, and consider the group size and their participation as constraints.\\
 
-Los objetivos específicos que esto conlleva se mencionan a continuación:
+The specific objectives that this entails are described below:
 
 \begin{enumerate}
+    
+    \item Define stability and near-stability for the problem.
 
-\item Los datos para la experimentación serán artificiales, debido a que no se cuentan con datos con las especificaciones requeridas, por lo que es necesario buscar bases de datos públicas que puedan servir para hacer pruebas, con el afán de que se acerquen lo más posible a datos reales.
+    \item Build an artificial data-set to compare the potential approaches.
 
-\item Definir los atributos y parámetros relevantes para formular las funciones mono-objetivo y multiobjetivo, para la función mono-objetivo se establecerá un peso para cada atributo.
+    \item Define the relevant attributes and parameters to formulate the single-objective and multi-objective functions.
 
-\item Implementar estrategias mono-objetivo para generar soluciones del problema, los cuales serán la base para poder comparar las soluciones multiobjetivo que se realicen. 
+    \item Implement mono-objective strategies to generate solutions to the problem, which will be the basis for comparing the multi-objective solutions that are made.
 
-\item Implementar y probar distintas estrategias multiobjetivo y compararlos con los resultados obtenidos con las estrategias mono-objetivo.
+    \item Implement and test different multi-objective strategies and compare them with the results obtained with the mono-objective strategies.
 
-\item Revisar los resultados y realizar un reporte indicando si se llegó a un mejor resultado con una estrategia multi-objetivo y cuál fue el algoritmo que tuvo mejores resultados.
+    \item Review the results and make a report indicating if a better result was reached with a multi-objective strategy and what was the algorithm that had the best results.
 \end{enumerate}
-\clearpage
-\section{Hipótesis}
 
-Multi-Objective algorithms can outperform Single Objective algorithms in finding stable studying groups based on their interests and level of experience and considering the group size and the participation as constraints.\\
+\section{Hypothesis}
+
+Multi-Objective algorithms can outperform single-objective algorithms in finding near-stable studying groups based on their interests and level of experience, while considering the group size and participation as constraints.\\
 
 This research tries to respond the following questions:
 
 \begin{itemize}
 
-\item Is optimization even necessary? (Can a Random solution be improved using optimization techniques?)
+\item How stable are the solutions found?
 
-\item How does Single-Objective solutions are, compared with Multi-Objective ones?
+\item Which advantages multi-objective algorithms may have against single-objective algorithms and vice-versa?
 
-\item Can a Single-Objective algorithm have a solution that belongs to the Pareto Front?
+\item Is optimisation even necessary? (Can a random solution be improved using optimisation techniques?)
 
-\item Which Single-Objective algorithm outperforms the other Single-Objective Algorithm for this Problem?
+\item How does single-objective solutions are, compared with multi-objective ones?
 
-\item Which Multi-Objective algorithm outperforms the other Multi-Objective Algorithm for this Problem?
+\item Can a single-objective algorithm have a solution that belongs to the Pareto front?
 
-\item Which Algorithm results to be the best overall?
+\item Which single-objective algorithm outperforms the other single-objective algorithms for this problem?
+
+\item Which multi-objective algorithm outperforms the other multi-objective algorithms for this problem?
+
+\item Which algorithm results to be the best overall?
 
 \end{itemize}
+\clearpage
 
+\section{Contributions}
 
+Below is shown a list of the main contributions of this research. They were established to achieve the objectives and answer the questions previously raised.
+
+\begin{itemize}
+    \item Introduces the problem of Stable Student Groups (SSGP), based mostly in SMP and SRP and other similar combinatorial problems.
+    \item Makes a comparison of optimisation of different preference criteria against the stability of the resulting groups.
+    \item Establishes a way to solve SSGP with unknown preferences, using a predicted preferences based on a preference criteria.
+    \item Defines a set of objective functions to help predict the preference of the students of a given data-set.
+    \item Builds a synthetic data-set based on distribution data, determined by the objective functions previously defined.
+    \item Defines a set of operators to be used for SSGP, based on small but significant changes to the groups. 
+    \item Presents different models for the solution of SSGP, and a way to compare them.
+    \item Presents an extensive analysis of the solutions found making use of different ways to compare single-objective algorithms to multi-objective algorithms in a ways that are considered fair.
+\end{itemize}
+
+\section{Solution Model}
+
+The solution for the established SSGP follows a structure for optimisation using evolutionary algorithms. First, the objective functions that represent the objective of the problem are defined. Then a synthetic database is generated using the distribution data for several sources. This data will be evaluated by the objective functions. After that, the operators for the evolutionary algorithms are defined and tested. \\
+
+Finally, single-objective algorithms and multi-objective algorithms are compared within them and with each other. These comparisons follow closely the one based on the one developed by Ishibuchi et al.~\cite{Ishibuchi_single_vs_multiobjective}, who compared single-objective algorithms with multi-objective algorithms. A diagram of the solution model can be seen in Figure~\ref{fig:solution_model}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/solution_model.png}
+    \caption{Solution model proposed to compare the approaches to solve SSGP.}
+    \label{fig:solution_model}
+\end{figure}
+
+\section{Document Structure}
+
+Including this introduction, the thesis consists of 6 chapters. \\
+
+Chapter~\ref{chapter:chapter02} provides a review of the literature. Includes basic definitions for the single-objective algorithms and multi-objective algorithms to be used. Additionally, it includes some background for performing a comparison between them, including the different metrics used. This chapter also discusses the preference criteria, which is later used to define the objective functions. Finally, it includes a brief introduction of the frameworks used to evaluate the different algorithms. \\
+
+Chapter~\ref{chapter:chapter03} presents the design of the problem and the approach to solving it. It defines the objective functions to use and the operators for the different algorithms. \\
+
+Chapter~\ref{chapter:chapter04} shows a set of preliminary experiments. Beginning to test the defined objective functions. Then, a brief methodology for the data-set creation is explained and later tested with a set of exploratory experiments. \\
+
+Chapter~\ref{chapter:chapter05} contains the main experiments and a discussion of their results. The experiments are separated in the setup and three phases. The setup introduces the parameters to be used for the rest of the experimentation. The first phase contains the first set of experiments using the parameters defined in the setup. Second and Third phases are the result of the feedback obtained during the first phase. \\
+
+Chapter~\ref{chapter:chapter06} explains the conclusions of the research and mentions the future work that can be derived.

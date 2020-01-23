@@ -1,1 +1,31 @@
 % Conclusion and Future Work
+\chapter{Conclusions and future Work.}
+\label{chapter:chapter06}
+
+\section{Conclusion}
+
+The main aim of this work was to compare SOAs against MOAs for the stable student groups problem. It was shown that SOAs could outperform MOAs for a given a small enough problem; however, when the size of the problem increases, MOAs outperform SOAs and SOAs surpassing MOAs is not consistent. Although in the literature is common to find a reduction in the performance of MOAs for problems with more than three objective functions, known as many-objective optimisation problems, the results show that this was not the case for the problem, as the performance against SOAs remained consistent across the experiments. \\
+
+The reason MOA had better performance may be attributed to its characteristics to escape local minima. This was shown by doing the experiments in Section~\ref{sec:front_construction}, which had each objective function optimized individually, still MOA were able to outperform SOA.\\
+
+The optimisation of objectives effectively leads to a stabilisation of the groups; however, it is still unknown if it can reach a perfectly stable configuration. Although this specific research only required near-stable solutions, so the results obtained are considered to satisfy this purpose.\\
+
+RS stood out as the most competitive method; however, it got away from the reference front with the highest-sized problem. Although only tested in small-sized problems of $n=20$ and $n=200$, the last experimentation phase showed that NSGA-II could outperform RS using parameters related to the problem. This behaviour could be because the homogeneous distribution of the data-set, as most of its values have little variance.\\
+
+It was shown that the way the problem was laid out had a high sensitivity to the starting point for the optimisations, which is mostly attributed to the way the neighbour solutions are considered. Each solution of a neighbourhood varies in a student belonging to a different group, which by the distribution of the synthetic dataset does not affect significantly the performance. There was a significant lack of novel solutions that improve the performance for the first two phases. RS, as well as PT, took advantage of the spread of starting points to come with novel solutions.\\
+
+The reason why NSGA-II could perform better than the other algorithms can be attributed to a more aggressive mutation that overcame the lack of novel solutions. That makes sense since the SMP, which is a related problem, also considered an aggressive mutation to ensure that the algorithms covered the search space.\\
+
+One additional advantage that MOA may have against SOA is the resulting solutions front have different solutions that optimise better a specific objective and in essence a different preference for the user. According to the exploration of stability, the student can give more importance to specific preferences. The ability to chose between groups within solutions that can include the student in a group that optimises their specific preference help improve the stability of the groups.
+
+\section{Future work}
+
+This work presents an effort to define stability for the stable student groups problem; however, this definition is not complete. There is a general idea of how stable the groups are and how to improve stability, but a generalisation that addresses any size of groups and their size restrictions, and a proof of whether it is always possible to find perfectly stable groups remains as an interesting opportunity to research in the future.\\
+
+Although there was the possibility of optimising the stability metric in general, this was ignored in this research, because checking stability in higher problems to each group in a solution would cause higher complexity. However, if a general definition of stability can be determined that includes perfectly stable groups; thus, there might be additional heuristics to reach more stable groups. This also leads to a deeper exploring of the relationship between optimisation and stability.\\
+
+Since the problem is sensitive to the starting point, another interesting path to explore consists in involving a clusterisation technique at the beginning to define the starting points. Then this can be compared to other clusterisation methods of multi-objective optimisation such as the work of Julia Handl~\cite{Handl2006}.\\
+
+Despite the results, there is still a chance for SOAs to outperform MOAs. Additional research may include further experiments with Chebyshev scalarization function using the ideal weights found, the same thing with the individual optimisation for the Pareto front construction.\\
+
+It is suggested to test the same problem with relaxed constraints. For example, the group size function can be considered as a relaxed constraint that becomes more important as the solutions converge. Another area of improvement would be the parameter tuning for each of the algorithms, as this was only a brief exploration using a handful of algorithms. It can also be considered to use other configurations for the mutation and crossover operators, or even use other operators at all. Another thing to consider for the future is to test the algorithms with a real dataset, as the distribution of the data was assumed, and, as it was shown, it could have lead to a negative impact in the results. \\
