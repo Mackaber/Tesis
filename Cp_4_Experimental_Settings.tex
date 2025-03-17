@@ -7,9 +7,9 @@ For these experiments, there were three different steps taken. First, some of th
 
 \section{Experiments regarding objective functions}
 
-Some of the objective functions used for the research had a very straightforward approach. The standard $\sigma$ deviation represents how much variety of different levels of experience there is within a group. For function $Gs$, subtraction is the representation of the distance to the ideal group size.
+Some of the objective functions used for the research had a very straightforward approach, specifically $Lvl$ and $Gs$ defined in sections \ref{subsection:experience_level} and \ref{subsection:group_size} respectively. In the $Lvl$ function the standard deviation $\sigma$ represents how much variety of different levels of experience there is within a group. For function $Gs$, the subtraction represents the distance to the ideal group size.\\
 
-To define the objective functions for interests similarity and the participation style it was necessary to perform additional experiments. Since this can be accomplished in different ways and it was not known which was the most adequate. These experiments are described in the following subsections. \\
+To define the objective functions for interests similarity $Int$ and the participation style $Ps$ it was necessary to perform additional experiments. Since this can be accomplished in different ways and it was not known which was the most adequate. These experiments are described in the following subsections. \\
 
 \subsection{Interests distance function}
 
@@ -175,7 +175,7 @@ For each meeting, the total silence time in seconds was considered as the propor
     \label{table:ami_times}
 \end{table}
 
-One of the conversation functional roles of Benne and Sheats is described as ''protagonism´´. This infers that a person making an utterance with this intention is starting to talk about a specific topic, not just responding by the utterance made by others. It was inferred that this specific role may have some correlation with the lack of silences. The next step involved measuring the \textit{protagonistic proportion} and \textit{protagonistic time} of each of the participants in the conversation. This is for all the utterance they made, how many were \textit{protagonistic} and for all the time they spoke, how much of it was \textit{protagonistic} respectively.\\
+One of the conversation functional roles of Benne and Sheats is described as "protagonism". This infers that a person making an utterance with this intention is starting to talk about a specific topic, not just responding by the utterance made by others. It was inferred that this specific role may have some correlation with the lack of silences. The next step involved measuring the \textit{protagonistic proportion} and \textit{protagonistic time} of each of the participants in the conversation. This is for all the utterance they made, how many were \textit{protagonistic} and for all the time they spoke, how much of it was \textit{protagonistic} respectively.\\
 
 Tables~\ref{table:res_ES2008d}~and~\ref{table:res_IS1003d} show the \textit{protagonistic proportion} and \textit{protagonistic time} for each participant in the conversation with the most (ES2008d) and the less (IS1003d) \textit{quantity of silences} respectively. As it can be seen in Table~\ref{table:res_ES2008d}, the meeting ES2008d has only brief protagonisms by a single person in the conversation, while in Table~\ref{table:res_IS1003d}, the meeting IS1003d has a homogeneous amount of \textit{protagonisms} by all of their participants.\\
 
@@ -217,11 +217,11 @@ Finally, the number of participations was compared to the average participation 
     \begin{tabular}{ccccc}
     \hline
     Conversation & Participations proportion & Average  of paticipation & $\Sigma$ & $\frac{1}{\Sigma}$ \\ \hline
-    ES2008b      & $24.75\%$                 & $0.80\%$                                                              & $23.17\%$  & $4.3$               \\
-    ES2008d      & $24.16\%$                 & $5.79\%$                                                              & $3.21\%$   & $31.17$              \\
-    ES2002d      & $27.11\%$                 & $4.29\%$                                                              & $17.15\%$  & $5.83$               \\
-    ES2009d      & $29.51\%$                 & $2.43\%$                                                                & $9.72\%$   & $10.29$              \\
-    IS1003d      & $33.21\%$                 & $2.81\%$                                                                & $11.23\%$  & $8.90$              \\
+    ES2008b & $24.75\%$ & $0.80\%$ & $23.17\%$  & $04.30\%$ \\
+    ES2008d & $24.16\%$ & $5.79\%$ & $03.21\%$  & $31.17\%$ \\
+    ES2002d & $27.11\%$ & $4.29\%$ & $17.15\%$  & $05.83\%$ \\
+    ES2009d & $29.51\%$ & $2.43\%$ & $09.72\%$  & $10.29\%$ \\
+    IS1003d & $33.21\%$ & $2.81\%$ & $11.23\%$  & $08.90\%$ \\
     \hline
     \end{tabular}
     \caption{Results of the conversation analysis.}
@@ -270,7 +270,7 @@ The social network Facebook has a database of interests separated by population 
 
 When a user of this platform consults the potential marketing segment, filtered by specific interest, a number known as \textit{potential reach} is shown. This number was acquired for each of the interests in the ontology to figure out the proportion of the population for each interest.\\
 
-The ontology contains overall categories (such as "Business and Industry" or "Hobbies"), this, however, was not considered for the distribution estimation, because they represented very general interests. Therefore, only interests from the third level onwards in the ontology were considered. Part of the distributions of interests can be seen in Table~\ref{table:results_interests}. \\
+The ontology contains overall categories (such as "Business and Industry" or "Hobbies"). This, however, was not considered for the distribution estimation, because they represented very general interests. Therefore, only interests from the third level onwards in the ontology were considered. Part of the distributions of interests can be seen in Table~\ref{table:results_interests}. \\
 
 \begin{table}[H]
     \centering
@@ -325,8 +325,7 @@ For the participation style, the same data-set as for defining the function was 
 Before comparing the proposed algorithms, several exploratory experiments took place to understand how the objective functions and the proposed operators behave. This also serves as the first comparison of a simple meta-heuristic, a population-based meta-heuristic, and a multi-objective algorithm. All algorithms were subject to similar parameters, described as follows.\\
 
 \begin{itemize}
-    \item A data-set of {10,001} was used. The mutation operator described in 
-    Section~\ref{section:mutation_operator} at a $1/n$ rate.
+    \item A data-set of $n=10,001$ was used with the mutation operator described in Section~\ref{section:mutation_operator} at a $1/n$ rate with $n$ representing the number of students.
 
     \item For the single objective algorithms, the same weight for all the functions was considered.
     
@@ -391,4 +390,4 @@ As can be seen in Figure~\ref{fig:multiobjetivo} the algorithm is stuck at sever
 
 \section{Preliminary conclusions}
 
-After analysing the results, it can be noticed that there is very little variation with the aggregated function $f_{agg}$, this is mostly because for this experimentation phase the same weights were considered for all the functions. However considering that not all functions have the same minimum and maximum values, there was a clear need to normalise them. This is done in the experiments in Chapter~\ref{chapter:chapter05}. It should also be noticed that for the LS algorithm $f_{agg}$ seems to become trapped in the local minima, further evidence of this is GA and NSGA-II being able to find a better solution. Finally, NSGA-II had the best performance overall, which may be a clue that MOA may be able to outperform SOA. It should also be noticed that despite using a large data-set of {10,001} students for these experiments, the local minima appear after $100$ steps.
+After analysing the results, it can be noticed that there is very little variation with the aggregated function $f_{agg}$, this is mostly because for this experimentation phase the same weights were considered for all the functions. However, considering that not all functions have the same minimum and maximum values, there was a clear need to normalise them. This is done in the experiments in Chapter~\ref{chapter:chapter05}. It should also be noticed that for the LS algorithm $f_{agg}$ seems to become trapped in the local minima, further evidence of this is GA and NSGA-II being able to find a better solution. Finally, NSGA-II had the best performance overall, which may be a clue that MOA may be able to outperform SOA. It should also be noticed that despite using a large data-set of {10,001} students for these experiments, the local minima appear after $100$ steps.

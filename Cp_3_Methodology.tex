@@ -55,6 +55,7 @@ Figure~\ref{fig:dataset_eg} presents a sample of a dataset with each of its diff
 In the following section, the different objective functions are described, which are based on the preference criteria defined in Section~\ref{section:preference_criteria}, the experience level, the interests similarity, and the participation style. It should be noted that preference criteria are evaluated per group $G$. Then, the objective values for a solution $A$ are computed as the average of each preference criterion. For instance, for the Group Size~$Gs(A) = AVG(Gs(G_i),...,Gs(G_n))$.\\
 
 \subsection{Group Size}
+\label{subsection:group_size}
 
 For this research, the ideal group size $Gs$ is arbitrarily considered from four to five students. This size is based on the idea that it will allow users belonging to the same group to participate homogeneously. It is also possible that there might be groups with $gs_{min} = 3$ or $gs_{max} = 6$ students, but these are not considered as ideal group sizes. Nonetheless, these non-ideal groups sizes are still considered as feasible group sizes, so that other features, such as the \textit{participation style} or the \textit{interests similarity} results in a better cohesion of the group.\\
 
@@ -65,6 +66,7 @@ The corresponding objective function measures the distance to $4.5$ since four a
 \end{equation}
 
 \subsection{Experience level}
+\label{subsection:experience_level}
 
 The experience level $Lvl$ in the language is taken from the standard \textbf{CEFR}. The values considered for each level are A1, A2, B1, B2, C1 y C2, which are sorted from the most basic to the most advanced level. Therefore, a numeric value is assigned to each of them from zero to five, where zero corresponds to A1 and five corresponds to C2. The intention for assembling the groups is that the users inside them do not have much variation in their experience level. 
 In this way, the vocabulary used is not too advanced for the lower student levels or too simple for more advanced users. 
