@@ -1,1 +1,0 @@
-For the first experiment, a Local Search algorithm was used, since this is considered one of the most simple metaheuristics that can be used for single-objective optimization according to the literature. As it can be seen in Figure~\ref{} from a random solution the algorithm manages to improve until it gets stuck in a local minima.
