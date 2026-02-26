@@ -120,8 +120,11 @@ It is worthy to mention that the perturbing mechanism is an important feature of
  \Repeat{the stopping criterion is satisfied}{
   Perturb $s^*$ to get a solution $p$\;
   Apply search starting from $p$ to get a solution $p^*$\;
-  % Placeholder for \eIf block
-
+    \eIf{$f(p^*) > f(s^*)$}{
+        $s^* \gets p^*$\;
+    }{
+        // Do nothing
+    }
  }
  % \textbf{return} the best solution met\;
 \end{algorithm}
@@ -258,9 +261,9 @@ Using this algorithm requires a minimum and maximum temperature, with each repli
     $j \gets U\{0,M-1\}$\; \tcp{Randomly select adjacent temp. levels}
     $\Delta E \gets (Cost({active\_solution}_{replica(j)}) - Cost({active\_solution}_{replica(j + 1)}))/G$\;
     $\Delta \beta \gets 1/{T_j} - 1/{T_{j+1}}$\;
-    \eIf{$U(0,1) < min(1,exp(\Delta E\Delta \beta))$}{
+    \If{$U(0,1) < min(1,exp(\Delta E\Delta \beta))$}{
         Set the temp. of $replica_j$ and $replica_{j+1}$ to $T_{j+1}$ and $T_j$, respectively\;
-        swap($replica_j$,$replica_{j+1}$) \tcp{Keeps replicas ordered by temp.}
+        $\text{swap}(replica_j,replica_{j+1})$ \tcp{Keeps replicas ordered by temp.}
     } 
 }
 \end{algorithm}
@@ -289,13 +292,13 @@ The algorithm attempts to design an electromagnetism inspired heuristic, where e
     \Repeat{stop criterion has met}{
         Generate a single new solution \textbf{$p$}\;
         Remove all solutions from $A$ dominated by $p$\;
-        \If{$\textbf{p} \nsucc \textbf{a} \wedge \textbf{f(p)} \neq \textbf{f(a)} \forall \textbf{a} \in A$}{
+        \If{$\textbf{p} \not\succ \textbf{a} \wedge \textbf{f(p)} \neq \textbf{f(a)} \forall \textbf{a} \in A$}{
             \If{$|A| < N$}{
                 $A:= A \cup \{p\}$\;
             }\Else{
                 Calculate $e(a)$ for all $a \in \mathcal{A}$\;
                 Calculate $e:= (e_{a^1}(p),...,e_{a^N}(p))$\;
-                $update(A,p,e)$\;
+                $\text{update}(A,p,e)$\;
             }
         }
     }
@@ -363,11 +366,11 @@ This algorithm works as follows. After an initial population is created, each in
 \label{nsgaii_alg}
 \SetAlgoLined
 Generate a random initial population $P_t$\;
-$R_t \gets P_t \cup Q_t$ \; \Comment{combine parent and offspring population}\;
-$F \gets \text{fast-non-dominated-sort}(R_t)$\; \Comment{run the fast non dominates sort procedure and collect $F = (F_1,F_2,...)$ with the non-dominated fronts of $R_t$}\;
+$R_t \gets P_t \cup Q_t$ \; \tcp{combine parent and offspring population}\;
+$F \gets \text{fast-non-dominated-sort}(R_t)$\; \tcp{run the fast non dominates sort procedure and collect $F = (F_1,F_2,...)$ with the non-dominated fronts of $R_t$}\;
 $P_{t+1} = 0$ and $i = 1$\;
-\Repeat{$|P_{t+1}| + |F_i| \leq N$ \; \Comment{until the parent population is filled}}{
-    $\text{crowding-distance-assigment}(F_i)$\; \Comment{calculate crowding-distance in $F_i$}\;
+\Repeat{$|P_{t+1}| + |F_i| \leq N$ \; \tcp{until the parent population is filled}}{
+    $\text{crowding-distance-assigment}(F_i)$\; \tcp{calculate crowding-distance in $F_i$}\;
     $P_{t+1} = P_{t+1} \cup F_i$\;
     $i = i + 1$\;
 }
@@ -409,9 +412,9 @@ Then for the mating selection, individuals are selected by binary tournaments. T
 \Repeat{$t \leq T$ or any stopping criterion is satisfied.}{
     \textit{Fitness assignment:} Calculate fitness values of individuals in $P_t$ and $\bar P_t$\;
     \textit{Environmental selection} Copy all nondominated individuals in $P_t$ and $\bar P_t$ to $\bar P_{t+1}$. \;
-    \eIf{$size(\bar P_{t+1}) > \bar N$}{
+    \If{$\text{size}(\bar P_{t+1}) > \bar N$}{
         \textit{Reduce} $\bar P_{t+1}$ by means of the truncator operator
-    }{
+    }\Else{
         \textit{Fill} $\bar P_{t+1}$ with dominated individuals in $P_t$ and $\bar P_t$
     }
 }
@@ -438,7 +441,7 @@ First defined by Zitzler and Thiele \cite{zitzler1999multiobjective}, as:
 
 \begin{definition}
 The size of space covered $S$ by a front $X' = (x_1, x_2,...,x_k)$, as a set of points in a Front, then $S(X')$ gives the volume enclosed by the union of the polytopes $p_1, p_2,... p_k$ where each $p_i$ is formed by the intersection of the hyperplanes arising out of ${x_i}$ along with the axes, for each of them in the objective space, there exists a hyperplane perpendicular to this axis and passing thought the point $(f_i(x_i), f_2(x_i), f_n(x_i))$. In the two dimensional case, each $p_i$ represents a rectangle defined by the points $(0,0)$ and $(f_1(x_i),f_2(x_i))$.
-\end{definition}\\
+\end{definition}
 
 HV is considered the only unary indicator that is capable of truly detecting that a front $A$ is not worse than another front $B$ for all its pairs $A\triangleright B $ \cite{zitzler2003performance}.  This concept is referred as \textit{pareto complaint}~\cite{ishibuchi2015study}. It is also noticed that for all the points in a front $A$ and a front $B$, $A \triangleright B $ follows $I_H(A) > IH(B)$, because this means that $A$ must include at least one point that is not weakly dominated by $B$, therefore a portion of the objective space is covered by $A$ but not by $B$.\\
 
