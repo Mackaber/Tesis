@@ -1,0 +1,21 @@
+# texpackages.txt - Your LaTeX dependencies
+times
+babel
+inputenc
+algorithm
+algpseudocode
+algorithm2e
+amsmath
+graphics
+graphicx
+url
+amsfonts
+amssymb
+xcolor
+multicol
+subcaption
+colortbl
+amsthm
+booktabs
+caption
+threeparttable

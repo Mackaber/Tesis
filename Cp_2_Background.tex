@@ -115,16 +115,15 @@ It is worthy to mention that the perturbing mechanism is an important feature of
 \caption{Local Search Algorithm} 
 \label{local_search_alg}
 \SetAlgoLined 
- Choose, at random, an initial solution $s$ in the search space\;\\
- Apply a search starting from $s$ to get a solution $s*^$\;\\
+ Choose, at random, an initial solution $s$ in the search space\;
+ Apply a search starting from $s$ to get a solution $s^*$\;
  \Repeat{the stopping criterion is satisfied}{
-  Perturb $s^*$ to get a solution $p$\;\\
-  Apply search starting from $p$ to get a solution $p*$\;\\
-  \eIf{the acceptance criterion is satisfied}{
-   $s^*$ \gets $p^*$\;
-  }
+  Perturb $s^*$ to get a solution $p$\;
+  Apply search starting from $p$ to get a solution $p^*$\;
+  % Placeholder for \eIf block
+
  }
- \textbf{return} the best solution met\;
+ % \textbf{return} the best solution met\;
 \end{algorithm}
 
 
@@ -147,18 +146,18 @@ Finally, the replacement or survivor selection uses the fitness value to identif
 \caption{Genetic Algorithm}
 \label{genetic_alg}
 \SetAlgoLined 
-Generate Initial population $p$\;\\
+Generate Initial population $p$\;
 Compute fitness of each individual\;\
 
 \Repeat{stopping condition has been met}{
-    \Comment{Produce a new generation}\;\\
+    // Produce a new generation\;
     \For{size of $p$ / 2}{
-        Select two individuals from the previous generation for matching\;\\
-        Recombine the two individuals to give two new off springs\;\\
-        Insert the offspring in the new generation\;\\
+        Select two individuals from the previous generation for matching\;
+        Recombine the two individuals to give two new off springs\;
+        Insert the offspring in the new generation\;
     }
 }
- \textbf{return} the best solution met\;
+ % \textbf{return} the best solution met\;
 \end{algorithm}
 
 \subsection{Evolution Strategies}
@@ -175,7 +174,7 @@ Later, Rechenberg proposed a multi-member ES~\cite{huning1976evolutionsstrategie
 \begin{itemize}
     \item $(\mu + \lambda)$-ES, known as elitist evolution strategy, indicates that $\mu$ parents will create $\mu \geq 1$ descendants by recombination and mutation, keeping the fittest individual of the previous generation and discarding the rest.
     \item $(\mu, \lambda)$-ES, known as non-elitist evolution strategy, is similar with the difference that none of the parents is kept in any of the subsequent generations, disregarding how good or bad was its fitness compared to the generation they belong.
-\end{itemize}\\
+\end{itemize}
 
 %Two other well-known ($ES$) is $(\mu/\rho + \lambda) - ES$ and ($\mu/\rho, \lambda) - ES$, where the $\rho$ refers to the number of parents involved in the procreation the offspring. Mutation in ES can be realised through normally distributed numbers with a mean zero and a standard deviation of $\sigma$, which represents the size in the mutation step when the problem has a continuous solution. A basic version of the ($ES$) can be seen in \ref{evolution_alg}
 
@@ -183,14 +182,14 @@ Later, Rechenberg proposed a multi-member ES~\cite{huning1976evolutionsstrategie
 \caption{Evolution Strategy Algorithm}
 \label{evolution_alg}
 \SetAlgoLined
-    \textit{Initialise} the population with random individuals\;\\
+    \textit{Initialise} the population with random individuals\;
     \textit{Evaluate} each individual
     \Repeat{the termination condition is satisfied}{
-        \textit{Select} parents\;\\
-        \textit{Recombine} pairs of parents\;\\
-        \textit{Mutate} the resulting offspring\;\\
-        \textit{Evaluate} new individuals\;\\
-        \textit{Select} individuals for the next generation\;\\
+        \textit{Select} parents\;
+        \textit{Recombine} pairs of parents\;
+        \textit{Mutate} the resulting offspring\;
+        \textit{Evaluate} new individuals\;
+        \textit{Select} individuals for the next generation\;
     }
 \end{algorithm}
 
@@ -212,25 +211,25 @@ Random Descent (RD), also known as Stochastic Hill climbing, is an algorithm sim
 The local improvements are determined by a neighbourhood structure, which can be seen as an undirected graph G on vertex set S, and a fitness function on the search space of the algorithm. The algorithm checks a member of its neighbourhood randomly and transitions to this solution when there is an improvement in the fitness function result or is the same. The process is then repeated at each step.%\\
 %
 %It was designed with discrete domains in mind, since they have explicit neighbourhoods, such as with combinatorial optimisation problems. However, even being a stochastic optimisation process, it can still get stuck in a local optimum. 
-Algorithm~\ref{evolution_alg} describes the pseudocode for RD.
+Algorithm~\ref{stochastic_hill_climbing_alg} describes the pseudocode for RD.
 
 \begin{algorithm}[H]
 \caption{Pseudocode for stochastic hill climbing}
-\label{evolution_alg}
+\label{stochastic_hill_climbing_alg}
 \SetAlgoLined
-    Currrent solution $s$ from new population\;\\
-    Evaluate the objective function $f(s)$\;\\
-    $stop = \textit{FALSE}$\;\\
-    $iter = 0$\;\\
+    Currrent solution $s$ from new population\;
+    Evaluate the objective function $f(s)$\;
+    stop = \textit{FALSE}\;
+    $iter = 0$\;
     \While{$stop = \textit{FALSE}$}{
-      Choose a random solution in the neighbourhood $s_n$\;\\
+      Choose a random solution in the neighbourhood $s_n$\;
       \eIf{$f(s_n) > f(s)$}{
         replace $s$ by $s_n$\;
        }{
         $iter = iter + 1$\;
       }
-      \eIf{$iter = iter_{max}$}{
-        $stop = TRUE$\;
+      \If{$iter = iter_{max}$}{
+        stop = TRUE\;
       }
      }
 \end{algorithm}
@@ -248,20 +247,20 @@ Using this algorithm requires a minimum and maximum temperature, with each repli
 \label{parallel_temp_alg}
 \SetAlgoLined
 \For{$i \gets 0$ \textbf{to} $M - 1$}{
-    $T_i \gets$ calculate temperature $i$\;\\
+    $T_i \gets$ calculate temperature $i$\;
     $replica_i \gets$ new instance of Metropolis search with temperature $T_i$
 }
 \Repeat{The stop criterion has been met}{
     \For{$i \gets 0$ \textbf{to} $M - 1$}{
         Run $replica_i$ for $N_{swap}$ iterations
     }
-    $G \gets min(Cost({global_best}_{replica(0)},...,Cost({global_best}_{replica(M - 1)})))$\;\\
-    $j \gets U\{0,M-1\} \Comment{Randomly select adjacent temp. levels}$\;\\
-    $\Delta E \gets (Cost({active\_solution}_{replica(j)}) - Cost({active\_solution}_{replica(j + 1)}))/G$\;\\
-    $\Delta \beta \gets 1/{T_j} - 1/{T_{j+1}}$\;\\
+    $G \gets min(Cost({global_best}_{replica(0)},...,Cost({global_best}_{replica(M - 1)})))$\;
+    $j \gets U\{0,M-1\}$\; \tcp{Randomly select adjacent temp. levels}
+    $\Delta E \gets (Cost({active\_solution}_{replica(j)}) - Cost({active\_solution}_{replica(j + 1)}))/G$\;
+    $\Delta \beta \gets 1/{T_j} - 1/{T_{j+1}}$\;
     \eIf{$U(0,1) < min(1,exp(\Delta E\Delta \beta))$}{
-        Set the temp. of $replica_j$ and $replica_{j+1}$ to $T_{j+1}$ and $T_j$, respectively\;\\
-        $swap($replica_j$,$replica_{j+1}$)$ \Comment{Keeps replicas ordered by temp.}
+        Set the temp. of $replica_j$ and $replica_{j+1}$ to $T_{j+1}$ and $T_j$, respectively\;
+        swap($replica_j$,$replica_{j+1}$) \tcp{Keeps replicas ordered by temp.}
     } 
 }
 \end{algorithm}
@@ -285,24 +284,22 @@ The algorithm attempts to design an electromagnetism inspired heuristic, where e
 \label{espea_alg}
 \caption{ESPEA}
 \SetAlgoLined
-\Begin{
-    Generate initial population $P$\;\\
-    Copy all non-dominated solutions in $P$ to archive $A$\;\\
+    Generate initial population $P$\;
+    Copy all non-dominated solutions in $P$ to archive $A$\;
     \Repeat{stop criterion has met}{
-        Generate a single new solution \textbf{$p$}\;\\
-        Remove all solutions from $A$ dominated by $p$\;\\
-        \eIf{$\textbf{p} \nsucc \textbf{a} \wedge \textbf{f(p)} \neq \textbf{f(a)} \forall \textbf{a} \in A$}{
-            \eIf{$|A| < N$}{
-                $A:= A \cup {p}$
-            }{
-                Calculate $e(a)$ for all $a \in \A$\;\\
-                Calculate $e:= (e_{a^1}(p),...,e_{-a^N}(p))$\;\\
-                $update(A,p,e)$
+        Generate a single new solution \textbf{$p$}\;
+        Remove all solutions from $A$ dominated by $p$\;
+        \If{$\textbf{p} \nsucc \textbf{a} \wedge \textbf{f(p)} \neq \textbf{f(a)} \forall \textbf{a} \in A$}{
+            \If{$|A| < N$}{
+                $A:= A \cup \{p\}$\;
+            }\Else{
+                Calculate $e(a)$ for all $a \in \mathcal{A}$\;
+                Calculate $e:= (e_{a^1}(p),...,e_{a^N}(p))$\;
+                $update(A,p,e)$\;
             }
         }
     }
-}
-\textbf{return $A$}
+    \Return $A$\;
 \end{algorithm}
 
 % where e represents the energy
@@ -333,21 +330,21 @@ Algorithm~\ref{mombi2_alg} describes MOMBI2.
 \label{mombi2_alg}
 \caption{MOMBI2}
 \SetAlgoLined
-\textbf{Require:} MOP, stopping criterion,set of weight vectors $W$\;\\
-\textbf{Ensure:} Pareto set approximation\;\\
-Initialise population $P_i,i \gets 1$\;\\
-Evaluate population $P-i$\;\\
-Calculate the $L_2-norm$ of objectives for $P_i$\;\\
-Set $\vec z^{min} \gets \vec z^*$ and $\vec z^{max} \gets \vec z^{nad}$\;\\
+\textbf{Require:} MOP, stopping criterion,set of weight vectors $W$\;
+\textbf{Ensure:} Pareto set approximation\;
+Initialise population $P_i,i \gets 1$\;
+Evaluate population $P-i$\;
+Calculate the $L_2-norm$ of objectives for $P_i$\;
+Set $\vec z^{min} \gets \vec z^*$ and $\vec z^{max} \gets \vec z^{nad}$\;
 \While{termination condition is not fulfilled}{
-    Perform parent selection\;\\
-    Generate offspring $P_i'$ using variation operators\;\\
-    Evaluate population $P_i'$\;\\
-    Calculate the $L_2-norm$ of objectives for $P_i'$\;\\
-    Normalize objective functions for $P_i \cup P_i'$\;\\
-    Execute $R2$ ranking algorithm $(P_i \cup P_i',W)$\;\\
-    Reduce population $P_{i+1} \gets \{P_i \cup P_i'\}$\;\\
-    Update reference points $(\vec z^{min},\vec z^{max},P_{i+1},m)$\;\\
+    Perform parent selection\;
+    Generate offspring $P_i'$ using variation operators\;
+    Evaluate population $P_i'$\;
+    Calculate the $L_2-norm$ of objectives for $P_i'$\;
+    Normalize objective functions for $P_i \cup P_i'$\;
+    Execute $R2$ ranking algorithm $(P_i \cup P_i',W)$\;
+    Reduce population $P_{i+1} \gets \{P_i \cup P_i'\}$\;
+    Update reference points $(\vec z^{min},\vec z^{max},P_{i+1},m)$\;
     $i \gets i + 1$
 }
 \textbf{return} $P_i$
@@ -365,19 +362,19 @@ This algorithm works as follows. After an initial population is created, each in
 \caption{NSGAII}
 \label{nsgaii_alg}
 \SetAlgoLined
-Generate a random initial population $P_t$\\
-$R_t \gets P_t \cup Q_t$ \Comment{combine parent and offspring population}\\
-$F \gets fast-non-dominated-sort(R_t)$ \Comment{run the fast non dominates sort procedure and collect $F = (F_1,F_2,...)$ with the non-dominated fronts of $R_t$}\\
-$P_{t+1} = 0$ and $i = 1$\\
-\Repeat{$|P_{t+1}| + |F_i| \leq N$ \Comment{until the parent population is filled}}{
-    $crowding-distance-assigment(F_i)$ \Comment{calculate crowding-distance in $F_i$}\\
-    $P_{t+1} = P_{t+1} \cups F_i$\\
-    $i = i + 1$
+Generate a random initial population $P_t$\;
+$R_t \gets P_t \cup Q_t$ \; \Comment{combine parent and offspring population}\;
+$F \gets \text{fast-non-dominated-sort}(R_t)$\; \Comment{run the fast non dominates sort procedure and collect $F = (F_1,F_2,...)$ with the non-dominated fronts of $R_t$}\;
+$P_{t+1} = 0$ and $i = 1$\;
+\Repeat{$|P_{t+1}| + |F_i| \leq N$ \; \Comment{until the parent population is filled}}{
+    $\text{crowding-distance-assigment}(F_i)$\; \Comment{calculate crowding-distance in $F_i$}\;
+    $P_{t+1} = P_{t+1} \cup F_i$\;
+    $i = i + 1$\;
 }
-$Sort(F_i, \prec_n)$\\
-$P_{t+1} = P_{t+1} \cups F_i[1:(N-|P_{t+1}|)]$\\
-$Q_{t+1} = make-new-pop(P_{t+1})$\\
-$t = t+1$\\
+$\text{Sort}(F_i, \prec_n)$\;
+$P_{t+1} = P_{t+1} \cup F_i[1:(N-|P_{t+1}|)]$\;
+$Q_{t+1} = \text{make-new-pop}(P_{t+1})$\;
+$t = t+1$\;
 \end{algorithm}
 
 \subsection{Strength Pareto Evolutionary Algorithm 2}
@@ -406,20 +403,20 @@ Then for the mating selection, individuals are selected by binary tournaments. T
 \caption{SPEA2}
 \label{spea2_alg}
 \SetAlgoLined
-\textbf{Input:} \textit{population size} $N$, \textif{archive size} $\bar N$, \textit{maximum number of generations} $T$\;\\
-\textbf{Output:} \textit{nondominated set} \textbf{A}\;\\
-\textit{Initialize:} Generate an initial population $P_0$ and create the empty archive $\bar P_o = 0.$ Set $t = 0$\;\\
+\textbf{Input:} \textit{population size} $N$, \textit{archive size} $\bar N$, \textit{maximum number of generations} $T$\;
+\textbf{Output:} \textit{nondominated set} \textbf{A}\;
+\textit{Initialize:} Generate an initial population $P_0$ and create the empty archive $\bar P_0 = \emptyset.$ Set $t = 0$\;
 \Repeat{$t \leq T$ or any stopping criterion is satisfied.}{
-    \textit{Fitness assignment:} Calculate fitness values of individuals in $P_t$ and $\bar P_t$\;\\
-    \textit{Environmental selection} Copy all nondominated individuals in $P_t$ and $\bar P_t$ to $\bar P_{t+1}$. \;\\
+    \textit{Fitness assignment:} Calculate fitness values of individuals in $P_t$ and $\bar P_t$\;
+    \textit{Environmental selection} Copy all nondominated individuals in $P_t$ and $\bar P_t$ to $\bar P_{t+1}$. \;
     \eIf{$size(\bar P_{t+1}) > \bar N$}{
         \textit{Reduce} $\bar P_{t+1}$ by means of the truncator operator
     }{
-        \textit{Fill} $\bar P_{t+1}$ with dominated individuals in $P_t$ and $\bat P_t$
+        \textit{Fill} $\bar P_{t+1}$ with dominated individuals in $P_t$ and $\bar P_t$
     }
 }
-\textit{Termination:} $A \gets$ the set of decision vectors represented by the nondominated individuals in $\bar P_{t+1}$\;\\
-\textit{Mating selection:} Perform binary tournament selection with replacement on $\bar P_{t+1}$ in order to fill the mating pool.
+\textit{Termination:} \textbf{A} $\gets$ the set of decision vectors represented by the nondominated individuals in $\bar P_{t+1}$\;
+\textit{Mating selection:} Perform binary tournament selection with replacement on $\bar P_{t+1}$ in order to fill the mating pool.\
 \end{algorithm}
 
 \section{Comparing Single-Objective and Multi-Objective Optimisation}

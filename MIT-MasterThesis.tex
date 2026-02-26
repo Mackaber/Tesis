@@ -10,9 +10,11 @@
 
 % My Packages
 \usepackage[utf8]{inputenc}
-\usepackage{algorithm}
-\usepackage[noend]{algpseudocode}
+% \usepackage{algorithm}
+% \usepackage[noend]{algpseudocode}
 \usepackage[linesnumbered]{algorithm2e}
+\usepackage{float} % Added for [H] float option
+
 
 %%  Useful packages to use in your document
 %%  These are optional but I recommend you used them and that you keep them here.
@@ -28,9 +30,6 @@
 \usepackage{subcaption}
 
 \usepackage{colortbl}
-\usepackage[table*]{xcolor}
-\xdefinecolor{gray95}{gray}{0.65}
-\xdefinecolor{gray25}{gray}{0.8}
 \usepackage{amsthm}
 \newtheorem{definition}{Definition}
 \usepackage{booktabs,caption}
@@ -41,6 +40,7 @@
 
 %% Definition of new commands
 \newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\vect}[1]{\boldsymbol{#1}} % Definition of \vect
 \renewcommand{\thefootnote}{\alph{footnote}}
   
 %%  Here you set up the variables according to your work

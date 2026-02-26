@@ -1,0 +1,73 @@
+% This is a provisional main file for the thesis.
+% It includes the necessary packages and sets up the structure.
+% The idea is to go chapter by chapter, fixing issues and ensuring that each part compiles 
+% correctly before moving on to the next.
+
+% Prompt:
+% Fix each chapter individually, making sure they work correctly before including the next one.
+% When a chapter is fixed, make a commit with a message indicating which chapter was fixed and what issues were addressed.
+
+\documentclass[english,12pt,oneside,openright]{report}
+\usepackage{phdThesisFormat}
+\usepackage{times}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[linesnumbered]{algorithm2e}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{graphics}
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{subcaption}
+\usepackage{colortbl}
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\graphicspath{ {./images/} }
+\newcommand{\field}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\vect}[1]{\ensuremath{\boldsymbol{#1}}}
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+\advisor{Dr. Alejandro Rosales Perez}
+\advisorInstitution{Tecnol\'{o}gico de Monterrey}
+\committeeMemberA{Dr. Santiago Enrique Conant Pablos}
+\committeeMemberAInstitution{Tecnol\'{o}gico de Monterrey}
+\committeeMemberB{Ramon Felipe Brena Pinero}
+\committeeMemberBInstitution{}
+\committeeMemberC{Sa\'ul Zapotecas Mart\'inez}
+\committeeMemberCInstitution{Universidad Aut\'onoma Metropolitana (UAM)}
+\graduateProgramDirector{Dr. Hugo Terashima Marin}
+\researchCenter{Intelligent Systems Center}
+\doctoralStudent{Miguel {\'A}ngel Bravo Vidales}
+\dissertationMonth{December}
+\dissertationYear{2019}
+\dissertationTitle{Comparison between Single-Objective and Multi-Objective Algorithms for the creation of stable student groups.}
+\campus{Monterrey}
+\major{Computer Science}
+\abstractFile{abstractFile}
+\acknowledgementFile{acknowledgementFile}
+\dedicationFile{dedicationFile}
+\bibliographyFile{References}
+
+\begin{document}
+% Chapter inclusion will go here
+\input{Cp_1_Intro}
+% \input{Cp_2_Background}
+% \input{Cp_3_Methodology}
+% \input{Cp_4_Experimental_Settings}
+% \input{Cp_5_Experimentation}
+% \input{Cp_6_Observations_and_Corrections}
+% \input{Cp_7_ Results}
+% \input{Cp_8_Conclusion}
+
+% Critical issues to address in the respective files before including them:
+% 1. Fix 'Cp_2_Background.tex' (nsgaii_alg syntax and espea_alg errors, ensure correct use of \Comment and line terminators).
+% 2. Fix 'images/multiobjetivo.png' (rename to 'Multi-Objective.png' and update \includegraphics path) in 'Cp_4_Experimental_Settings.tex'.
+% 3. Address '! LaTeX Error: Not in outer par mode.' errors in 'Cp_5_Experimentation.tex' (likely by ensuring \par before \begin{table}).
+
+\end{document}

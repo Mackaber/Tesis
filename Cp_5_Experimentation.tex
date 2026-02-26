@@ -52,12 +52,7 @@ Considering that a fair comparison requires a level of complexity similar to eac
 
 In this experiment, several combinations of these parameters were tested for SOA and MOA. For the SOA, a generational GA was used, whereas, for the MOA, the algorithm NSGA-II was used. These pairs of parameters $(p,s)$ to be tested were established on a constant scale: \textbf{100}, \textbf{150}, \textbf{200}, \textbf{250}, and \textbf{300}. This experiment only considered the problem sizes of \textbf{20} and \textbf{200} students. Each pair of parameters was tested for \textbf{50} independent runs. Although a high performance may be observed from the high parameters, it should be considered that a pair with lower complexity is preferred.\\
 
-Table~\ref{table:parameters_(SOA)_20} shows the results for the SOA of $n = 20$. The different metrics give a variety of results that leans towards high pairs, like $(250,300)$ or $(250,250)$. However, in Table~\ref{table:parameters_(SOA)_200}, it is observed that when the size of the problem grows to $n=200$, pairs of lower parameters show to have a better performance. \\
-
-Table~\ref{table:parameters_(MOA)_20} shows the result for MOA with $n=20$. There, it can be observed a significant frequency for the pair $(100,300)$ for most metrics. The HV metric, however,  showed high performance for $(150,150)$ as the best, and $(100,100)$ as the second-best. Finally, Table~\ref{table:parameters_(MOA)_200} shows for $n=200$, where the most frequent pair is $(100,100)$.
-%
-Since it was established that there is a bias for lower complexity, the selected pair of parameters for the following experiments was $p=100$ and $s=100$.\\
-
+\par
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{
@@ -82,6 +77,7 @@ Since it was established that there is a bias for lower complexity, the selected
 \label{table:parameters_(SOA)_20}
 \end{table}
 
+\par
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{
@@ -106,6 +102,7 @@ Since it was established that there is a bias for lower complexity, the selected
 \label{table:parameters_(SOA)_200}
 \end{table}
 
+\par
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
@@ -132,6 +129,7 @@ HV Med and Inter Range     & 200,100 & $9.78_{40.50}$   & 300,200 & $6.20_{34.00
 \label{table:parameters_(MOA)_20}
 \end{table}
 
+\par
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
@@ -174,6 +172,7 @@ The full details of each of the implementations can be seen in Table~\ref{table:
     \label{eq:normalization_equation}
 \end{equation}
 
+\par
 \begin{table}[H]
     \begin{tabular}{lcc}
     \hline
@@ -189,6 +188,7 @@ The full details of each of the implementations can be seen in Table~\ref{table:
     \label{table:normalization_parameters}
 \end{table}
 
+\par
 \begin{table}[H]
     \begin{tabular}{p{0.15\textwidth}p{0.15\textwidth}p{0.30\textwidth}p{0.24\textwidth}p{0.10\textwidth}}
     \hline
@@ -207,6 +207,7 @@ The full details of each of the implementations can be seen in Table~\ref{table:
     \label{table:(SOA)_details_jmetal}
 \end{table}
 
+\par
 \begin{table}[H]
     \begin{tabular}{p{0.15\textwidth}p{0.15\textwidth}p{0.30\textwidth}p{0.24\textwidth}p{0.10\textwidth}}
     \hline
@@ -225,6 +226,7 @@ The full details of each of the implementations can be seen in Table~\ref{table:
 
 The details and specific parameters for the multi-objective algorithms can be seen in Table~\ref{table:(MOA)_details}. In this case, all the algorithms implementations belong to the jMetal framework. It should also be noted that a binary tournament selection, a ranking, and crowding distance were used for all these algorithms.
 
+\par
 \begin{table}[H]
     \begin{tabular}{p{0.15\textwidth}p{0.15\textwidth}p{0.30\textwidth}p{0.30\textwidth}}
     \hline
@@ -278,8 +280,7 @@ To evaluate the performance we made an analysis using the EPSILON, SPREAD, IGD+ 
 
 The EPS scalarization method make use of a boundary to determine its constraints. This boundary was established using all the SOA and optimising each objective function independently for each of the problem sizes, taking the best result for each objective function and for each problem size. The results are shown in Table~\ref{tab:best_independant_results}. These were used as the boundaries for the constraints, in each step a single objective function is evaluated and the rest are used as constraints. If a function evaluation is higher than the best values it is consider that it had violated the constraint to a certain degree depending on how much higher it was.\\
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
+\par
 \begin{table}[!htp]
 \centering
 \begin{tabular}{lcccc}
@@ -301,9 +302,7 @@ For the WS and CHE methods there was a need to define a weight for each function
 
 Where $w_i$ is the weight to be used for each function, $f_i(x)$ is the best result found for this function evaluated individually and $\sum f(x)$ is the sum of all the results for each problem size. The weights are shown in Table~\ref{tab:weights_to_be_used}.\\
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
+\par
 \begin{table}[!htc]
 \centering
 \begin{tabular}{@{}lcccc@{}}
@@ -324,10 +323,7 @@ Interestingly, these weights are close from each other from their problem sizes.
 
 The common parameters for the mutation and crossover probabilities specify to have a low mutation probability usually between $0.001$ and $0.05$ and a high crossover probability between $0.5$ and $1.0$  \cite{Lin2003}. In this research, we call these parameters "Thumb-Parameters", as they are rules of thumb to follow. For this experimentation phase, we used a crossover probability of $0.9$ and a mutation probability of $1/n$ where $n$ is the size of the problem which corresponds to the number of students. \\
 
-Table~\ref{tab:igd+_thumb} shows the median and interquartile ranges for the IGD+ metric for all the problem sizes, for each SOA and their scalarization methods and each of the MOA. The results in dark grey are considered the best, and the ones in dark grey are the second best. The MOA show an advantage against the SOA for all the problem sizes, although they came very near especially with the CHE method. Although the performance varies for each of the problem sizes, there is a clear advantage for using the CHE and EPS methods for the SOA, using Thumb-Parameters. GSA and GGA show a very poor performance using the WS method overall. MOA results show an advantage for MORS and MOMBI-II, although the results are too close with each other, except for the $n = 200$ problem.\\
-
-Table~\ref{tab:ep_thumb} shows the median and interquartile ranges for the EP metric. These results are consistent with the ones found with the IGD+ for the most part. Except for the second-best algorithm which goes to SPEA-II instead of MOMBI-II for the $n = 20$ problem, although the performance for these two is very similar, so this inconsistency may not be relevant.\\
-
+\par
 \begin{table}[!htc]
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccccccccc@{}}
@@ -353,10 +349,7 @@ MORS     & \multicolumn{3}{c}{\cellcolor{gray95}$2.25_{1.28}$} & \multicolumn{3}
 \label{tab:igd+_thumb}
 \end{table}
 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
+\par
 \begin{table}[!htc]
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccccccccc@{}}
@@ -386,9 +379,7 @@ Tables~\ref{tab:spread_thumb} and \ref{tab:hv_thumb} show the results for the SP
 
 The two best algorithms according to the HV metric are NSGA-II and SPEA-II. These results are mostly consist ant between problem sizes. These results are mostly consistent with the SPREAD showed in Table~\ref{tab:spread_thumb}. EP and IGD+ highlighted MORS as the better algorithm, but as previously noted, the difference between the others in comparison wasn't much. Therefore the analysis of HV showed clearer results among the MOA. While EP and IGD+ showed an slight advantage for the MOA against the SOA in general.\\
   
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
+\par
 \begin{table}[!htc]
 \centering
 \begin{tabular}{@{}lccc@{}}
@@ -404,9 +395,7 @@ MORS     & $0.68_{0.11}$                   & $0.83_{0.04}$                   & \
 \label{tab:spread_thumb}
 \end{table}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
+\par
 \begin{table}[!htc]
 \centering
 \begin{tabular}{@{}lccc@{}}
@@ -426,44 +415,45 @@ A Friedman ranking test was done to define which algorithms performed better acr
 
 Both rankings show an overall better performance for the MOA, although, these metrics are not able to determine a best algorithm among themselves, since their position in the ranking is very close.\\
 
+\par
 \begin{table}[!htc]
 \centering
 \begin{tabular}{lc}
 \toprule
 Algorithm  & Ranking \\
 \midrule
-GGA_{WS}   & 27.66  \\
-GSA_{WS}   & 28.66  \\
-ES_{WS}    & 25.33  \\
-NES_{WS}   & 27.00  \\
-LS_{WS}    & 19.00  \\
-RD_{WS}    & 16.00  \\
-PT_{WS}    & 23.66  \\
-SORS_{WS}  & 21.00  \\
+$GGA_{WS}$   & $27.66$  \\
+$GSA_{WS}$   & $28.66$  \\
+$ES_{WS}$    & $25.33$  \\
+$NES_{WS}$   & $27.00$  \\
+$LS_{WS}$    & $19.00$  \\
+$RD_{WS}$    & $16.00$  \\
+$PT_{WS}$    & $23.66$  \\
+$SORS_{WS}$  & $21.00$  \\
 \midrule
-GGA_{CHE}  & 9.00   \\
-GSA_{CHE}  & 8.66   \\
-ES_{CHE}   & 12.33  \\
-NES_{CHE}  & 11.66  \\
-LS_{CHE}   & 14.00  \\
-RD_{CHE}   & 15.66  \\
-PT_{CHE}   & 8.00   \\
-SORS_{CHE} & 8.66   \\
+$GGA_{CHE}$  & $9.00$   \\
+$GSA_{CHE}$  & $8.66$   \\
+$ES_{CHE}$   & $12.33$  \\
+$NES_{CHE}$  & $11.66$  \\
+$LS_{CHE}$   & $14.00$  \\
+$RD_{CHE}$   & $15.66$  \\
+$PT_{CHE}$   & $8.00$   \\
+$SORS_{CHE}$ & $8.66$   \\
 \midrule
-GGA_{EPS}  & 22.00  \\
-GSA_{EPS}  & 23.33  \\
-ES_{EPS}   & 20.66  \\
-NES_{EPS}  & 17.66  \\
-LS_{EPS}   & 14.33  \\
-RD_{EPS}   & 12.66  \\
-PT_{EPS}   & 16.00  \\
-SORS_{EPS} & 17.00  \\
+$GGA_{EPS}$  & $22.00$  \\
+$GSA_{EPS}$  & $23.33$  \\
+$ES_{EPS}$   & $20.66$  \\
+$NES_{EPS}$  & $17.66$  \\
+$LS_{EPS}$   & $14.33$  \\
+$RD_{EPS}$   & $12.66$  \\
+$PT_{EPS}$   & $16.00$  \\
+$SORS_{EPS}$ & $17.00$  \\
 \midrule
-ESPEA      & 3.66   \\
-MOMBI-II   & 3.66   \\
-NSGA-II    & 3.66   \\
-SPEA-II    & 2.66   \\
-MORS       & 1.33   \\
+ESPEA      & $3.66$   \\
+MOMBI-II   & $3.66$   \\
+NSGA-II    & $3.66$   \\
+SPEA-II    & $2.66$   \\
+MORS       & $1.33$   \\
 \bottomrule
 \end{tabular}
 \caption{Friedman Ranking on IGD+ metric using Thumb-Parameters}
@@ -471,38 +461,39 @@ MORS       & 1.33   \\
 Considering reduction performance (distributed according to chi-square with 28 degrees of freedom: 74.63).
 \end{table}
 
+\par
 \begin{table}[!htp]
 \centering
 \begin{tabular}{lc}
 \toprule
 Algorithm&Ranking\\
 \midrule
-GGA_{WS}&27.00\\
-GSA_{WS}&29.00\\
-ES_{WS}&25.66\\
-NES_{WS}&26.66\\
-LS_{WS}&19.00\\
-RD_{WS}&16.33\\
-PT_{WS}&23.99\\
-SORS_{WS}&20.66\\
+$GGA_{WS}$&27.00\\
+$GSA_{WS}$&29.00\\
+$ES_{WS}$&25.66\\
+$NES_{WS}$&26.66\\
+$LS_{WS}$&19.00\\
+$RD_{WS}$&16.33\\
+$PT_{WS}$&23.99\\
+$SORS_{WS}$&20.66\\
 \midrule
-GGA_{CHE}&8.33\\
-GSA_{CHE}&7.66\\
-ES_{CHE}&12.66\\
-NES_{CHE}&11.66\\
-LS_{CHE}&13.66\\
-RD_{CHE}&15.33\\
-PT_{CHE}&8.00\\
-SORS_{CHE}&8.66\\
+$GGA_{CHE}$&8.33\\
+$GSA_{CHE}$&7.66\\
+$ES_{CHE}$&12.66\\
+$NES_{CHE}$&11.66\\
+$LS_{CHE}$&13.66\\
+$RD_{CHE}$&15.33\\
+$PT_{CHE}$&8.00\\
+$SORS_{CHE}$&8.66\\
 \midrule
-GGA_{EPS}&23.00\\
-GSA_{EPS}&23.33\\
-ES_{EPS}&20.66\\
-NES_{EPS}&17.66\\
-LS_{EPS}&14.00\\
-RD_{EPS}&12.33\\
-PT_{EPS}&17.66\\
-SORS_{EPS}&17.00\\
+$GGA_{EPS}$&23.00\\
+$GSA_{EPS}$&23.33\\
+$ES_{EPS}$&20.66\\
+$NES_{EPS}$&17.66\\
+$LS_{EPS}$&14.00\\
+$RD_{EPS}$&12.33\\
+$PT_{EPS}$&17.66\\
+$SORS_{EPS}$&17.00\\
 \midrule
 ESPEA&3.66\\
 MOMBI-II&3.66\\
@@ -519,6 +510,7 @@ Considering reduction performance (distributed according to chi-square with 28 d
 
 The rankings for SPREAD and HV metrics are shown in Tables~\ref{tab:fried_spread_thumb} and \ref{tab:hv_thumb} respectively. For the Friedman test on the HV metric the higher is the better result. The best algorithms according to this ranking are SPEA-II and NSGA-II separated only by a small difference. SPEA-II shows a lower SPREAD metric which means their solutions are more convergent.\\
  
+\par
 \begin{table}[!htc]
 \centering
 \begin{tabular}{lc}
@@ -537,6 +529,7 @@ MORS&2.33\\
 Considering reduction performance (distributed according to chi-square with 4 degrees of freedom: 4.53).
 \end{table}
 
+\par
 \begin{table}[!htc]
 \centering
 \begin{tabular}{lc}
@@ -567,10 +560,7 @@ In this section we tested both SOA and MOA using Thumb-Parameters, which involve
 
 To test the stability, an experiment took place measuring the results from the previous set of exploratory experiments for the $n=20$ problem. The results were evaluated using the methodology described in Section~\ref{section:stability}. The number of stable students is considered for each preference criteria. And by each of the tested algorithms. The analysis was made using a metaheuristic LS, the single objective genetic algorithm GGA and the multi-objective algorithm NSGA-II. Using a random solution for comparison.\\
 
-Results are shown in Table~\ref{tab:preference_criteria}, here the solutions obtained from the algorithms are compared to a random solution, it can be seen that the stability improves or stays the same for all the algorithms, except for the $Lvl$ criteria. This can be explained because of the little variation between the levels of the students. Interestingly, NSGA-II seems to have the most stability spread across all the objective functions.\\
-
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
+\par
 \begin{table}[H]
 \centering
 \resizebox{\textwidth}{!}{%
@@ -595,10 +585,7 @@ This analysis was made not to test which algorithm lead to the most stability, b
 
 After extensive analysis and looking at the results and observing an apparent trade-off between some of the objective functions There was the need of analysing the correlation among objectives over the non-dominated, which were taken from the best front obtained from the $n=200$ problem.\\
 
-For this correlation analysis, a Pearson's Correlation test was used taking into account all the objective functions results and their correlation between each other.
-
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
+\par
 \begin{table}[H]
 \centering
 

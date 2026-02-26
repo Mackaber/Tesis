@@ -1,14 +1,14 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Solution model proposed to compare the approaches to solve SSGP.}}{5}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Caption}}{18}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Demonstration of the (HV) in two dimensions, the grey area represents the value of $HV(S,r)$}}{20}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Graph representing the Spread metric.}}{21}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Graph representing the subspace of which Epsilon is based.}}{22}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example of distance between Reference $Z$, Solution $A$ and Solution $B$.}}{24}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Example of distance between Reference $Z$, Solution $A$ and Solution $B$, here the solutions from set $B$ appear to be closer to $Z$.}}{24}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A graph representing the main idea behind ($IGD+$).}}{25}{}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces An example of the Facebook interests ontology.}}{27}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces This is an example of a dataset of 9 users, each with their id, exp, 3 different interests and a participation percentage}}{20}% 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Tabla de valores de Intereses}}{21}% 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Vector de Intereses}}{21}% 
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces B\IeC {\'u}squeda Local}}{26}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Algoritmo Gen\IeC {\'e}tico Mono-objetivo}}{27}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Multi-Objetivo (NSGAII)}}{28}% 
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces This is an example of a data set of nine users, each with their experience, three different interests and a participation percentage.}}{30}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces An example of the Facebook interests ontology.}}{32}{}%

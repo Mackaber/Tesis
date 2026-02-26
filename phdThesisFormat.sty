@@ -28,6 +28,11 @@
    	\usepackage{graphicx}
 \fi
 
+% Define custom colors for tables
+\usepackage[table]{xcolor}
+\definecolor{gray25}{rgb}{0.9,0.9,0.9} 
+\definecolor{gray95}{rgb}{0.1,0.1,0.1}
+
 %%  Checks if the document is to be printed on just one side of the pages or on both sides and, accordingly, sets up the margins
 \if@twoside
 	\setlength\oddsidemargin   {36.1\p@}
@@ -354,7 +359,7 @@
 	\thispagestyle{empty}
 	{\LARGE \bf {Curriculum Vitae}}\\
 	\vspace*{0.8cm}\\
-	\input{#1}
+	\input{#1}\par
 	
 	\vfill
 	

@@ -1,7 +1,11 @@
-\babel@toc {english}{}
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Interests mapping of a $s_1$ example user.}}{32}{}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Interests mapping of a $s_2$ example user.}}{32}{}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Comparison of interests between $s_a$ and $s_b$.}}{33}{}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Example dataset of 10 students}}{34}{}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Values representing the stability of the $Int$ function of $G_0$ and $G_1$ respectively, a higher value represents a higher stability }}{34}{}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Values representing the stability of the $Int$ function of $G_0$ and $G_1$ respectively after the change, a higher value represents a higher stability }}{35}{}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Number of stable students within the groups according to the different preference criteria}}{35}{}%

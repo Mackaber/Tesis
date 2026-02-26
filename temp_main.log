@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  17 FEB 2026 19:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.15)  17 FEB 2026 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**MIT-MasterThesis.tex
-(./MIT-MasterThesis.tex
+**temp_main.tex
+(./temp_main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
@@ -431,7 +431,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box113
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 6
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
 8.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -440,23 +440,23 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count325
 )
-(./MIT-MasterThesis.aux)
-\openout1 = `MIT-MasterThesis.aux'.
+(./temp_main.aux)
+\openout1 = `temp_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 
 (/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -512,62 +512,8 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<./images/escudo-itesm.png, id=1, 60.5478pt x 28.04076pt>
-File: ./images/escudo-itesm.png Graphic file (type png)
-<use ./images/escudo-itesm.png>
-Package pdftex.def Info: ./images/escudo-itesm.png  used on input line 72.
-(pdftex.def)             Requested size: 256.0748pt x 118.62479pt.
 
-[1
-
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc} <./images/escudo-itesm.
-png>] [1]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 7
-4.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 74--74
-
- []
-
-[2] (./dedicationFile.tex) [3] (./acknowledgementFile.tex) [4]
-(./abstractFile.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-) [5] (./MIT-MasterThesis.lof
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
-\tf@lof=\write3
-\openout3 = `MIT-MasterThesis.lof'.
-
- [6
-
-]
-(./MIT-MasterThesis.lot)
-\tf@lot=\write4
-\openout4 = `MIT-MasterThesis.lot'.
-
- [7
-
-] (./MIT-MasterThesis.toc [8
-
-])
-\tf@toc=\write5
-\openout5 = `MIT-MasterThesis.toc'.
-
- [9] (./Cp_1_Intro.tex
+(./Cp_1_Intro.tex
 Chapter 1.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -586,7 +532,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
 [1
 
-]
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 
 LaTeX Warning: Citation `Iwama_SMP_variants' on page 2 undefined on input line 
 12.
@@ -622,7 +570,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
  []
 
-[3]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 4
+9.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [3]
 Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
@@ -631,7 +583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 LaTeX Warning: Citation `Ishibuchi_single_vs_multiobjective' on page 4 undefine
 d on input line 87.
 
-<images/solution_model.png, id=54, 779.91376pt x 556.0775pt>
+<images/solution_model.png, id=14, 779.91376pt x 556.0775pt>
 File: images/solution_model.png Graphic file (type png)
 <use images/solution_model.png>
 Package pdftex.def Info: images/solution_model.png  used on input line 91.
@@ -647,6 +599,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
+
+
+LaTeX Warning: Reference `chapter:chapter03' on page 5 undefined on input line 
+102.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 102--103
@@ -683,7 +639,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
 
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
  []
@@ -919,7 +885,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.367 ... fast-non-dominated-sort(R_t)$\; \Comment
+l.367 ...fast-non-dominated-sort}(R_t)$\; \Comment
                                                   {run the fast non dominate...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -928,7 +894,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> ...distance-assigment(F_i)$\; \Comment 
+<argument> ...istance-assigment}(F_i)$\; \Comment 
                                                   {calculate crowding-distan...
 l.373 }
        
@@ -1006,12 +972,6 @@ LaTeX Warning: Citation `Jiao2017DynamicME' on page 19 undefined on input line
 LaTeX Warning: Citation `Jin2007-qu' on page 19 undefined on input line 427.
 
 
-Overfull \hbox (6.75131pt too wide) in paragraph at lines 427--428
-[]\OT1/ptm/m/n/12 Different works in-clude a com-par-i-son be-tween single-obje
-ctive and multi-objective strate-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
  []
@@ -1037,6 +997,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--434
 LaTeX Warning: Citation `zitzler1999multiobjective' on page 19 undefined on inp
 ut line 437.
 
+[19]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1051,11 +1012,11 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Citation `zitzler2003performance' on page 19 undefined on input 
+LaTeX Warning: Citation `zitzler2003performance' on page 20 undefined on input 
 line 443.
 
 
-LaTeX Warning: Citation `ishibuchi2015study' on page 19 undefined on input line
+LaTeX Warning: Citation `ishibuchi2015study' on page 20 undefined on input line
  443.
 
 
@@ -1063,12 +1024,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 445--446
 
  []
 
-<images/hv_graph.png, id=118, 769.87625pt x 384.43625pt>
+<images/hv_graph.png, id=84, 769.87625pt x 384.43625pt>
 File: images/hv_graph.png Graphic file (type png)
 <use images/hv_graph.png>
 Package pdftex.def Info: images/hv_graph.png  used on input line 449.
@@ -1087,28 +1048,20 @@ LaTeX Warning: Citation `audet2018performance' on page 20 undefined on input li
 ne 462.
 
 
-Overfull \hbox (1.42473pt too wide) in paragraph at lines 462--463
-[]\OT1/ptm/m/n/12 One of the ma-jor draw-backs of us-ing HV is that its com-ple
-x-ity re-sults in $\OMS/cmsy/m/n/12 O\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 j\OML/cm
-m/m/it/12 S\OMS/cmsy/m/n/12 j[]\OML/cmm/m/it/12 log\OMS/cmsy/m/n/12 j\OML/cmm/m
-/it/12 S\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 )$
- []
-
-
 LaTeX Warning: Citation `zitzler2003performance' on page 20 undefined on input 
 line 466.
 
-
+[20 <./images/hv_graph.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 468--469
 
  []
 
-[20 <./images/hv_graph.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
-<images/spread_metric.png, id=124, 776.9025pt x 609.77812pt>
+<images/spread_metric.png, id=90, 776.9025pt x 609.77812pt>
 File: images/spread_metric.png Graphic file (type png)
 <use images/spread_metric.png>
 Package pdftex.def Info: images/spread_metric.png  used on input line 479.
@@ -1155,7 +1108,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
-<images/epsiolon.png, id=130, 907.13907pt x 550.30594pt>
+<images/epsiolon.png, id=95, 907.13907pt x 550.30594pt>
 File: images/epsiolon.png Graphic file (type png)
 <use images/epsiolon.png>
 Package pdftex.def Info: images/epsiolon.png  used on input line 505.
@@ -1164,15 +1117,16 @@ Package pdftex.def Info: images/epsiolon.png  used on input line 505.
 LaTeX Warning: Citation `van1998evolutionary' on page 22 undefined on input lin
 e 514.
 
-[22 <./images/epsiolon.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 521--522
 
  []
 
 
-LaTeX Warning: Citation `riquelme2015performance' on page 23 undefined on input
+LaTeX Warning: Citation `riquelme2015performance' on page 22 undefined on input
  line 523.
 
+[22]
 
 LaTeX Warning: Citation `coello2004study' on page 23 undefined on input line 52
 7.
@@ -1194,12 +1148,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 533--534
 LaTeX Warning: Citation `7007204' on page 23 undefined on input line 535.
 
 
-Overfull \hbox (12.47563pt too wide) in paragraph at lines 535--536
-\OT1/ptm/m/n/12 even con-sid-er-ing multi-objective prob-lems with more than fo
-ur ob-jec-tives, called many-objective
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 535--536
 
  []
@@ -1209,17 +1157,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
+[23 <./images/epsiolon.png>]
 
-LaTeX Warning: Citation `ishibuchi2015study' on page 23 undefined on input line
+LaTeX Warning: Citation `ishibuchi2015study' on page 24 undefined on input line
  541.
 
-<images/igd_comp_1.png, id=135, 743.77875pt x 562.1pt>
+<images/igd_comp_1.png, id=104, 743.77875pt x 562.1pt>
 File: images/igd_comp_1.png Graphic file (type png)
 <use images/igd_comp_1.png>
 Package pdftex.def Info: images/igd_comp_1.png  used on input line 545.
 (pdftex.def)             Requested size: 223.31403pt x 168.76852pt.
-[23]
-<images/igd_comp_2.png, id=140, 632.3625pt x 464.73625pt>
+<images/igd_comp_2.png, id=105, 632.3625pt x 464.73625pt>
 File: images/igd_comp_2.png Graphic file (type png)
 <use images/igd_comp_2.png>
 Package pdftex.def Info: images/igd_comp_2.png  used on input line 552.
@@ -1238,12 +1186,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
-<images/igd_comp_3.png, id=141, 569.12625pt x 424.58624pt>
+[24 <./images/igd_comp_1.png> <./images/igd_comp_2.png>]
+<images/igd_comp_3.png, id=111, 569.12625pt x 424.58624pt>
 File: images/igd_comp_3.png Graphic file (type png)
 <use images/igd_comp_3.png>
 Package pdftex.def Info: images/igd_comp_3.png  used on input line 565.
 (pdftex.def)             Requested size: 223.31403pt x 166.59863pt.
-[24 <./images/igd_comp_1.png> <./images/igd_comp_2.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
@@ -1257,15 +1206,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 575--576
 
  []
 
+[25 <./images/igd_comp_3.png>]
 
-LaTeX Warning: Citation `de2017james' on page 25 undefined on input line 588.
+LaTeX Warning: Citation `de2017james' on page 26 undefined on input line 588.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 587--589
 
  []
 
-[25 <./images/igd_comp_3.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 590--591
 
  []
@@ -1274,15 +1224,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 590--591
 LaTeX Warning: Citation `benne2007functional' on page 26 undefined on input lin
 e 599.
 
+[26]
 
-LaTeX Warning: Citation `VinciarelliUnderstandingCorpus' on page 26 undefined o
+LaTeX Warning: Citation `VinciarelliUnderstandingCorpus' on page 27 undefined o
 n input line 613.
 
 
-LaTeX Warning: Citation `benne2007functional' on page 26 undefined on input lin
+LaTeX Warning: Citation `benne2007functional' on page 27 undefined on input lin
 e 613.
 
-[26]
+
 Underfull \hbox (badness 10000) in paragraph at lines 618--619
 
  []
@@ -1295,6 +1246,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 620--621
 
 LaTeX Warning: Citation `facebook_business' on page 27 undefined on input line 
 622.
+
+
+LaTeX Warning: Reference `chapter:chapter03' on page 27 undefined on input line
+ 622.
 
 
 LaTeX Warning: Reference `chapter:chapter04' on page 27 undefined on input line
@@ -1310,7 +1265,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 624--625
 
  []
 
-<./images/ontology.png, id=154, 1542.76375pt x 330.23375pt>
+<./images/ontology.png, id=120, 1542.76375pt x 330.23375pt>
 File: ./images/ontology.png Graphic file (type png)
 <use ./images/ontology.png>
 Package pdftex.def Info: ./images/ontology.png  used on input line 628.
@@ -1320,1021 +1275,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
-[27 <./images/ontology.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 639--640
 
  []
 
-) (./Cp_3_Methodology.tex [28]
-Chapter 3.
-[29
-
-]
-<images/dataset_eg.png, id=166, 677.53125pt x 367.3725pt>
-File: images/dataset_eg.png Graphic file (type png)
-<use images/dataset_eg.png>
-Package pdftex.def Info: images/dataset_eg.png  used on input line 48.
-(pdftex.def)             Requested size: 379.63658pt x 205.85611pt.
- [30 <./images/dataset_eg.png>]
-
-LaTeX Warning: Citation `taxonomy_semantic_similarity' on page 31 undefined on 
-input line 86.
-
-[31]
-File: ./images/ontology.png Graphic file (type png)
-<use ./images/ontology.png>
-Package pdftex.def Info: ./images/ontology.png  used on input line 90.
-(pdftex.def)             Requested size: 426.79134pt x 91.35623pt.
- [32]
-
-LaTeX Warning: Citation `FunctionalRoles' on page 33 undefined on input line 16
-8.
-
-[33]
-Overfull \hbox (14.61443pt too wide) in paragraph at lines 219--220
-[]\OT1/ptm/m/n/12 Let's as-sume we find the so-lu-tion: $\OML/cmm/m/it/12 A \OT
-1/cmr/m/n/12 = \OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 G[] \OMS/cmsy/m/n/12   \OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 s[]; s[]; s[]; s[]; s[]\OT1/cmr/m/n/12 )\OML/cmm/m/
-it/12 ; G[] \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s[]; s[]; s[];
- s[]; s[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 i$\OT1/ptm/m/n/12 ,
- []
-
-[34] [35]
-
-LaTeX Warning: Reference `sec:Repair' on page 36 undefined on input line 330.
-
-
-LaTeX Warning: Reference `alg:initialisation' on page 36 undefined on input lin
-e 330.
-
-! Undefined control sequence.
-<argument>  $s_i \gets G \in AG$ \Comment 
-                                          Assign a random group to $s_i$\; $...
-l.341 P
-       erform $Repair$ in $A$
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[36]
-
-LaTeX Warning: Reference `alg:mutation' on page 37 undefined on input line 350.
-
-
-
-LaTeX Warning: Reference `fig:mutation_ex' on page 37 undefined on input line 3
-50.
-
-<images/mutation_g.png, id=190, 281.05pt x 97.36375pt>
-File: images/mutation_g.png Graphic file (type png)
-<use images/mutation_g.png>
-Package pdftex.def Info: images/mutation_g.png  used on input line 354.
-(pdftex.def)             Requested size: 446.62807pt x 154.7333pt.
-
-LaTeX Warning: Citation `nomura1994analysis' on page 37 undefined on input line
- 362.
-
-
-LaTeX Warning: Reference `fig:crossover_ex' on page 37 undefined on input line 
-362.
-
-<images/cross_over_g.png, id=191, 1244.65pt x 346.29375pt>
-File: images/cross_over_g.png Graphic file (type png)
-<use images/cross_over_g.png>
-Package pdftex.def Info: images/cross_over_g.png  used on input line 366.
-(pdftex.def)             Requested size: 446.62807pt x 124.26405pt.
-
-LaTeX Warning: Reference `alg:crossover' on page 37 undefined on input line 371
-.
-
-
-LaTeX Warning: Reference `alg:repair' on page 37 undefined on input line 419.
-
-! Undefined control sequence.
-l.425     $A_r = ()$ \Comment
-                             {Initialise a vector that will hold the repaire...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...leftarrow SplitGroup(G_i)$ \Comment 
-                                                  {Split $G_i$ the group in ...
-l.443 \end
-          {algorithm}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) (./Cp_4_Experimental_Settings.tex
-Chapter 4.
-
-LaTeX Warning: Reference `chapter:chapter04' on page 37 undefined on input line
- 4.
-
-
-LaTeX Warning: Citation `SeyedShirkhorshidi2015AData' on page 37 undefined on i
-nput line 16.
-
-
-LaTeX Warning: Citation `Sung-HyukChaComprehensiveFunctions' on page 37 undefin
-ed on input line 16.
-
-
-LaTeX Warning: Reference `table:results_interests_comp' on page 37 undefined on
- input line 18.
-
-
-LaTeX Warning: Reference `table:sample_interests' on page 37 undefined on input
- line 18.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51 \begin{table}[!htb]
-                        
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 52--138
-[][] [] 
- []
-
-
-LaTeX Warning: Citation `FunctionalRoles' on page 37 undefined on input line 14
-4.
-
-
-LaTeX Warning: Citation `mccowan2005ami' on page 37 undefined on input line 146
-.
-
-
-LaTeX Warning: Citation `dong2012modeling' on page 37 undefined on input line 1
-46.
-
-
-LaTeX Warning: Citation `Matsuyama2015Four-participantParticipant' on page 37 u
-ndefined on input line 146.
-
-
-LaTeX Warning: Citation `dong2012modeling' on page 37 undefined on input line 1
-46.
-
-
-Overfull \hbox (0.5605pt too wide) in paragraph at lines 148--149
-[]\OT1/ptm/m/n/12 The meet-ings used for these anal-y-sis have the fol-low-ing 
-names: "ES2002d", "ES2008b",
- []
-
-
-LaTeX Warning: Reference `table:ami_times' on page 37 undefined on input line 1
-50.
-
-
-LaTeX Warning: Reference `table:res_ES2008d' on page 37 undefined on input line
- 170.
-
-
-LaTeX Warning: Reference `table:res_IS1003d' on page 37 undefined on input line
- 170.
-
-
-LaTeX Warning: Reference `table:res_ES2008d' on page 37 undefined on input line
- 170.
-
-
-LaTeX Warning: Reference `table:res_IS1003d' on page 37 undefined on input line
- 170.
-
-
-LaTeX Warning: Reference `table:results_ami' on page 37 undefined on input line
- 203.
-
-
-LaTeX Warning: Reference `table:results_ami' on page 37 undefined on input line
- 203.
-
-
-LaTeX Warning: Citation `FunctionalRoles' on page 37 undefined on input line 22
-8.
-
-
-LaTeX Warning: Citation `ielts_demographic_data_2018' on page 37 undefined on i
-nput line 236.
-
-
-LaTeX Warning: Reference `table:results_levels' on page 37 undefined on input l
-ine 236.
-
-
-LaTeX Warning: Citation `facebook_business' on page 37 undefined on input line 
-259.
-
-
-LaTeX Warning: Reference `table:results_interests' on page 37 undefined on inpu
-t line 263.
-
-
-LaTeX Warning: Reference `table:participation_results' on page 37 undefined on 
-input line 299.
-
-
-LaTeX Warning: Reference `section:mutation_operator' on page 37 undefined on in
-put line 318.
-
-
-LaTeX Warning: Reference `section:crossover_operator' on page 37 undefined on i
-nput line 322.
-
-
-LaTeX Warning: Reference `weighted_function' on page 37 undefined on input line
- 331.
-
-
-LaTeX Warning: Citation `boussaid2013survey' on page 37 undefined on input line
- 346.
-
-
-LaTeX Warning: Reference `fig:local_search' on page 37 undefined on input line 
-346.
-
-<images/local_search.png, id=192, 762.59906pt x 448.67625pt>
-File: images/local_search.png Graphic file (type png)
-<use images/local_search.png>
-Package pdftex.def Info: images/local_search.png  used on input line 350.
-(pdftex.def)             Requested size: 446.62807pt x 262.77235pt.
-
-LaTeX Warning: Reference `fig:genetico' on page 37 undefined on input line 357.
-
-
-<images/genetic_algorithm.png, id=193, 744.53156pt x 322.20375pt>
-File: images/genetic_algorithm.png Graphic file (type png)
-<use images/genetic_algorithm.png>
-Package pdftex.def Info: images/genetic_algorithm.png  used on input line 361.
-(pdftex.def)             Requested size: 446.62807pt x 193.28932pt.
-
-LaTeX Warning: Reference `fig:multiobjetivo' on page 37 undefined on input line
- 370.
-
-
-LaTeX Warning: Reference `fig:multiobjetivo' on page 37 undefined on input line
- 372.
-
-<images/Multi-Objective.png, id=194, 778.91pt x 360.34625pt>
-File: images/Multi-Objective.png Graphic file (type png)
-<use images/Multi-Objective.png>
-Package pdftex.def Info: images/Multi-Objective.png  used on input line 376.
-(pdftex.def)             Requested size: 446.62807pt x 206.62015pt.
-
-LaTeX Warning: Reference `chapter:chapter05' on page 37 undefined on input line
- 383.
-
-) (./Cp_5_Experimentation.tex
-Chapter 5.
-
-LaTeX Warning: Citation `Ishibuchi_single_vs_multiobjective' on page 37 undefin
-ed on input line 4.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
- []
-
-
-LaTeX Warning: Reference `fig:reference_front_20' on page 37 undefined on input
- line 23.
-
-
-LaTeX Warning: Reference `fig:reference_front_2000' on page 37 undefined on inp
-ut line 23.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
-
- []
-
-<images/parallel_ref_20.png, id=195, 866.23625pt x 397.485pt>
-File: images/parallel_ref_20.png Graphic file (type png)
-<use images/parallel_ref_20.png>
-Package pdftex.def Info: images/parallel_ref_20.png  used on input line 27.
-(pdftex.def)             Requested size: 446.62807pt x 204.94057pt.
-<images/parallel_ref_200.png, id=196, 866.23625pt x 416.55624pt>
-File: images/parallel_ref_200.png Graphic file (type png)
-<use images/parallel_ref_200.png>
-Package pdftex.def Info: images/parallel_ref_200.png  used on input line 34.
-(pdftex.def)             Requested size: 446.62807pt x 214.77356pt.
-<images/parallel_ref_2000.png, id=197, 873.2625pt x 409.53pt>
-File: images/parallel_ref_2000.png Graphic file (type png)
-<use images/parallel_ref_2000.png>
-Package pdftex.def Info: images/parallel_ref_2000.png  used on input line 41.
-(pdftex.def)             Requested size: 446.62807pt x 209.45117pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
-
- []
-
-
-LaTeX Warning: Reference `3.4' on page 37 undefined on input line 161.
-
-
-LaTeX Warning: Reference `chapter:chapter04' on page 37 undefined on input line
- 166.
-
-
-LaTeX Warning: Reference `eq:normalization_equation' on page 37 undefined on in
-put line 166.
-
-
-LaTeX Warning: Reference `table:normalization_parameters' on page 37 undefined 
-on input line 166.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
-
- []
-
-
-LaTeX Warning: Reference `table:(SOA)_details_jmetal' on page 37 undefined on i
-nput line 168.
-
-
-LaTeX Warning: Reference `table:(SOA)_details_james' on page 37 undefined on in
-put line 168.
-
-
-Overfull \hbox (1.67184pt too wide) in paragraph at lines 195--195
-[]|\OT1/ptm/m/n/12 Denomination| 
- []
-
-
-Underfull \hbox (badness 3713) in paragraph at lines 198--198
-\OT1/ptm/m/n/12 er-a-tional Al-
- []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 198--198
-\OT1/ptm/m/n/12 all the so-lu-tions are re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 199--199
-[]|\OT1/ptm/m/n/12 Genetic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
-[]|\OT1/ptm/m/n/12 Elitist Strat-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
-\OT1/ptm/m/n/12 egy Al-go-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--201
-[]|\OT1/ptm/m/n/12 Non-Elitist
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--201
-\OT1/ptm/m/n/12 Strat-egy
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--201
-\OT1/ptm/m/n/12 Al-go-rithm
- []
-
-
-Underfull \hbox (badness 1024) in paragraph at lines 201--201
-\OT1/ptm/m/n/12 off-spring of the last gen-
- []
-
-
-Underfull \hbox (badness 1107) in paragraph at lines 202--202
-[]|\OT1/ptm/m/n/12 Local Search
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
-\OT1/ptm/m/n/12 (Steep-est
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 202--202
-\OT1/ptm/m/n/12 De-scent/Hill
- []
-
-
-Underfull \hbox (badness 1902) in paragraph at lines 202--202
-\OT1/ptm/m/n/12 in the frame-work jMetal,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--203
-[]|\OT1/ptm/m/n/12 Random
- []
-
-
-Overfull \hbox (1.67184pt too wide) in paragraph at lines 214--214
-[]|\OT1/ptm/m/n/12 Denomination| 
- []
-
-
-Underfull \hbox (badness 2600) in paragraph at lines 217--217
-[]|\OT1/ptm/m/n/12 Random De-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-[]|\OT1/ptm/m/n/12 Parallel
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-\OT1/ptm/m/n/12 Tem-per-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-\OT1/ptm/m/n/12 (Replica
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-\OT1/ptm/m/n/12 Ex-change
- []
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 218--218
-[]|\OT1/ptm/m/n/12 Similar to Sim-u-lated An-
- []
-
-
-Underfull \hbox (badness 1102) in paragraph at lines 218--218
-\OT1/ptm/m/n/12 a max tem-per-a-ture and a
- []
-
-
-Underfull \hbox (badness 5345) in paragraph at lines 218--218
-\OT1/ptm/m/n/12 ning par-al-lel repli-cas of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--218
-[]|$\OML/cmm/m/it/12 temp[] \OT1/cmr/m/n/12 =
- []
-
-
-LaTeX Warning: Reference `table:(MOA)_details' on page 37 undefined on input li
-ne 227.
-
-
-Overfull \hbox (1.67184pt too wide) in paragraph at lines 233--233
-[]|\OT1/ptm/m/n/12 Denomination| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
-[]|\OT1/ptm/m/n/12 Electrostatic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
-\OT1/ptm/m/n/12 Po-ten-tial
- []
-
-
-Underfull \hbox (badness 4621) in paragraph at lines 235--235
-\OT1/ptm/m/n/12 En-ergy Evo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
-\OT1/ptm/m/n/12 lu-tion-ary
- []
-
-
-Underfull \hbox (badness 2150) in paragraph at lines 235--237
-[]|\OT1/ptm/m/n/12 Since no scalar-ized pref-
- []
-
-
-Underfull \hbox (badness 4416) in paragraph at lines 235--237
-\OT1/ptm/m/n/12 er-ence is spec-i-fied, uni-
- []
-
-
-Underfull \hbox (badness 3525) in paragraph at lines 235--237
-\OT1/ptm/m/n/12 form pref-er-ences are as-
- []
-
-
-Underfull \hbox (badness 3838) in paragraph at lines 235--237
-\OT1/ptm/m/n/12 sumed Uses a Worst in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--237
-[]|\OT1/ptm/m/n/12 Replacement Strat-egy:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-[]|\OT1/ptm/m/n/12 Many Ob-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\OT1/ptm/m/n/12 jec-tive
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\OT1/ptm/m/n/12 Meta-heuris-tic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-[]|\OT1/ptm/m/n/12 Requires a num-ber of
- []
-
-
-Underfull \hbox (badness 1859) in paragraph at lines 238--238
-\OT1/ptm/m/n/12 the pop-u-la-tion size us-ing
- []
-
-
-Underfull \hbox (badness 2600) in paragraph at lines 238--238
-[]|\OT1/ptm/m/n/12 Vector of weights, us-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--238
-\OT1/ptm/m/n/12 Simple-Lattice De-sign
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
-[]|\OT1/ptm/m/n/12 Non-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
-\OT1/ptm/m/n/12 dominated
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
-\OT1/ptm/m/n/12 Sort-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 239--239
-\OT1/ptm/m/n/12 Ge-netic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
-[]|\OT1/ptm/m/n/12 Multi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
-\OT1/ptm/m/n/12 Objective
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 240--240
-\OT1/ptm/m/n/12 Ran-dom
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
-[]|\OT1/ptm/m/n/12 Strength
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
-\OT1/ptm/m/n/12 Pareto Evo-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
-\OT1/ptm/m/n/12 lu-tion-ary
- []
-
-
-Overfull \hbox (3.33443pt too wide) in paragraph at lines 231--244
-[][] 
- []
-
-
-LaTeX Warning: Citation `Emmerich2018' on page 37 undefined on input line 251.
-
-
-LaTeX Warning: Citation `CooperWilliamW.2010' on page 37 undefined on input lin
-e 255.
-
-
-LaTeX Warning: Reference `sec:scalarization' on page 37 undefined on input line
- 269.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
-
- []
-
-
-LaTeX Warning: Citation `Lin2003' on page 37 undefined on input line 271.
-
-
-LaTeX Warning: Citation `bello2016genetic' on page 37 undefined on input line 2
-71.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
-
- []
-
-
-LaTeX Warning: Reference `sub:section_ref_params' on page 37 undefined on input
- line 273.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-
-LaTeX Warning: Reference `table:(SOA)_details_jmetal' on page 37 undefined on i
-nput line 275.
-
-
-LaTeX Warning: Reference `table:(SOA)_details_james' on page 37 undefined on in
-put line 275.
-
-
-LaTeX Warning: Reference `table:(MOA)_details' on page 37 undefined on input li
-ne 275.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 277--278
-
- []
-
-
-LaTeX Warning: Reference `tab:best_independant_results' on page 37 undefined on
- input line 281.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.284 \begin{table}[!htp]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Citation `Emmerich2018' on page 37 undefined on input line 297.
-
-
-LaTeX Warning: Reference `tab:best_independant_results' on page 37 undefined on
- input line 297.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
-
- []
-
-
-LaTeX Warning: Reference `tab:weights_to_be_used' on page 37 undefined on input
- line 303.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.306 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
-
- []
-
-
-LaTeX Warning: Citation `Lin2003' on page 37 undefined on input line 324.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.327 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.353 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `tab:spread_thumb' on page 37 undefined on input line 
-378.
-
-
-LaTeX Warning: Reference `tab:hv_thumb' on page 37 undefined on input line 378.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
-
- []
-
-
-LaTeX Warning: Reference `tab:spread_thumb' on page 37 undefined on input line 
-380.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.383 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.399 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `tab:fried_igd+_thumb' on page 37 undefined on input l
-ine 414.
-
-
-LaTeX Warning: Reference `tab:fried_ep_thumb' on page 37 undefined on input lin
-e 414.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.419 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.465 \begin{table}[!htp]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: Reference `tab:fried_spread_thumb' on page 37 undefined on input
- line 511.
-
-
-LaTeX Warning: Reference `tab:hv_thumb' on page 37 undefined on input line 511.
-
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 511--512
-
- []
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.514 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Not in outer par mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.533 \begin{table}[!htc]
-                         
-You've lost some text.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
-
- []
-
-
-LaTeX Warning: Reference `tab:correlation' on page 37 undefined on input line 6
-09.
-
-
-LaTeX Warning: Reference `fig:parallel_2000' on page 37 undefined on input line
- 609.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
-
- []
-
-) (./Cp_6_Observations_and_Corrections.tex) (./Cp_7_Results.tex)
-(./Cp_8_Conclusion.tex
-Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-
-LaTeX Warning: Reference `sec:front_construction' on page 37 undefined on input
- line 9.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 13--14
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--24
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-
-LaTeX Warning: Citation `Handl2006' on page 37 undefined on input line 27.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 31--91
-
- []
-
-No file MIT-MasterThesis.bbl.
-(./vitaFile.tex)
-
-! LaTeX Error: \begin{figure} on input line 374 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.100 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-(./MIT-MasterThesis.aux)
+[27]) [28 <./images/ontology.png>] (./temp_main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -2346,42 +1292,39 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-! You can't use `\end' in internal vertical mode.
-\enddocument ...cument/end}\deadcycles \z@ \@@end 
-                                                  
-l.100 \end{document}
-                    
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-! LaTeX Error: \begin{figure} on input line 374 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.100 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-! Emergency stop.
-<*> MIT-MasterThesis.tex
-                        
-*** (job aborted, no legal \end found)
-
- 
+ ) 
 Here is how much of TeX's memory you used:
- 8661 strings out of 467533
- 147647 string characters out of 5419495
- 733124 words of memory out of 5000000
- 37360 multiletter control sequences out of 15000+600000
- 668769 words of font info for 132 fonts, out of 8000000 for 9000
+ 8368 strings out of 467533
+ 140461 string characters out of 5419495
+ 574807 words of memory out of 5000000
+ 37112 multiletter control sequences out of 15000+600000
+ 657213 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,97p,1889b,686s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 72i,18n,97p,1874b,528s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/
+texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/te
+xlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loca
+l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
+local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/te
+xlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025
+/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2025/texmf-di
+st/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on temp_main.pdf (28 pages, 676922 bytes).
+PDF statistics:
+ 213 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+
