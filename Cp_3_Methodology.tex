@@ -135,7 +135,7 @@ Taking this into account, the satisfaction according to their preference is calc
 
 Suppose we have the following data-set $D$: 
 
-Let's assume we find the solution: $ A = \langle G_0 \leftarrow (s_0,s_1,s_2,s_4,s_5), G_1 \leftarrow (s_3,s_6,s_7,s_8,s_9) \rangle$, for this example we make use of the Interests Similarity function alone. In Table~\ref{tab:int_stability} the Interest Similarity is calculated from each user towards every other from the data-set. Then, the average of these values is calculated, this value represents "How much they would like to leave their group for the other?" according to the rest of the members. After that, the same is done for the other groups, representing "How much they would like to leave this group if they were a member?".\
+Let's assume we find the solution: $ A = \langle G_0 \leftarrow (s_0,s_1,s_2,s_4,s_5), G_1 \leftarrow (s_3,s_6,s_7,s_8,s_9) \rangle$, for this example we make use of the Interests Similarity function alone. In Table~\ref{tab:int_stability} the Interest Similarity is calculated from each user towards every other from the data-set. Then, the average of these values is calculated, this value represents "How much they would like to leave their group for the other?" according to the rest of the members. After that, the same is done for the other groups, representing "How much they would like to leave this group if they were a member?"\
 
 Here all the preferences for each one of the students are satisfied except for $s_0$, who would prefer to be in the group $G_1$ since the average of the similarity is lower (which means more similar) to the other group than the former. The overall stability of the solution is given by the number of stable groups, which means all of their students are satisfied with the arrangement. Here, $G_1$ is considered stable because there are no students that would like to switch to $G_0$. However, $G_1$ is considered unstable because there is at least one student that would prefer to belong to $G_1$.\
 
@@ -165,7 +165,7 @@ This next section describes the different operators applied by the algorithms to
 \subsection{Initialisation}
 \label{sec:initialisation}
 
-All the algorithms start with a random initial population. First, the groups are generated according to the maximum possible groups, which is (\lfloor\frac{n}{gs_{min}}\rfloor). These groups are stored in a vector for the available groups (AG). When a group is filled, it means it has reached $gs_{max}$ students. Therefore the group leaves vector AG, if a move is performed by the operators and the group misses a student, then this group returns to the AG vector.\
+All the algorithms start with a random initial population. First, the groups are generated according to the maximum possible groups, which is ($\lfloor\frac{n}{gs_{min}}\rfloor$). These groups are stored in a vector for the available groups (AG). When a group is filled, it means it has reached $gs_{max}$ students. Therefore the group leaves vector AG, if a move is performed by the operators and the group misses a student, then this group returns to the AG vector.\
 
 Then each student is assigned to a random group from AG.
 A solution becomes unfeasible if a student is left alone in a group.
@@ -176,10 +176,10 @@ a $Repair$ operator, described in Section~\ref{sec:Repair}, is applied after the
 \caption{Initialisation}
 \label{alg:initialisation}
 \SetAlgoLined 
-$AG \leftarrow$ Create (\lfloor\frac{n}{gs_{min}}\rfloor) groups\;
+$AG \leftarrow$ Create ($\lfloor\frac{n}{gs_{min}}\rfloor$) groups\;
 \For{$s_i \in D$}{
     $s_i \gets G \in AG$ \tcp{Assign a random group to $s_i$}
-    $A \gets s_i$\
+    $A \gets s_i$
 }
 Perform $Repair$ in $A$
 \end{algorithm}
@@ -204,7 +204,7 @@ To prevent a student ending up in a group that has more students than $gs_{max}$
 \SetAlgoLined
 \For{$s_i \in A$}{
     \If{random() < mutation\_rate}{
-        $s_i \gets G \in AG$\
+        $s_i \gets G \in AG$
     }
 }
 \end{algorithm}
@@ -232,34 +232,34 @@ Select two parents $A$ and $B$ from a parent pool\;
 Create two offspring $C$ and $D$ as follows:\;
 Randomly choose $k$ crossover points $cp_1,...cp_k \in \{1,...,n-1\}$\;
 \For{$i \gets 1$ to $cp_1$}{
-    $c_i \gets a_i$\
-    $d_i \gets b_i$\
+    $c_i \gets a_i$
+    $d_i \gets b_i$
 }
 $switch \gets 0$
 \For{$j \gets 2$ to $k$}{
     \eIf{$switch = 0$}{
         \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-            $c_i \gets b_i$\
-            $d_i \gets a_i$\
+            $c_i \gets b_i$
+            $d_i \gets a_i$
         }
-        $switch \gets 1$\
+        $switch \gets 1$
     }{
         \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-            $c_i \gets a_i$\
-            $d_i \gets b_i$\
+            $c_i \gets a_i$
+            $d_i \gets b_i$
         }
-        $switch \gets 0$\
+        $switch \gets 0$
     }
 }
 \eIf{$switch = 0$}{
     \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-        $c_i \gets b_i$\
-        $d_i \gets a_i$\
+        $c_i \gets b_i$
+        $d_i \gets a_i$
     }
 }{
     \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-        $c_i \gets a_i$\
-        $d_i \gets b_i$\
+        $c_i \gets a_i$
+        $d_i \gets b_i$
     }
 }
 Perform $Repair$ in $C$ and $D$
@@ -281,7 +281,7 @@ The fill task can be seen in Algorithm~\ref{alg:repair}.
     \For{$ G_i \in A$}{
         \If{$Size(G_i) > 0$}{
             \If{$P_g$ is not $NULL$ $\textbf{AND}$ $Size(P_g) \leq gs_{max}$ $\textbf{AND}$ $Size(P_g) > gs_{min} $}{
-                $A_r \gets \text{MergeGroups}(P_g,G_i)$\
+                $A_r \gets \text{MergeGroups}(P_g,G_i)$
                 $P_g \leftarrow NULL$
             }
             \If{$Size(G_i) < gs_{min}$}{
