@@ -1,1 +1,10 @@
 .DS_Store
+*.aux
+*.log
+*.pdf
+*.bbl
+*.blg
+*.toc
+*.lof
+*.lot
+*.swp
