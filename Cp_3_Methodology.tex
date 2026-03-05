@@ -1,11 +1,11 @@
 \chapter{Methodology}
 \label{chapter:chapter03}
 
-This chapter explains the different parts of the problem and the strategies to solve it. Section~\ref{sec:Problem_design} describes how the problem is structured, the size of the search space, and how a feasible solution looks like. Then, in Section~\ref{section:objective_functions} details the objective functions are described, as well as a justification of why each of them was chosen. Finally, Section~\ref{sec:operators} defines the operators to be used by the optimisation algorithms and the reasoning behind them.\
+This chapter explains the different parts of the problem and the strategies to solve it. Section~\ref{sec:Problem_design} describes how the problem is structured, the size of the search space, and how a feasible solution looks like. Then, Section~\ref{section:objective_functions} describes the objective functions, as well as a justification of why each of them was chosen. Finally, Section~\ref{sec:operators} defines the operators to be used by the optimisation algorithms and the reasoning behind them.\
 
 \section{Problem Design} \label{sec:Problem_design}
 
-The problem established is described as given a data set $D$ of $n$ students, $D = (s_1,...,s_n)$, a solution $A$ consists of an optimal arrangement of groups $G$, which assigns each student to a group, $A = \langle s_i \leftarrow G_j, \ldots, s_n \leftarrow G_m \rangle$, with the students being in the same group optimising their preference criteria as described in Section~\ref{section:preference_criteria}. Thus, the optimisation encompasses the following goals:
+The problem established is described as given a data set $D$ of $n$ students, $D = (s_1,\dots,s_n)$, a solution $A$ consists of an optimal arrangement of groups $G$, which assigns each student to a group, $A = \langle s_i \leftarrow G_j, \dots, s_n \leftarrow G_m \rangle$, with the students being in the same group optimising their preference criteria as described in Section~\ref{section:preference_criteria}. Thus, the optimisation encompasses the following goals:
 
 \begin{itemize}
     \item Finding the less distance between the level of experience of the students inside the same group.
@@ -19,14 +19,15 @@ The solution is then the group number for each student, which serves as identifi
 \begin{equation}
   \label{eq:students_groups}
   \begin{gathered}
-        D = (s_0,s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_9,...,s_n),\        A = \langle s_0 \leftarrow G_3, s_1 \leftarrow G_0, s_2 \leftarrow G_2,     s_3 \leftarrow G_1, s_4 \leftarrow G_3, s_5 \leftarrow G_1,...  \rangle
+        D = (s_0,s_1,s_2,s_3,s_4,s_5,s_6,s_7,s_9,\dots,s_n),\\
+        A = \langle s_0 \leftarrow G_3, s_1 \leftarrow G_0, s_2 \leftarrow G_2,     s_3 \leftarrow G_1, s_4 \leftarrow G_3, s_5 \leftarrow G_1,\dots  \rangle
   \end{gathered}
 \end{equation}
 
 
 There are two manners to approach the problem. The first one considers the groups as the variables and the students as the values, while the second one considers the students as the variables and the groups as the values. The second approach, however, has the disadvantage that the number of variables becomes inconsistent depending on the size of the groups. Another disadvantage is that some groups could remain empty, and the crossover and mutation added unnecessary complexity to the task. The former approach does not present these disadvantages and is the chosen one to use.\
 
-A linked list is further kept to internally track the groups and make easy the evaluation of objective functions, which means if $s_i \leftarrow G_j$ then $G_j = (...,s_i,...)$.\
+A linked list is further kept to internally track the groups and make easy the evaluation of objective functions, which means if $s_i \leftarrow G_j$ then $G_j = (\dots,s_i,\dots)$.\
 
 %REWRITE
 
@@ -44,7 +45,7 @@ Figure~\ref{fig:dataset_eg} presents a sample of a dataset with each of its diff
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{images/dataset_eg.png}
+    \includegraphics[width=0.85\textwidth]{dataset_eg.png}
     \caption{This is an example of a data set of nine users, each with their experience, three different interests and a participation percentage.}
     \label{fig:dataset_eg}
 \end{figure}
@@ -52,7 +53,7 @@ Figure~\ref{fig:dataset_eg} presents a sample of a dataset with each of its diff
 \section{Objective Functions} 
 \label{section:objective_functions}
 
-In the following section, the different objective functions are described, which are based on the preference criteria defined in Section~\ref{section:preference_criteria}, the experience level, the interests similarity, and the participation style. It should be noted that preference criteria are evaluated per group $G$. Then, the objective values for a solution $A$ are computed as the average of each preference criterion. For instance, for the Group Size~$Gs(A) = AVG(Gs(G_i),...,Gs(G_n))$.\
+In the following section, the different objective functions are described, which are based on the preference criteria defined in Section~\ref{section:preference_criteria}, the experience level, the interests similarity, and the participation style. It should be noted that preference criteria are evaluated per group $G$. Then, the objective values for a solution $A$ are computed as the average of each preference criterion. For instance, for the Group Size~$Gs(A) = AVG(Gs(G_i),\dots,Gs(G_n))$.\
 
 \subsection{Group Size}
 \label{subsection:group_size}
@@ -92,7 +93,7 @@ To calculate the interests similarity $Int$, a strategy similar to the one descr
 \end{figure}
 
 These values are then normalised by a factor of $1/(1+d)$. The interest vector for a user is confirmed by the maximum value of this normalisation. 
-For example, a student $s_a$, with "Graphic Design", "Interior Design", and "Banking" as his/her interest, has an interest vector equals to $Ints(s_a) = \langle Business \gets 0.50, Design \gets 0.50, Graphic Design \gets 1.00,... \rangle$ and a student $s_b$, with "Retail Banking", "Advertising", and "Running" as his/her interest, has an interest vector equals to $Ints(s_b) = \langle Business \gets 0.33, Advertising \gets 0.50, Banking \gets 0.50,... \rangle$. The complete process can be seen in Table~\ref{tab:interests_s_1} for the student $s_a$ and in Table~\ref{tab:interests_s_2} for the student $s_b$.\
+For example, a student $s_a$, with "Graphic Design", "Interior Design", and "Banking" as his/her interest, has an interest vector equals to $Ints(s_a) = \langle Business \gets 0.50, Design \gets 0.50, Graphic Design \gets 1.00, \dots \rangle$ and a student $s_b$, with "Retail Banking", "Advertising", and "Running" as his/her interest, has an interest vector equals to $Ints(s_b) = \langle Business \gets 0.33, Advertising \gets 0.50, Banking \gets 0.50, \dots \rangle$. The complete process can be seen in Table~\ref{tab:interests_s_1} for the student $s_a$ and in Table~\ref{tab:interests_s_2} for the student $s_b$.\
 
 To compare the interests of a student to another student, the cosine $cos(\theta)$ distance, shown in Equation~(\ref{eq:cos_sym}), is used. When the users have identical interests, their cosine distance becomes one, and zero for completely different interests. Since we are minimising, the objective function is considered as $f = 1 - f_{int}$. An example of two interests vectors of two users can be seen in Table~\ref{tab:interests_comparison}, here $1 - f_{int}(s_a,s_b) = 0.29$ which is considerably similar because both students share interests such as: 
 
@@ -178,10 +179,10 @@ a $Repair$ operator, described in Section~\ref{sec:Repair}, is applied after the
 \SetAlgoLined 
 $AG \leftarrow$ Create ($\lfloor\frac{n}{gs_{min}}\rfloor$) groups\;
 \For{$s_i \in D$}{
-    $s_i \gets G \in AG$ \tcp{Assign a random group to $s_i$}
-    $A \gets s_i$
+    $s_i \gets G \in AG$\; \tcp{Assign a random group to $s_i$}
+    $A \gets s_i$\;
 }
-Perform $Repair$ in $A$
+Perform $Repair$ in $A$\;
 \end{algorithm}
 
 \subsection{Mutation}
@@ -194,7 +195,7 @@ To prevent a student ending up in a group that has more students than $gs_{max}$
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/mutation_g.png}
+    \includegraphics[width=\textwidth]{mutation_g.png}
     \caption{An example of a mutation of a solution $A$.}
     \label{fig:mutation_ex}
 \end{figure}
@@ -204,7 +205,7 @@ To prevent a student ending up in a group that has more students than $gs_{max}$
 \SetAlgoLined
 \For{$s_i \in A$}{
     \If{random() < mutation\_rate}{
-        $s_i \gets G \in AG$
+        $s_i \gets G \in AG$\;
     }
 }
 \end{algorithm}
@@ -217,7 +218,7 @@ The crossover operator is meant to add convergence to already good solutions, so
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{images/cross_over_g.png}
+    \includegraphics[width=1.0\textwidth]{cross_over_g.png}
     \caption{Example of a crossover operation.}
     \label{fig:crossover_ex}
 \end{figure}
@@ -230,39 +231,39 @@ It should be noted that, since the assignment is not done with only compatible g
     \SetAlgoLined 
 Select two parents $A$ and $B$ from a parent pool\;
 Create two offspring $C$ and $D$ as follows:\;
-Randomly choose $k$ crossover points $cp_1,...cp_k \in \{1,...,n-1\}$\;
+Randomly choose $k$ crossover points $cp_1,\dots,cp_k \in \{1,\dots,n-1\}$\;
 \For{$i \gets 1$ to $cp_1$}{
-    $c_i \gets a_i$
-    $d_i \gets b_i$
+    $c_i \gets a_i$\;
+    $d_i \gets b_i$\;
 }
-$switch \gets 0$
+$switch \gets 0$\;
 \For{$j \gets 2$ to $k$}{
     \eIf{$switch = 0$}{
         \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-            $c_i \gets b_i$
-            $d_i \gets a_i$
+            $c_i \gets b_i$\;
+            $d_i \gets a_i$\;
         }
-        $switch \gets 1$
+        $switch \gets 1$\;
     }{
         \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-            $c_i \gets a_i$
-            $d_i \gets b_i$
+            $c_i \gets a_i$\;
+            $d_i \gets b_i$\;
         }
-        $switch \gets 0$
+        $switch \gets 0$\;
     }
 }
 \eIf{$switch = 0$}{
-    \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-        $c_i \gets b_i$
-        $d_i \gets a_i$
+    \For{$i \gets cp_{k} + 1$ to $n$}{
+        $c_i \gets b_i$\;
+        $d_i \gets a_i$\;
     }
 }{
-    \For{$i \gets cp_{j-1} + 1$ to $cp_j$}{
-        $c_i \gets a_i$
-        $d_i \gets b_i$
+    \For{$i \gets cp_{k} + 1$ to $n$}{
+        $c_i \gets a_i$\;
+        $d_i \gets b_i$\;
     }
 }
-Perform $Repair$ in $C$ and $D$
+Perform $Repair$ in $C$ and $D$\;
 \end{algorithm}
 
 \subsection{Repair} \label{sec:Repair}
@@ -276,21 +277,21 @@ The fill task can be seen in Algorithm~\ref{alg:repair}.
     \caption{Group Repair}
     \label{alg:repair}
     \SetAlgoLined 
-    $A_r = ()$ \tcp{Initialise a vector that will hold the repaired solution}
-    $P_g \leftarrow NULL$
+    $A_r = ()$\; \tcp{Initialise a vector that will hold the repaired solution}
+    $P_g \leftarrow NULL$\;
     \For{$ G_i \in A$}{
         \If{$Size(G_i) > 0$}{
             \If{$P_g$ is not $NULL$ $\textbf{AND}$ $Size(P_g) \leq gs_{max}$ $\textbf{AND}$ $Size(P_g) > gs_{min} $}{
-                $A_r \gets \text{MergeGroups}(P_g,G_i)$
-                $P_g \leftarrow NULL$
+                $A_r \gets \text{MergeGroups}(P_g,G_i)$\;
+                $P_g \leftarrow NULL$\;
             }
             \If{$Size(G_i) < gs_{min}$}{
-                $A_r \leftarrow \text{SplitGroup}(G_i)$ \tcp{Split $G_i$ the group in half}
+                $A_r \leftarrow \text{SplitGroup}(G_i)$\; \tcp{Split $G_i$ the group in half}
             }
             \eIf{$Size(G_i) > gs_{max}$}{
-                $P_g \leftarrow G_i$
+                $P_g \leftarrow G_i$\;
             }{
-                $A_r \leftarrow G_i$
+                $A_r \leftarrow G_i$\;
             }
         }
     }
