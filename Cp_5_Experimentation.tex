@@ -24,21 +24,21 @@ After the experiment, the results of each run were compared with each other, and
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/parallel_ref_20.png}
+    \includegraphics[width=\textwidth]{parallel_ref_20.png}
     \caption{Reference front for the $n=20$ problem.}
     \label{fig:reference_front_20}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/parallel_ref_200.png}
+    \includegraphics[width=\textwidth]{parallel_ref_200.png}
     \caption{Reference front for the $n=200$ problem. }
     \label{fig:reference_front_200}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/parallel_ref_2000.png}
+    \includegraphics[width=\textwidth]{parallel_ref_2000.png}
     \caption{Reference front for the $n=2,000$ problem. }
     \label{fig:reference_front_2000}
 \end{figure}
@@ -303,7 +303,7 @@ For the WS and CHE methods there was a need to define a weight for each function
 Where $w_i$ is the weight to be used for each function, $f_i(x)$ is the best result found for this function evaluated individually and $\sum f(x)$ is the sum of all the results for each problem size. The weights are shown in Table~\ref{tab:weights_to_be_used}.\\
 
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \centering
 \begin{tabular}{@{}lcccc@{}}
 \toprule
@@ -324,7 +324,7 @@ Interestingly, these weights are close from each other from their problem sizes.
 The common parameters for the mutation and crossover probabilities specify to have a low mutation probability usually between $0.001$ and $0.05$ and a high crossover probability between $0.5$ and $1.0$  \cite{Lin2003}. In this research, we call these parameters "Thumb-Parameters", as they are rules of thumb to follow. For this experimentation phase, we used a crossover probability of $0.9$ and a mutation probability of $1/n$ where $n$ is the size of the problem which corresponds to the number of students. \\
 
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccccccccc@{}}
 \toprule
@@ -350,7 +350,7 @@ MORS     & \multicolumn{3}{c}{\cellcolor{gray95}$2.25_{1.28}$} & \multicolumn{3}
 \end{table}
 
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{@{}lccccccccc@{}}
 \toprule
@@ -380,7 +380,7 @@ Tables~\ref{tab:spread_thumb} and \ref{tab:hv_thumb} show the results for the SP
 The two best algorithms according to the HV metric are NSGA-II and SPEA-II. These results are mostly consist ant between problem sizes. These results are mostly consistent with the SPREAD showed in Table~\ref{tab:spread_thumb}. EP and IGD+ highlighted MORS as the better algorithm, but as previously noted, the difference between the others in comparison wasn't much. Therefore the analysis of HV showed clearer results among the MOA. While EP and IGD+ showed an slight advantage for the MOA against the SOA in general.\\
   
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \centering
 \begin{tabular}{@{}lccc@{}}
 \toprule
@@ -396,7 +396,7 @@ MORS     & $0.68_{0.11}$                   & $0.83_{0.04}$                   & \
 \end{table}
 
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \centering
 \begin{tabular}{@{}lccc@{}}
 \toprule
@@ -416,7 +416,7 @@ A Friedman ranking test was done to define which algorithms performed better acr
 Both rankings show an overall better performance for the MOA, although, these metrics are not able to determine a best algorithm among themselves, since their position in the ranking is very close.\\
 
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \centering
 \begin{tabular}{lc}
 \toprule
@@ -511,7 +511,7 @@ Considering reduction performance (distributed according to chi-square with 28 d
 The rankings for SPREAD and HV metrics are shown in Tables~\ref{tab:fried_spread_thumb} and \ref{tab:hv_thumb} respectively. For the Friedman test on the HV metric the higher is the better result. The best algorithms according to this ranking are SPEA-II and NSGA-II separated only by a small difference. SPEA-II shows a lower SPREAD metric which means their solutions are more convergent.\\
  
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \centering
 \begin{tabular}{lc}
 \toprule
@@ -530,7 +530,7 @@ Considering reduction performance (distributed according to chi-square with 4 de
 \end{table}
 
 \par
-\begin{table}[!htc]
+\begin{table}[!htp]
 \centering
 \begin{tabular}{lc}
 \toprule
