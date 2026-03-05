@@ -1,0 +1,42 @@
+# Tips and Details for Fixing LaTeX Chapters
+
+## Common Issues and Fixes
+
+1.  **Algorithm Syntax (`algorithm2e`)**:
+    - Ensure every line inside an algorithm (except for structure keywords like `\If`, `\For`, etc.) ends with `\;` to correctly terminate the line.
+    - Use `\tcp{comment}` for side comments and `\tcc{comment}` for block comments.
+    - Use `\text{...}` for descriptive text inside math or algorithm blocks to ensure correct font rendering.
+    - Ensure `\SetAlgoLined` is used at the beginning if vertical lines are desired.
+
+2.  **Image Paths and Naming**:
+    - The project uses `\graphicspath{{./images/}}` in `temp_main.tex`.
+    - **Do not** include the `images/` prefix in `\includegraphics{...}` calls.
+    - Verify filenames in the `images/` folder (e.g., `Multi-Objective.png` was preferred over `multiobjective.png` in Chapter 4).
+
+3.  **Trailing Backslashes**:
+    - Avoid using `\` at the end of paragraphs. This is a common error in the source files that causes improper spacing and potential compilation warnings. Use a blank line for paragraph breaks.
+
+4.  **Typesetting Standards**:
+    - Replace `...` with `\dots` for proper mathematical and text ellipsis.
+    - Use `~` (non-breaking space) before `\ref` and `\cite` to prevent references from being separated from their context at the end of a line (e.g., `Chapter~\ref{...}`).
+
+5.  **Floating Elements (Tables and Figures)**:
+    - Use the `[H]` specifier from the `float` package to force placement if necessary, but ensure it's not nested in a way that causes "Not in outer par mode" errors.
+    - If you encounter "! LaTeX Error: Not in outer par mode.", try adding a `\par` or a blank line before the `\begin{table}` or `\begin{figure}` environment.
+
+## Chapter-Specific Guidance
+
+- **Chapter 2 (Background)**: 
+    - Fix `nsgaii_alg` and `espea_alg` syntax.
+    - Check for correct use of `\Comment` and line terminators in algorithm blocks.
+- **Chapter 5 (Experimentation)**:
+    - Target the "! LaTeX Error: Not in outer par mode." error.
+    - This often happens when a `table` or `figure` is placed inside another environment (like a `quote` or a `list`) or immediately after a line that hasn't been properly ended.
+- **Tables**:
+    - Many tables in this project use `tabular` inside `subtable`. Ensure the `subcaption` package is used correctly and check for extra `\\` inside or outside table environments that might break alignment.
+
+## Testing Strategy
+1.  Modify `temp_main.tex` to include **ONLY** the chapter you are working on.
+2.  Run `pdflatex -interaction=nonstopmode temp_main.tex`.
+3.  Check the `.log` file for specific line numbers of errors.
+4.  Once the chapter compiles cleanly (warnings for missing global references/citations are okay), revert `temp_main.tex` and move to the next task.
